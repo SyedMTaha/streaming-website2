@@ -19,149 +19,156 @@ import img06 from './../../public/assets/images/landing/home06.png';
 export default function HomePage() {
   return (
     <>
-    <Navbar />
-    <div className="min-h-screen bg-[#020D1E] text-white overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-60 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-[#132036] to-transparent z-10" />
-          <Image
-            src={home01}
-            alt="Movie and TV show posters collage"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="relative z-10 container mx-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            The Home of Endless
-            <br />
-            Shows and Movies
-          </h1>
-          <p className="text-sm sm:text-md md:text-md text-gray-300 mb-8">More shows. More fun. More you.</p>
-          <div className="flex flex-col sm:flex-row gap-2 justify-center items-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="w-full px-4 py-3 rounded-sm bg-white/90 text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    <div className="w-full overflow-x-hidden">
+      <Navbar />
+      <div className="min-h-screen bg-[#020D1E] text-white w-full">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 text-center min-h-[70vh] flex items-center w-full">
+          <div className="absolute inset-0 opacity-60 w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#132036] to-transparent z-10" />
+            <Image
+              src={home01 || "/placeholder.svg"}
+              alt="Movie and TV show posters collage"
+              fill
+              className="object-cover"
+              priority
             />
-            <Link href="/auth/login">
-              <button className="w-full sm:w-auto whitespace-nowrap bg-[#1D50A3] text-white px-8 py-3 rounded-sm font-medium inline-block hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
-                Get Started
-              </button>
-            </Link>
           </div>
-        </div>
-      </section>
+          <div className="relative z-10 container mx-auto max-w-full">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+              The Home of Endless
+              <br />
+              Shows and Movies
+            </h1>
+            <p className="text-sm sm:text-md md:text-md text-gray-300 mb-8">More shows. More fun. More you.</p>
+            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center max-w-md mx-auto w-full">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="w-full px-4 py-3 rounded-sm bg-white/90 text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Link href="/auth/login" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto whitespace-nowrap bg-[#1D50A3] text-white px-8 py-3 rounded-sm font-medium hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-      {/* Watch Free Movies Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold">Watch Free Movies</h2>
-            <div className="flex gap-2">
-              <button
-                onClick={() => {
-                  const container = document.getElementById('movie-scroll-container');
-                  container.scrollBy({ left: -300, behavior: 'smooth' });
+        {/* Watch Free Movies Section */}
+        <section className="py-16 px-4 w-full">
+          <div className="container mx-auto">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold">Watch Free Movies</h2>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    const container = document.getElementById("movie-scroll-container")
+                    if (container) {
+                      container.scrollBy({ left: -300, behavior: "smooth" })
+                    }
+                  }}
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => {
+                    const container = document.getElementById("movie-scroll-container")
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: "smooth" })
+                    }
+                  }}
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="w-full overflow-hidden">
+              <div
+                id="movie-scroll-container"
+                className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 scrollbar-hide"
+                style={{
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                  WebkitOverflowScrolling: "touch",
                 }}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => {
-                  const container = document.getElementById('movie-scroll-container');
-                  container.scrollBy({ left: 300, behavior: 'smooth' });
-                }}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+                {/* Movie Cards */}
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" />
+                </div>
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img02} title="SpaceX" href="/movie/spacex" />
+                </div>
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img03} title="City Hunter" href="/movie/city-hunter" />
+                </div>
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img04} title="The Sleeping Angel" href="/movie/the-sleeping-angel" />
+                </div>
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img05} title="The Post" href="/movie/the-post" />
+                </div>
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
+                  <MovieCard image={img06} title="White House" href="/movie/white-house" />
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            id="movie-scroll-container"
-            className="flex gap-4 overflow-x-auto max-w-full scrollbar-hide pb-4"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {/* Movie Cards */}
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" />
-            </div>
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img02} title="SpaceX" href="/movie/spacex" />
-            </div>
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img03} title="City Hunter" href="/movie/city-hunter" />
-            </div>
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img04} title="The Sleeping Angel" href="/movie/the-sleeping-angel" />
-            </div>
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img05} title="The Post" href="/movie/the-post" />
-            </div>
-            <div className="flex-shrink-0 w-48 sm:w-56 md:w-50">
-              <MovieCard image={img06} title="White House" href="/movie/white-house" />
-            </div>
-          </div>
-          <style jsx>{`
-            #movie-scroll-container::-webkit-scrollbar {
-              display: none;
-            }
-          `}</style>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Join Us Section */}
-      <section className="py-16 px-4 bg-[#0a1a3a]/30">
-        <div className="container mx-auto">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12">Why Join Us</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <FeatureCard
-              icon={<Tv className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
-              title="Enjoy on your TV"
-              description="Watch on Smart TVs, Playstation, Xbox, Apple TV, Roku Players and more."
-            />
-            <FeatureCard
-              icon={<Download className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
-              title="Download Shows"
-              description="Save your favorites easily and always have something to watch."
-            />
-            <FeatureCard
-              icon={<Dribbble className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
-              title="Watch everywhere"
-              description="Stream unlimited movies and TV shows on your phone, tablet, laptop and TV."
-            />
-            <FeatureCard
-              icon={<Smile className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
-              title="Create profiles"
-              description="Send kids on adventures with their favorite characters in a space made just for them."
-            />
+        {/* Why Join Us Section */}
+        <section className="py-16 px-4 bg-[#0a1a3a]/30 w-full">
+          <div className="container mx-auto">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12">Why Join Us</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <FeatureCard
+                icon={<Tv className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
+                title="Enjoy on your TV"
+                description="Watch on Smart TVs, Playstation, Xbox, Apple TV, Roku Players and more."
+              />
+              <FeatureCard
+                icon={<Download className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
+                title="Download Shows"
+                description="Save your favorites easily and always have something to watch."
+              />
+              <FeatureCard
+                icon={<Dribbble className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
+                title="Watch everywhere"
+                description="Stream unlimited movies and TV shows on your phone, tablet, laptop and TV."
+              />
+              <FeatureCard
+                icon={<Smile className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />}
+                title="Create profiles"
+                description="Send kids on adventures with their favorite characters in a space made just for them."
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <FAQItem question="What is INBV?" />
-            <FAQItem question="How much INBV cost?" />
-            <FAQItem question="Where can I watch?" />
-            <FAQItem question="How do I cancel?" />
-            <FAQItem question="What can I watch on INBV?" />
+        {/* FAQ Section */}
+        <section className="py-16 px-4 w-full">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <FAQItem question="What is INBV?" />
+              <FAQItem question="How much INBV cost?" />
+              <FAQItem question="Where can I watch?" />
+              <FAQItem question="How do I cancel?" />
+              <FAQItem question="What can I watch on INBV?" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      <Footer />
     </div>
-    <Footer/>
     </>
   )
 }
