@@ -51,19 +51,19 @@ export default function SignupForm() {
   };
 
   return (
-    <div 
-      className="min-h-screen flex items-start pt-2 pr-4" >
-      <div className="bg-[#191C33] ml-4 rounded-[10px] p-8 flex items-center justify-start shadow-2xl " style={{ width: '500px', height: '540px' }}>
-        <div className=" p-8 rounded-xl  w-full">
+    <div className="min-h-screen flex items-start pt-2 pr-2 sm:pr-4">
+      <div
+        className="bg-[#191C33] ml-2 sm:ml-4 rounded-[10px] p-4 sm:p-8 flex items-center justify-start shadow-2xl w-full max-w-[600px]"
+        style={{ height: "550px", minHeight: "500px" , width:'500px' }}
+      >
+        <div className="p-4 sm:p-8 rounded-xl w-full">
           <div className="text-center mb-6">
-            <h1 className="text-white text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text ">
+            <h1 className="text-white text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text">
               Sign Up
             </h1>
-            <p className="text-gray-300 text-m leading-relaxed">
-              Create your account to get started
-            </p>
+            <p className="text-gray-300 text-m leading-relaxed">Create your account to get started</p>
           </div>
-  
+
           <form onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div className="space-y-3">
@@ -81,7 +81,7 @@ export default function SignupForm() {
                     placeholder="Enter your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="text-white block text-sm font-medium mb-2">
                     Email Address
@@ -97,7 +97,7 @@ export default function SignupForm() {
                   />
                 </div>
               </div>
-  
+
               <div>
                 <label htmlFor="password" className="text-white block text-sm font-medium mb-2">
                   Password
@@ -114,46 +114,44 @@ export default function SignupForm() {
               </div>
 
               <div className="space-y-2">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  checked={termCondition}
-                  onChange={(e) => {
-                    setTermCodition(e.target.checked);
-                    // Clear error when user checks the box
-                    if (errors.terms) {
-                      setErrors(prev => ({
-                        ...prev,
-                        terms: ""
-                      }));
-                    }
-                  }}
-                  className={`rounded border-gray-400 ${error.terms ? 'ring-2 ring-red-500' : ''}`}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    checked={termCondition}
+                    onChange={(e) => {
+                      setTermCodition(e.target.checked)
+                      // Clear error when user checks the box
+                      if (errors.terms) {
+                        setErrors((prev) => ({
+                          ...prev,
+                          terms: "",
+                        }))
+                      }
+                    }}
+                    className={`rounded border-gray-400 ${error.terms ? "ring-2 ring-red-500" : ""}`}
                   />
-                <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-300">
-                  I agree to terms & conditions
-                </label>
+                  <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-300">
+                    I agree to terms & conditions
+                  </label>
                 </div>
-              {error.terms && (
-                <p className="text-red-400 text-xs mt-1 ml-6">{errors.terms}</p>
-              )}
-             </div>
-              
+                {error.terms && <p className="text-red-400 text-xs mt-1 ml-6">{errors.terms}</p>}
+              </div>
+
               <div className="pt-2">
-                <button 
-                  type="submit" 
-                  className="w-full bg-[#1D50A3] text-white  hover:bg-blue-900 h-12 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                <button
+                  type="submit"
+                  className="w-full bg-[#1D50A3] text-white hover:bg-blue-900 h-12 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                 >
                   Create Account
                 </button>
               </div>
-  
-              <div className="text-center text-gray-300 text-sm pt-2">
+
+              <div className="text-center text-gray-300 text-sm ">
                 Already have an account?{" "}
-                <Link 
-                  href="/auth/login" 
-                  className="text-[#1D50A3]   font-medium hover:underline transition-colors duration-200"
+                <Link
+                  href="/auth/login"
+                  className="text-[#1D50A3] font-medium hover:underline transition-colors duration-200"
                 >
                   Login
                 </Link>
