@@ -6,6 +6,18 @@ import Image from 'next/image'
 import { ChevronDown, Globe, Menu, X, User } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
 
+
+const genreDropdownItems = [
+  { href: "/genre/action", label: "Action" },
+  { href: "/genre/comedy", label: "Comedy" },
+  { href: "/genre/drama", label: "Drama" },
+  { href: "/genre/horror", label: "Horror" },
+  { href: "/genre/romance", label: "Romance" },
+  { href: "/genre/thriller", label: "Thriller" },
+  { href: "/genre/sci-fi", label: "Sci-Fi" },
+  { href: "/genre/documentary", label: "Documentary" },
+]
+
 function NavItem({ href, label, mobile }) {
   return (
     <Link href={href} className={`text-white hover:text-blue-300 flex items-center gap-1 ${mobile ? "" : "font-medium"}`}>
@@ -31,7 +43,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center space-x-6"> {/* Added items-center here */}
           <NavItem href="/" label="Home" />
-          <NavItem href="/genre" label="Genre" />
+          <NavItem href="/genre" label="Genre" hasDropdown={true} dropdownItems={genreDropdownItems} />
           <NavItem href="/live" label="Live TV" />
           <NavItem href="/blog" label="Blog" />
           <NavItem href="/about" label="About Us" />

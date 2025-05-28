@@ -24,6 +24,10 @@ const faqData = [
     answer: "Services vary. Most movies and videos only require registration."
   },
   {
+    question: "Where Can I Watch?",
+    answer: "This may vary also. Please check for current platform availability. "
+  },
+  {
     question: "How Do I Cancel?",
     answer: "Most platforms are available free to the public. Cancelling registration can be achieved at the same area where registration is done."
   },
