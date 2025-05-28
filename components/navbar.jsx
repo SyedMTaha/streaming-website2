@@ -1,26 +1,17 @@
 "use client"
 
-import { useState , useRef, useEffect} from "react"
+import React from "react"
 import Link from "next/link"
 import Image from 'next/image'
 import { ChevronDown, Globe, Menu, X, User } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
 
-function NavItem({ href, label, mobile }) {
-  return (
-    <Link href={href} className={`text-white hover:text-blue-300 flex items-center ${mobile ? "" : "font-medium"}`}>
-      {label}
-      <ChevronDown className="h-4 w-4 ml-1" />
-    </Link>
-  )
-}
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isGenreOpen, setIsGenreOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const dropdownRef = useRef(null)
-  const timeoutRef = useRef(null)
+  const [isGenreOpen, setIsGenreOpen] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const dropdownRef = React.useRef(null)
+  const timeoutRef = React.useRef(null)
 
   const genres = [
     { name: "Action", href: "/genre/action" },
@@ -34,46 +25,45 @@ export default function Navbar() {
     { name: "Family", href: "/genre/family" },
     { name: "Documentary", href: "/genre/documentary" },
   ]
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsGenreOpen(false)
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
-
-   // Handle mouse enter with delay
-   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-    setIsGenreOpen(true)
-  }
-
-  // Handle mouse leave with delay
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
+ // Close dropdown when clicking outside
+ React.useEffect(() => {
+  function handleClickOutside(event) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsGenreOpen(false)
-    }, 150)
+    }
   }
 
-  // Toggle dropdown for mobile/click
-  const toggleGenreDropdown = () => {
-    setIsGenreOpen(!isGenreOpen)
+  document.addEventListener("mousedown", handleClickOutside)
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside)
   }
+}, [])
 
-  // Close mobile menu when link is clicked
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
+// Handle mouse enter with delay
+function handleMouseEnter() {
+  if (timeoutRef.current) {
+    clearTimeout(timeoutRef.current)
+  }
+  setIsGenreOpen(true)
+}
+
+// Handle mouse leave with delay
+function handleMouseLeave() {
+  timeoutRef.current = setTimeout(() => {
     setIsGenreOpen(false)
-  }
+  }, 150)
+}
+
+// Toggle dropdown for mobile/click
+function toggleGenreDropdown() {
+  setIsGenreOpen(!isGenreOpen)
+}
+
+// Close mobile menu when link is clicked
+function closeMobileMenu() {
+  setIsMobileMenuOpen(false)
+  setIsGenreOpen(false)
+}
 
   return (
     <nav className="bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full">
@@ -86,12 +76,12 @@ export default function Navbar() {
             </div>
           </Link>
 
-         {/* Desktop Navigation */}
-         <div className="hidden md:flex space-x-6">
-              <NavItem href="/" label="Home" />
-
-              {/* Genre Dropdown */}
-              <div
+      {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6">
+            <NavItem href="/" label="Home" />
+            
+            {/* Genre Dropdown */}
+            <div
                 className="relative"
                 ref={dropdownRef}
                 onMouseEnter={handleMouseEnter}
@@ -125,6 +115,7 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
             <NavItem href="/live" label="Live TV" />
             <NavItem href="/blog" label="Blog" />
             <NavItem href="/about" label="About Us" />
@@ -148,20 +139,55 @@ export default function Navbar() {
             </button>
           </Link>
 
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <button
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
+              className="text-white hover:text-blue-400 transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden mt-4 bg-navy-800 rounded-lg p-4">
-          <div className="flex flex-col space-y-3">
-            <NavItem href="/" label="Home" mobile />
-            <NavItem href="/about" label="About Us" mobile />
-            <NavItem href="/live" label="Live TV" mobile />
-            <NavItem href="/blog" label="Blog" mobile />
+      {isMobileMenuOpen && (
+         <div className="md:hidden fixed inset-x-0 top-16 bg-[#1a1a3a]/95 border-t border-blue-900/30 z-50 max-h-[80vh] overflow-y-auto">
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <MobileNavItem href="/" label="Home" onClick={closeMobileMenu} />
+
+            <div className="w-full">
+                <button
+                  onClick={toggleGenreDropdown}
+                  className="flex items-center justify-between w-full px-3 py-2 text-white hover:text-blue-400 hover:bg-blue-600/10 rounded transition-colors duration-200"
+                >
+                  <span>Genre</span>
+                  <ChevronDown
+                    className={"h-4 w-4 transition-transform duration-200 " + (isGenreOpen ? "rotate-180" : "")}
+                  />
+                </button>
+
+                {isGenreOpen && (
+                  <div className="pl-4 mt-1 space-y-1 border-l-2 border-blue-800/50 ml-3">
+                    {genres.map((genre) => (
+                      <Link
+                        key={genre.name}
+                        href={genre.href}
+                        className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-blue-600/20 rounded transition-colors duration-150"
+                        onClick={closeMobileMenu}
+                      >
+                        {genre.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            <MobileNavItem href="/live-tv" label="Live TV" onClick={closeMobileMenu} />
+              <MobileNavItem href="/blog" label="Blog" onClick={closeMobileMenu} />
+              <MobileNavItem href="/about" label="About Us" onClick={closeMobileMenu} />
+            
+            
             <div className="pt-2 border-t border-navy-700">
               <button className="text-white flex items-center hover:bg-white/10 p-2 rounded transition-colors">
                 <Globe className="h-4 w-4 mr-1" />
@@ -169,10 +195,32 @@ export default function Navbar() {
                 <ChevronDown className="h-4 w-4 ml-1" />
               </button>
             </div>
+
           </div>
         </div>
       )}
     </div>
   </nav>
+  )
+}
+
+
+function NavItem({ href, label }) {
+  return (
+    <Link href={href} className="text-white hover:text-blue-400 transition-colors duration-200 py-2">
+      {label}
+    </Link>
+  )
+}
+
+function MobileNavItem({ href, label, onClick }) {
+  return (
+    <Link
+      href={href}
+      className="block px-3 py-2 text-white hover:text-blue-400 hover:bg-blue-600/10 rounded transition-colors duration-200"
+      onClick={onClick}
+    >
+      {label}
+    </Link>
   )
 }

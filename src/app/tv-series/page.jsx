@@ -2,7 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
-import Navbar from "../../../components/navbarTwo";
+import Navbar from "../../../components/navbarSearch";
 import Footer from "../../../components/footer";
 import TvSeries from "../../../components/tvSeries";
 
