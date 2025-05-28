@@ -14,6 +14,24 @@ import img04 from './../../public/assets/images/landing/home04.png';
 import img05 from './../../public/assets/images/landing/home05.png';
 import img06 from './../../public/assets/images/landing/home06.png';
 
+const faqData = [
+  {
+    question: "What is INBV?",
+    answer: "The acronym stands for Internet Best Videos. We are an innovative media company whose mission is to present the world's best content providers and creators."
+  },
+  {
+    question: "How Much Does INBV Services Cost?",
+    answer: "Services vary. Most movies and videos only require registration."
+  },
+  {
+    question: "How Do I Cancel?",
+    answer: "Most platforms are available free to the public. Cancelling registration can be achieved at the same area where registration is done."
+  },
+  {
+    question: "What can I watch on INBV?",
+    answer: "Genre types may vary. Please check for availability."
+  }
+];
 
 
 export default function HomePage() {
@@ -158,11 +176,9 @@ export default function HomePage() {
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Frequently Asked Questions</h2>
             <div className="space-y-4">
-              <FAQItem question="What is INBV?" />
-              <FAQItem question="How much INBV cost?" />
-              <FAQItem question="Where can I watch?" />
-              <FAQItem question="How do I cancel?" />
-              <FAQItem question="What can I watch on INBV?" />
+            {faqData.map((faq, index) => (
+             <FAQItem key={index} question={faq.question} answer={faq.answer} />
+             ))}
             </div>
           </div>
         </section>
@@ -170,8 +186,8 @@ export default function HomePage() {
       <Footer />
     </div>
     </>
-  )
-}
+  );
+};
 
 function MovieCard({ image, title, href }) {
   return (
@@ -201,8 +217,9 @@ function FeatureCard({ icon, title, description }) {
 )
 }
 
-function FAQItem({ question }) {
+function FAQItem({ question, answer }) {
   const [isOpen, setIsOpen] = React.useState(false)
+  
 
   return (
     <div className="bg-[#2D2D2D] rounded-lg">
@@ -215,12 +232,10 @@ function FAQItem({ question }) {
       </button>
       {isOpen && (
         <div className="px-6 pb-6">
-          <p className="text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </p>
+          <p className="text-gray-300">{answer}</p>
         </div>
       )}
     </div>
   )
 }
+

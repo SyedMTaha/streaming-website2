@@ -4,9 +4,11 @@ import {auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
+const router = useRouter();
+const [isLoading, setIsLoading] = useState(false);
 
 export default function SignupForm() {
   const [name, setName] = useState("");
@@ -16,9 +18,6 @@ export default function SignupForm() {
   const [termCondition, setTermCodition] = useState(false);
   
  
-  // const router = useRouter();
- 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -41,7 +40,7 @@ export default function SignupForm() {
       });
   
       // Redirect to home page or dashboard
-      router.push('/dashboard');
+      router.push('/login');
     } 
     catch (error) 
     {
