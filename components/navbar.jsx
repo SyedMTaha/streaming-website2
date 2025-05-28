@@ -31,9 +31,10 @@ export default function Navbar() {
 
           <div className="hidden md:flex space-x-6">
             <NavItem href="/" label="Home" />
-            <NavItem href="/about" label="About Us" />
+            <NavItem href="/genre" label="Genre" />
             <NavItem href="/live" label="Live TV" />
             <NavItem href="/blog" label="Blog" />
+            <NavItem href="/about" label="About Us" />
           </div>
         </div>
 

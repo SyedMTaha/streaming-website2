@@ -16,7 +16,8 @@ export default function SignupPage() {
         backgroundBlend: "overlay",
       }}
     >
-      <SignupForm />
+    <SignupForm/>
+      
     </div>
     </>
   );

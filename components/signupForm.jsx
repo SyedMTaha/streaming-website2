@@ -7,8 +7,6 @@ import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
-const router = useRouter();
-const [isLoading, setIsLoading] = useState(false);
 
 export default function SignupForm() {
   const [name, setName] = useState("");
@@ -17,6 +15,8 @@ export default function SignupForm() {
   const [error, setError] = useState("");
   const [termCondition, setTermCodition] = useState(false);
   
+  // const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
  
   const handleSubmit = async (e) => {
     e.preventDefault();

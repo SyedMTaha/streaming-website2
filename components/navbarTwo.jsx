@@ -8,9 +8,9 @@ import logo from './../public/assets/images/logo/logo.png';
 
 function NavItem({ href, label, mobile }) {
   return (
-    <Link href={href} className={`text-white hover:text-blue-300 flex items-center ${mobile ? "" : "font-medium"}`}>
+    <Link href={href} className={`text-white hover:text-blue-300 flex items-center gap-1 ${mobile ? "" : "font-medium"}`}>
       {label}
-      <ChevronDown className="h-4 w-4 ml-1" />
+      <ChevronDown className="h-4 w-4 " />
     </Link>
   )
 }
@@ -20,22 +20,23 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full">
-      <div className="px-4 sm:px-8 lg:px-16 max-w-full">
+      <div className="px-4 sm:px-8 lg:px-8 max-w-full">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4 sm:space-x-8">
-            <Link href="/" className="flex items-center">
-              <div className="relative flex items-center justify-center h-8 w-18">
-                <Image src={logo || "/placeholder.svg"} alt="INBV Logo" width={80} height={32} priority />
-              </div>
-            </Link>
+          <Link href="/" className="flex items-center">
+         <div className="relative flex items-center justify-center h-8 w-18">
+         <Image src={logo || "/placeholder.svg"} alt="INBV Logo" width={80} height={32} priority />
+       </div>
+        </Link>
 
-            <div className="hidden md:flex space-x-6">
-              <NavItem href="/" label="Home" />
-              <NavItem href="/about" label="About Us" />
-              <NavItem href="/live" label="Live TV" />
-              <NavItem href="/blog" label="Blog" />
-            </div>
-          </div>
+        <div className="hidden md:flex items-center space-x-6"> {/* Added items-center here */}
+          <NavItem href="/" label="Home" />
+          <NavItem href="/genre" label="Genre" />
+          <NavItem href="/live" label="Live TV" />
+          <NavItem href="/blog" label="Blog" />
+          <NavItem href="/about" label="About Us" />
+        </div>
+        </div>
 
           {/* Search Bar - Hidden on mobile, shown on desktop */}
           <div className="hidden lg:flex flex-1 max-w-sm mx-4 xl:mx-8" style={{ marginLeft: "110px" }}>
@@ -44,7 +45,7 @@ export default function Navbar() {
                 type="text"
                 placeholder="Find movies, TV shows and more..."
                 className="bg-gradient-to-b from-[#00112C] to-[#012256] border border-white rounded-lg pl-10 pr-4 py-1.5 text-sm  placeholder-gray-400 focus:outline-none"
-                style={{ width: "290px", color: "#A2ABC0"  }}
+                style={{ width: "280px", color: "#A2ABC0"  }}
               />
               <button className="absolute left-3 top-1/2 transform -translate-y-1/2">
                 <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
