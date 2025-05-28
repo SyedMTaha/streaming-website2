@@ -16,7 +16,7 @@ import img06 from './../../public/assets/images/landing/home06.png';
 
 const faqData = [
   {
-    question: "What is INBV?",
+    question: "What is INBV? ",
     answer: "The acronym stands for Internet Best Videos. We are an innovative media company whose mission is to present the world's best content providers and creators."
   },
   {
