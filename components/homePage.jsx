@@ -98,6 +98,9 @@ export default function DashboardPage() {
           <MovieCard image={home004} title="The Post" />
           <MovieCard image={home05} title="Riverdale" />
           <MovieCard image={home06} title="Best Friend" />
+          <MovieCard image={home01}  title="John Wick 4" />
+          <MovieCard image={home002} title="Spider-Man" />
+          <MovieCard image={home003} title="The White House" />
         </MovieRow>
       </ContentSection>
 
@@ -110,6 +113,9 @@ export default function DashboardPage() {
           <MovieCard image={home10} title="Swamp Thing" />
           <MovieCard image={home11} title="James Bond" />
           <MovieCard image={home12} title="La La Land" />
+          <MovieCard image={home07} title="The Sleeping Angel" />
+          <MovieCard image={home08} title="The Great Empire" />
+          <MovieCard image={home09} title="Good Doctor" />
         </MovieRow>
       </ContentSection>
 
@@ -146,6 +152,8 @@ export default function DashboardPage() {
           <MovieCard image={home18} title="The Post" />
           <MovieCard image={home19} title="Best Friend" />
           <MovieCard image={home20} title="White House" />
+          <MovieCard image={home13} title="Love in The Sky" />
+          <MovieCard image={home14} title="SpaceX" />
         </MovieRow>
       </ContentSection>
 
@@ -196,6 +204,11 @@ export default function DashboardPage() {
           <MovieCard image={home29} title="Day Dreamer" />
           <MovieCard image={home30} title="Arcane" />
           <MovieCard image={home31} title="Arcane" />
+          <MovieCard image={home28} title="Day Night" />
+          <MovieCard image={home29} title="Day Dreamer" />
+          <MovieCard image={home30} title="Arcane" />
+          <MovieCard image={home31} title="Arcane" />
+          <MovieCard image={home28} title="Day Night" />
         </MovieRow>
       </ContentSection>
 
