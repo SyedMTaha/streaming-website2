@@ -102,7 +102,7 @@ export default function HomePage() {
               >
                 {/* Movie Cards */}
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
-                  <MovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" />
+                  <MovieCard image={img01} title="Love in The Sky" href="/movie/loveInSky" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-52">
                   <MovieCard image={img02} title="SpaceX" href="/movie/spacex" />

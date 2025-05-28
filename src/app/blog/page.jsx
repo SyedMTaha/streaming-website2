@@ -7,8 +7,8 @@ export default function BlogPage() {
   return (
     <>
       <NavbarTwo />
-      <Blog />
-      <Footer />
+      <Blog/>
+      <Footer/>
     </>
   );
 }
