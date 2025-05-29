@@ -4,7 +4,6 @@ import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share2, Star, Plus } from "lucide-react"
 import movie01 from './../public/assets/images/movies/loveinsky.png';
 import home01 from './../public/assets/images/landing/home01.png';
-import movie02 from './../public/assets/images/movies/sleepingangel.png';
 
 export default function MoviePage({ params }) {
   // This would normally come from an API based on the slug
@@ -74,29 +73,31 @@ export default function MoviePage({ params }) {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Left Column - Poster */}
-            <div className="md:w-1/3"> {/* Changed from md:w-1/4 to md:w-1/3 for more width */}
-            <div className="relative rounded-lg overflow-hidden">
+            <div className="md:w-1/4">
+              <div className="relative rounded-lg overflow-hidden">
                 <Image
-                src={home01}
-                alt={movie.title}
-                className="w-[500px] h-[450px] object-cover" // Increased width from 450px to 500px
+                  src={home01}
+                  alt={movie.title}
+                  width={300}
+                  height={400}
+                  className="w-full h-auto"
                 />
+              </div>
+              <div className="mt-4 flex gap-2">
+                <button className="flex-1 bg-[#1A1D33] hover:bg-gray-700 text-white py-2 rounded flex items-center justify-center gap-2 transition-colors">
+                  <ThumbsUp className="h-4 w-4" />
+                  <span>1 Like</span>
+                </button>
+                <button className="flex-1 bg-[#1A1D33]  hover:bg-gray-700 text-white py-2 rounded flex items-center justify-center gap-2 transition-colors">
+                  <Share2 className="h-4 w-4" />
+                  <span>Share</span>
+                </button>
+                <button className="flex-1 bg-[#1A1D33]  hover:bg-gray-700 text-white py-2 rounded flex items-center justify-center gap-2 transition-colors">
+                  <Plus className="h-4 w-4" />
+                  <span>Watchlist</span>
+                </button>
+              </div>
             </div>
-        <div className="mt-6 flex gap-4">
-            <button className="flex-1 bg-[#1A1D33] hover:bg-gray-700 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-            <ThumbsUp className="h-4 w-4" />
-            <span>Like</span>
-            </button>
-            <button className="flex-1 bg-[#1A1D33] hover:bg-gray-700 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-            <Share2 className="h-4 w-4" />
-            <span>Share</span>
-            </button>
-            <button className="flex-1 bg-[#1A1D33] hover:bg-gray-700 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-            <Plus className="h-4 w-4" />
-            <span>Watchlist</span>
-            </button>
-        </div>
-        </div>
 
             {/* Right Column - Details */}
             <div className="md:w-3/4">

@@ -76,10 +76,16 @@ export default function DashboardPage() {
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             </p>
             <div className="flex space-x-4">
+              
               <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
-                <span>Play Now</span>
-                <Play className=" h-5 w-5 fill-current" />
+                <Link href="/movie/johnWick">
+                  <div className="flex items-center space-x-2">
+                    <span>Play Now</span>
+                    <Play className=" h-5 w-5 fill-current" />
+                  </div>
+                </Link>
               </button>
+              
               <button className="bg-gray-600/80 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-gray-600 transition-colors">
                 <Plus className="h-5 w-5" />
                 <span>My List</span>

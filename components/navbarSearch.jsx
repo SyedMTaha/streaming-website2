@@ -139,13 +139,13 @@ function closeMobileMenu() {
 
         
           {/* Search Bar - Hidden on mobile, shown on desktop */}
-          <div className="hidden lg:flex flex-1 max-w-sm mx-4 xl:mx-8" style={{ marginLeft: "110px" }}>
-            <div className="relative w-full">
+          <div className="hidden lg:flex flex-1 justify-end mx-6 xl:mx-8">
+            <div className="relative">
               <input
                 type="text"
                 placeholder="Find movies, TV shows and more..."
-                className="bg-gradient-to-b from-[#00112C] to-[#012256] border border-white rounded-lg pl-10 pr-4 py-1.5 text-sm  placeholder-gray-400 focus:outline-none"
-                style={{ width: "280px", color: "#A2ABC0"  }}
+                className="bg-gradient-to-b from-[#00112C] to-[#012256] border border-white rounded-lg pl-10 pr-4 py-1.5 text-sm placeholder-gray-400 focus:outline-none"
+                style={{ width: "280px", color: "#A2ABC0" }}
               />
               <button className="absolute left-3 top-1/2 transform -translate-y-1/2">
                 <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ function closeMobileMenu() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4 " >
             {/* Mobile search button */}
             <button className="lg:hidden text-white p-2">
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
