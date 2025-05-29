@@ -24,7 +24,20 @@ export default function Navbar() {
     { name: "Adventure", href: "/genre/adventure" },
     { name: "Family", href: "/genre/family" },
     { name: "Documentary", href: "/genre/documentary" },
+    { name: "Inspiration", href: "/genre/inspiration" },
+    { name: "Mystery", href: "/genre/mystery" },
+    { name: "Crime", href: "/genre/crime" },
+    { name: "War", href: "/genre/war" },
+    { name: "Western", href: "/genre/western" },
+    { name: "Musical", href: "/genre/musical" },
+    { name: "Animation", href: "/genre/animation" },
+    { name: "Biographical", href: "/genre/biographical" },
+    { name: "Historical", href: "/genre/historical" },
+    { name: "Martial Arts", href: "/genre/martial-arts" },
+    { name: "Sport", href: "/genre/sport" },
+    { name: "News", href: "/genre/news" },
   ]
+  
  // Close dropdown when clicking outside
  React.useEffect(() => {
   function handleClickOutside(event) {
@@ -99,8 +112,8 @@ function closeMobileMenu() {
 
                 {/* Dropdown Menu */}
                 {isGenreOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50">
-                    <div className="grid grid-cols-2 gap-1 p-2">
+                  <div className="absolute top-full left-0 mt-1 w-106 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50">
+                    <div className="grid grid-cols-4 gap-2 p-2">
                       {genres.map((genre) => (
                         <Link
                           key={genre.name}
@@ -143,7 +156,7 @@ function closeMobileMenu() {
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen)
               }}
-              className="text-white hover:text-blue-400 transition-colors"
+              className="text-white hover:text-blue-400 transition-colors md:hidden"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
