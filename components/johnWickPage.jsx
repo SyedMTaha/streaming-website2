@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft , ChevronRight   } from "lucide-react"
+import { useRef } from "react"
 import movie01 from './../public/assets/images/movies/loveinsky.png';
 import home01 from './../public/assets/images/landing/home01.png';
 import movie02 from './../public/assets/images/movies/johnwick01.png';
@@ -9,6 +10,7 @@ import movie03 from './../public/assets/images/movies/johnwick02.png';
 import review01 from './../public/assets/images/review/review01.png';
 
 export default function MoviePage({ params }) {
+  const scrollContainerRef = useRef(null)
   // This would normally come from an API based on the slug
   const movie = {
     title: "John Wick 4",
@@ -40,16 +42,20 @@ export default function MoviePage({ params }) {
   ]
 
   const scrollLeft = () => {
-    const container = document.getElementById("episodes-container")
-    if (container) {
-      container.scrollBy({ left: -300, behavior: "smooth" })
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -200,
+        behavior: "smooth",
+      })
     }
   }
 
   const scrollRight = () => {
-    const container = document.getElementById("episodes-container")
-    if (container) {
-      container.scrollBy({ left: 300, behavior: "smooth" })
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 200,
+        behavior: "smooth",
+      })
     }
   }
 
@@ -180,21 +186,29 @@ export default function MoviePage({ params }) {
       </section>
 
       {/* Recommended Section */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-1 py-8">
-        <h3 className="text-2xl font-bold mb-6">Recommend For You</h3>
-        <button
-                onClick={scrollLeft}
-                className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={scrollRight}
-                className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-        <div className="flex gap-4 overflow-x-auto pb-4">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-2xl font-bold">Recommend For You</h3>
+          <div className="flex gap-2">
+            <button
+              onClick={scrollLeft}
+              className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           {recommendedMovies.map((movie, index) => (
             <div key={index} className="flex-shrink-0 w-32 md:w-40 cursor-pointer">
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
