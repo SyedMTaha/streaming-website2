@@ -14,6 +14,7 @@ export default function SignupPage() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundBlend: "overlay",
+        height: "122vh",
       }}
     >
     <SignupForm/>

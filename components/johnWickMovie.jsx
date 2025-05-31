@@ -90,12 +90,10 @@ export default function MoviePage({ params }) {
               cancel anytime.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/player/johnWick"> 
               <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
                 <span>Play Now</span>
                 <Play className="h-5 w-5 fill-current" />
               </button>
-              </Link>
               <button className="bg-gray-700/80 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-colors">
                 <Bookmark className="h-5 w-5" />
                 <span>Watch Later</span>
