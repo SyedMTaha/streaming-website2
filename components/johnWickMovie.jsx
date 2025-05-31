@@ -186,7 +186,7 @@ export default function MoviePage({ params }) {
       </section>
 
       {/* Recommended Section */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
+      <div className="container mx-auto px-4 md:px-8 lg:px-2 py-8">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-bold">Recommend For You</h3>
           <div className="flex gap-2">

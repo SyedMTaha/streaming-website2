@@ -105,7 +105,7 @@ export default function MoviePage({ params }) {
             </span>
             <span className="text-[#1D50A3] font-semibold">/</span>
             <span className="text-[#1D50A3] font-semibold text-sm uppercase tracking-wider">
-              Comedy
+              Sci-Fi
             </span>
           </div>
 
