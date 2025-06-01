@@ -91,53 +91,21 @@ export default function MoviePage({ params }) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center">
+      <section className="relative h-[90vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image src={movie02} alt={movie.title} fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#132036] to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4">
-          {/* Genre Navigation */}
-          <div className="flex items-center space-x-2 mb-6">
-            <span className="text-[#1D50A3] font-semibold text-sm uppercase tracking-wider">
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center space-x-4 mb-70">
+            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
               Genre
             </span>
-            <span className="text-[#1D50A3] font-semibold">/</span>
-            <span className="text-[#1D50A3] font-semibold text-sm uppercase tracking-wider">
+            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl">/</span>
+            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
               Drama
             </span>
-          </div>
-
-          <div className="max-w-2xl">
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">{movie.title}</h1>
-            <div className="flex items-center space-x-4 mb-4 text-sm">
-              <div className="flex items-center">
-                <Star className="h-4 w-4 text-[#1D50A3] fill-[#1D50A3] mr-1" />
-                <span>{movie.score}</span>
-              </div>
-              <span>{movie.year}</span>
-              <span>{movie.duration}</span>
-              <span className="bg-red-600 px-2 py-1 rounded">{movie.rating}</span>
-            </div>
-            <p className="text-gray-300 mb-6">
-              Enjoy exclusive Amazon Originals as well as popular movies and TV shows for USD 12.99/mon. Watch now,
-              cancel anytime.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Link href="">  {/*add link of the movie here*/} 
-              <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
-                <span>Play Now</span>
-                <Play className="h-5 w-5 fill-current" />
-              </button>
-              </Link>
-              <button className="bg-gray-700/80 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-colors">
-                <Bookmark className="h-5 w-5" />
-                <span>Watch Later</span>
-              </button>
-            </div>
           </div>
         </div>
       </section>

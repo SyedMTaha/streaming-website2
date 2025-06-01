@@ -6,6 +6,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
+import { Eye, EyeOff } from 'lucide-react';
 
 
 export default function SignupForm() {
@@ -14,16 +15,19 @@ export default function SignupForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [termCondition, setTermCodition] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous errors
     
     // Validate terms and conditions FIRST
     if (!termCondition) {
       setError("Please accept the terms and conditions to continue");
+      console.log("Terms and conditions must be accepted");
       return;
     }
     
@@ -39,8 +43,8 @@ export default function SignupForm() {
         createdAt: new Date().toISOString()
       });
   
-      // Redirect to home page or dashboard
-      router.push('/login');
+      // Redirect to login page
+      router.push('/auth/login');
     } 
     catch (error) 
     {
@@ -117,19 +121,32 @@ export default function SignupForm() {
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-2">
                 <label htmlFor="password" className="text-white block text-sm font-medium mb-2">
                   Password
                 </label>
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="w-full bg-gradient-to-r from-[#A1AABF] to-[#B5BED0] border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 shadow-inner"
-                  placeholder="Create a strong password"
-                />
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className="w-full bg-gradient-to-r from-[#A1AABF] to-[#B5BED0] border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-lg px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 shadow-inner"
+                    placeholder="Create a strong password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800 focus:outline-none"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -139,22 +156,21 @@ export default function SignupForm() {
                     id="terms"
                     checked={termCondition}
                     onChange={(e) => {
-                      setTermCodition(e.target.checked)
+                      setTermCodition(e.target.checked);
                       // Clear error when user checks the box
-                      if (errors.terms) {
-                        setErrors((prev) => ({
-                          ...prev,
-                          terms: "",
-                        }))
+                      if (error) {
+                        setError("");
                       }
                     }}
-                    className={`rounded border-gray-400 ${error.terms ? "ring-2 ring-red-500" : ""}`}
+                    className={`rounded border-gray-400 ${error && !termCondition ? "ring-2 ring-red-500" : ""}`}
                   />
                   <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-300">
                     I agree to terms & conditions
                   </label>
                 </div>
-                {error.terms && <p className="text-red-400 text-xs mt-1 ml-6">{errors.terms}</p>}
+                {error && !termCondition && (
+                  <p className="text-red-400 text-xs mt-1 ml-6">{error}</p>
+                )}
               </div>
 
               <div className="pt-2">
