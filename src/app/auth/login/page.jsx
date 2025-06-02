@@ -6,7 +6,7 @@ export default function LoginPage() {
     <>
     <Navbar/>
     <div
-      className="h-[107vh] px-12 flex items-center"
+      className="h-[117vh] px-12 flex items-center"
       style={{
         backgroundColor: "#020D1E",
         backgroundImage: "url('/assets/images/background/signup.png')",

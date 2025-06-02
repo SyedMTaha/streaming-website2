@@ -8,6 +8,7 @@ import home01 from './../public/assets/images/landing/home01.png';
 import movie02 from './../public/assets/images/movies/johnwick01.png';
 import movie03 from './../public/assets/images/movies/johnwick02.png';
 import review01 from './../public/assets/images/review/review01.png';
+import home02 from './../public/assets/images/background/homePage01.png';
 
 export default function MoviePage({ params }) {
   const scrollContainerRef = useRef(null)
@@ -91,19 +92,25 @@ export default function MoviePage({ params }) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center">
+      <section className="relative h-[65vh] flex items-center justify-center">
         <div className="absolute inset-0">
-          <Image src={movie02} alt={movie.title} fill className="object-cover" priority />
+        <Image
+              src={home02 || "/placeholder.svg"}
+              alt="Movie and TV show posters collage"
+              fill
+              className="object-cover"
+              priority
+            />
           <div className="absolute inset-0 bg-gradient-to-r from-[#132036] to-transparent" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-4 mb-70">
-            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
+          <div className="flex items-center justify-center space-x-4 mb-30">
+            <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
               Genre
             </span>
-            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl">/</span>
-            <span className="text-[#1D50A3] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
+            <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl">/</span>
+            <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
               Horror
             </span>
           </div>

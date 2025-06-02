@@ -95,17 +95,11 @@ function closeMobileMenu() {
         </div>
 
         <div className="flex items-center space-x-2 sm:space-x-4">
-          <div className="hidden md:flex items-center">
-            <button className="text-white flex items-center">
-              <Globe className="h-4 w-4 mr-2" />
-              EN
-              <ChevronDown className="h-4 w-4 ml-1" />
-            </button>
-          </div>
+          
 
           <Link href="/auth/login">
-            <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 text-navy-900 font-semibold p-2 rounded-lg flex items-center text-sm sm:text-base">
-              <User className="h-4 w-4 sm:h-5 sm:w-5 mr-1" />
+            <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 text-navy-900 font-semibold p-2  rounded-lg flex items-center text-sm sm:text-base">
+              
               <span className="hidden sm:inline">Watch Now</span>
               <span className="sm:hidden">Watch</span>
             </button>

@@ -1,17 +1,23 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from 'next/image'
-import { ChevronDown, Globe, Menu, X, User } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, User, LogOut } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
-
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isGenreOpen, setIsGenreOpen] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false)
+  const [currentUser, setCurrentUser] = useState(null)
   const dropdownRef = React.useRef(null)
+  const userDropdownRef = React.useRef(null)
   const timeoutRef = React.useRef(null)
+  const router = useRouter()
 
   const genres = [
     { name: "Action", href: "/genre/action" },
@@ -38,45 +44,66 @@ export default function Navbar() {
     { name: "News", href: "/genre/news" },
   ]
 
- // Close dropdown when clicking outside
- React.useEffect(() => {
-  function handleClickOutside(event) {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsGenreOpen(false)
+  useEffect(() => {
+    // Listen for auth state changes
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      router.push('/');
+    } catch (error) {
+      console.error('Error signing out:', error);
     }
+  };
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsGenreOpen(false)
+      }
+      if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
+        setIsUserMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
+
+  // Handle mouse enter with delay
+  function handleMouseEnter() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    setIsGenreOpen(true)
   }
 
-  document.addEventListener("mousedown", handleClickOutside)
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside)
+  // Handle mouse leave with delay
+  function handleMouseLeave() {
+    timeoutRef.current = setTimeout(() => {
+      setIsGenreOpen(false)
+    }, 150)
   }
-}, [])
 
-// Handle mouse enter with delay
-function handleMouseEnter() {
-  if (timeoutRef.current) {
-    clearTimeout(timeoutRef.current)
+  // Toggle dropdown for mobile/click
+  function toggleGenreDropdown() {
+    setIsGenreOpen(!isGenreOpen)
   }
-  setIsGenreOpen(true)
-}
 
-// Handle mouse leave with delay
-function handleMouseLeave() {
-  timeoutRef.current = setTimeout(() => {
+  // Close mobile menu when link is clicked
+  function closeMobileMenu() {
+    setIsMobileMenuOpen(false)
     setIsGenreOpen(false)
-  }, 150)
-}
-
-// Toggle dropdown for mobile/click
-function toggleGenreDropdown() {
-  setIsGenreOpen(!isGenreOpen)
-}
-
-// Close mobile menu when link is clicked
-function closeMobileMenu() {
-  setIsMobileMenuOpen(false)
-  setIsGenreOpen(false)
-}
+  }
 
   return (
     <nav className="bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full">
@@ -92,7 +119,7 @@ function closeMobileMenu() {
 
        {/* Desktop Navigation */}
        <div className="hidden md:flex space-x-6">
-              <NavItem href="/" label="Home" />
+              
 
               {/* Genre Dropdown */}
               <div
@@ -173,27 +200,50 @@ function closeMobileMenu() {
               </svg>
             </button>
 
-            <div className="hidden md:flex items-center">
-              <button className="text-white flex items-center">
-                <Globe className="h-4 w-4 mr-2" />
-                EN
-                <ChevronDown className="h-4 w-4 ml-1" />
-              </button>
-            </div>
+            
 
-            <div className="hidden sm:flex items-center">
-              <User className="h-5 w-5 text-white mr-1" />
-            </div>
+            <div className="hidden sm:flex items-center relative" ref={userDropdownRef}>
+              {currentUser ? (
+                <button
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                  className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors p-2 rounded-lg"
+                >
+                  <User className="h-5 w-5" />
+                  <span className="hidden sm:inline">{currentUser.displayName || 'User'}</span>
+                </button>
+              ) : (
+                <Link href="/">
+                  <button className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors p-2 rounded-lg">
+                    <User className="h-5 w-5" />
+                    <span className="hidden sm:inline">Sign In</span>
+                  </button>
+                </Link>
+              )}
 
-            <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 font-semibold px-3 py-2 rounded-lg text-sm sm:text-base">
-              <span className="hidden sm:inline">Subscribe</span>
-              <span className="sm:hidden">Sub</span>
-            </button>
+              {/* User Dropdown Menu */}
+              {isUserMenuOpen && currentUser && (
+                <div className="absolute right-0 top-full mt-2 w-48 bg-[#1a1a3a] rounded-lg shadow-lg py-1 z-50">
+                  <div className="px-4 py-2 border-b border-gray-700">
+                    <p className="text-sm text-white font-medium truncate">
+                      {currentUser.displayName || 'User'}
+                    </p>
+                    <p className="text-xs text-gray-400 truncate">
+                      {currentUser.email}
+                    </p>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center px-4 py-2 text-sm text-white hover:bg-blue-600/20 transition-colors"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </button>
+                </div>
+              )}
+            </div>
 
             <button
-              onClick={() => {
-                setIsMobileMenuOpen(!isMobileMenuOpen)
-              }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white hover:text-blue-400 transition-colors md:hidden"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

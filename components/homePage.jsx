@@ -45,8 +45,17 @@ import home35 from './../public/assets/images/home/home35.png';
 import home36 from './../public/assets/images/home/home36.png';
 import home37 from './../public/assets/images/home/home37.png';
 
- 
 export default function DashboardPage() {
+
+  const handleScroll = (direction, containerId) => {
+    const container = document.getElementById(containerId);
+    if (container) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
@@ -96,7 +105,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Trending Movies */}
-      <ContentSection title="Trending Movies" viewAllLink="/trending">
+      <ContentSection title="Trending Movies" viewAllLink="/trending" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home01}  title="John Wick 4" />
           <MovieCard image={home002} title="Spider-Man" />
@@ -111,7 +120,7 @@ export default function DashboardPage() {
       </ContentSection>
 
       {/* New Release */}
-      <ContentSection title="New Release" viewAllLink="/new-releases">
+      <ContentSection title="New Release" viewAllLink="/new-releases"  onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home07} title="The Sleeping Angel" />
           <MovieCard image={home08} title="The Great Empire" />
@@ -148,7 +157,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Deal of the Week */}
-      <ContentSection title="Deal of the Week" viewAllLink="/deals">
+      <ContentSection title="Deal of the Week" viewAllLink="/deals"  onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home13} title="Love in The Sky" />
           <MovieCard image={home14} title="SpaceX" />
@@ -164,18 +173,46 @@ export default function DashboardPage() {
       </ContentSection>
 
       {/* TV Series */}
-      <ContentSection title="TV Series" viewAllLink="/tv-series">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <TVShowCard image={home21} title="Falling Water" />
-          <TVShowCard image={home22} title="The Walking Dead" />
-          <TVShowCard image={home21} title="Suits" />
-          <TVShowCard image={home22} title="Stranger Things" />
-          <TVShowCard image={home23} title="Peaky Blinders" />
-          <TVShowCard image={home24} title="The Crown" />
-          <TVShowCard image={home25} title="Breaking Bad" />
-          <TVShowCard image={home26} title="Ozark" />
+      <section className="py-8 px-4">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold">TV Series</h2>
+            <div className="flex items-center gap-4">
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleScroll('left', 'tv-series-grid')}
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => handleScroll('right', 'tv-series-grid')}
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              <Link href="/tv-series" className="text-white-400 font-medium hover:text-blue-300 text-sm">
+                View All
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" id="tv-series-grid">
+            <TVShowCard image={home21} title="Falling Water" />
+            <TVShowCard image={home22} title="The Walking Dead" />
+            <TVShowCard image={home21} title="Suits" />
+            <TVShowCard image={home22} title="Stranger Things" />
+            <TVShowCard image={home23} title="Peaky Blinders" />
+            <TVShowCard image={home24} title="The Crown" />
+            <TVShowCard image={home25} title="Breaking Bad" />
+            <TVShowCard image={home26} title="Ozark" />
+          </div>
         </div>
-      </ContentSection>
+      </section>
 
       {/* Pieces of Her Featured */}
       <section className="py-8 px-4">
@@ -204,7 +241,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Recommended TV Shows */}
-      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv">
+      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv"  onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home28} title="Day Night" />
           <MovieCard image={home29} title="Day Dreamer" />
@@ -297,24 +334,54 @@ export default function DashboardPage() {
   )
 }
 
-function ContentSection({ title, viewAllLink, children }) {
+function ContentSection({ title, viewAllLink, children, onScroll }) {
+  const sectionId = title.replace(/\s+/g, '-').toLowerCase();
+  
   return (
     <section className="py-8 px-4">
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">{title}</h2>
-          <Link href={viewAllLink} className="text-white-400 font-medium hover:text-blue-300 text-sm">
-            View All
-          </Link>
+          <div className="flex items-center gap-4">
+            <div className="flex gap-2">
+              <button
+                onClick={() => onScroll('left', `${sectionId}-container`)}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => onScroll('right', `${sectionId}-container`)}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            <Link href={viewAllLink} className="text-white-400 font-medium hover:text-blue-300 text-sm">
+              View All
+            </Link>
+          </div>
         </div>
-        {children}
+        <div className="overflow-hidden">
+          <div 
+            id={`${sectionId}-container`}
+            className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {children}
+          </div>
+        </div>
       </div>
     </section>
   )
 }
 
 function MovieRow({ children }) {
-  return <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">{children}</div>
+  return children;
 }
 
 function MovieCard({ image, title }) {

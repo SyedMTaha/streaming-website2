@@ -1,7 +1,7 @@
 "use client"
 
 import {auth, db } from '../firebase';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
@@ -14,6 +14,7 @@ export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [termCondition, setTermCodition] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   
@@ -23,11 +24,20 @@ export default function SignupForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Clear previous errors
+    setSuccessMessage(""); // Clear previous success messages
+    setIsLoading(true);
     
     // Validate terms and conditions FIRST
     if (!termCondition) {
-      setError("Please accept the terms and conditions to continue");
-      console.log("Terms and conditions must be accepted");
+      setIsLoading(false);
+      // Don't set the general error, only set it for terms display
+      return;
+    }
+
+    // Validate password length
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long");
+      setIsLoading(false);
       return;
     }
     
@@ -36,20 +46,41 @@ export default function SignupForm() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
   
+      // Send verification email
+      await sendEmailVerification(user);
+  
       // Store additional user data in Firestore
       await setDoc(doc(db, "users", user.uid), {
         name,
         email,
+        emailVerified: false,
         createdAt: new Date().toISOString()
       });
   
-      // Redirect to login page
-      router.push('/auth/login');
-    } 
-    catch (error) 
-    {
-      setError(error.message);
+      // Show success message
+      setSuccessMessage("Registration successful! Please check your email to verify your account.");
+      
+      // Redirect to login page after 3 seconds
+      setTimeout(() => {
+        router.push('/auth/login');
+      }, 3000);
+    } catch (error) {
       console.error("Error during signup:", error);
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          setError('This email is already registered. Please use a different email or try logging in.');
+          break;
+        case 'auth/invalid-email':
+          setError('Please enter a valid email address.');
+          break;
+        case 'auth/weak-password':
+          setError('Password should be at least 6 characters long.');
+          break;
+        default:
+          setError(error.message);
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -63,6 +94,7 @@ export default function SignupForm() {
       await setDoc(doc(db, "users", user.uid), {
         name: user.displayName,
         email: user.email,
+        emailVerified: user.emailVerified,
         createdAt: new Date().toISOString()
       });
 
@@ -86,6 +118,19 @@ export default function SignupForm() {
             </h1>
             <p className="text-gray-300 text-m leading-relaxed">Create your account to get started</p>
           </div>
+
+          {/* Only show general errors that are not terms and conditions related */}
+          {error && error !== "Please accept the terms and conditions to continue" && (
+            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg">
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            </div>
+          )}
+
+          {successMessage && (
+            <div className="mb-4 p-3 bg-green-500/10 border border-green-500/50 rounded-lg">
+              <p className="text-green-500 text-sm text-center">{successMessage}</p>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="space-y-5">
@@ -132,8 +177,9 @@ export default function SignupForm() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    minLength={8}
                     className="w-full bg-gradient-to-r from-[#A1AABF] to-[#B5BED0] border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-lg px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 shadow-inner"
-                    placeholder="Create a strong password"
+                    placeholder="Create a strong password (min. 8 characters)"
                   />
                   <button
                     type="button"
@@ -147,6 +193,12 @@ export default function SignupForm() {
                     )}
                   </button>
                 </div>
+                {/* Password strength indicator */}
+                <div className="text-xs text-gray-400">
+                  {password && password.length < 8 && (
+                    <span className="text-red-400">Password must be at least 8 characters long</span>
+                  )}
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -158,18 +210,20 @@ export default function SignupForm() {
                     onChange={(e) => {
                       setTermCodition(e.target.checked);
                       // Clear error when user checks the box
-                      if (error) {
+                      if (!e.target.checked) {
+                        setError("Please accept the terms and conditions to continue");
+                      } else {
                         setError("");
                       }
                     }}
-                    className={`rounded border-gray-400 ${error && !termCondition ? "ring-2 ring-red-500" : ""}`}
+                    className={`rounded border-gray-400 ${!termCondition ? "ring-2 ring-red-500" : ""}`}
                   />
                   <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-300">
                     I agree to terms & conditions
                   </label>
                 </div>
-                {error && !termCondition && (
-                  <p className="text-red-400 text-xs mt-1 ml-6">{error}</p>
+                {!termCondition && (
+                  <p className="text-red-400 text-xs mt-1 ml-6">Please accept the terms and conditions to continue</p>
                 )}
               </div>
 

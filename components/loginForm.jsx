@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
 
@@ -13,11 +13,24 @@ export default function LoginForm() {
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  const handleResendVerification = async () => {
+    try {
+      if (auth.currentUser) {
+        await sendEmailVerification(auth.currentUser);
+        setError('Verification email has been resent. Please check your inbox.');
+      }
+    } catch (error) {
+      setError('Failed to resend verification email. Please try again later.');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Clear previous errors
+    setIsLoading(true);
     
     try {
       // Attempt to sign in with Firebase
@@ -25,6 +38,20 @@ export default function LoginForm() {
       const user = userCredential.user;
       
       if (user) {
+        if (!user.emailVerified) {
+          setError(
+            <div>
+              Your email is not verified. 
+              <button 
+                onClick={handleResendVerification}
+                className="ml-2 text-blue-400 hover:text-blue-300 underline"
+              >
+                Resend verification email
+              </button>
+            </div>
+          );
+          return;
+        }
         // Successful login
         console.log("Login successful");
         router.push('/home');
@@ -46,13 +73,33 @@ export default function LoginForm() {
           break;
       }
       console.error("Login error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true);
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      if (user) {
+        router.push('/home');
+      }
+    } catch (error) {
+      setError('Failed to sign in with Google. Please try again.');
+      console.error("Google sign in error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div
       className="bg-[#191C33] ml-2 sm:ml-4 rounded-[10px] p-4 sm:p-6 flex items-center justify-start shadow-2xl w-full max-w-[500px]"
-      style={{ height: "560px", minHeight: "550px" }}
+      style={{ height: "620px", minHeight: "600px" }}
     >
       <div className="p-6 sm:p-8 rounded-lg w-full max-w-md">
         <div className="mt-4">
@@ -61,7 +108,7 @@ export default function LoginForm() {
 
           {error && (
             <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg">
-              <p className="text-red-500 text-sm text-center">{error}</p>
+              <div className="text-red-500 text-sm text-center">{error}</div>
             </div>
           )}
 
@@ -133,7 +180,27 @@ export default function LoginForm() {
                 Login
               </button>
 
-              <div className="mt-1 text-center text-gray-300 text-sm">
+              <div className=" mb-5 flex items-center">
+                <div className="flex-1 border-t border-gray-600"></div>
+                <span className="mx-4 text-gray-400">or</span>
+                <div className="flex-1 border-t border-gray-600"></div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                className="w-full bg-white text-gray-800 hover:bg-gray-100 h-12 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 flex items-center justify-center"
+                style={{ borderRadius: "8px" }}
+              >
+                <img 
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+                  alt="Google logo" 
+                  className="w-5 h-5 mr-2"
+                />
+                Continue with Google
+              </button>
+
+              <div className="mt-4 text-center text-gray-300 text-sm">
                 Not a member?{" "}
                 <Link href="/auth/signup" className="text-[#1D50A3] hover:underline transition-colors duration-200">
                   Create an account
