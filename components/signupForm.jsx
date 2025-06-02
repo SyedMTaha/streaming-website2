@@ -179,7 +179,7 @@ export default function SignupForm() {
                     required
                     minLength={8}
                     className="w-full bg-gradient-to-r from-[#A1AABF] to-[#B5BED0] border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-lg px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 shadow-inner"
-                    placeholder="Create a strong password (min. 8 characters)"
+                    placeholder="Create a strong password"
                   />
                   <button
                     type="button"
