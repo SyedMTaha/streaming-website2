@@ -87,7 +87,7 @@ export default function DashboardPage() {
             <div className="flex space-x-4">
               
               <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
-                <Link href="/movie/johnWick">
+                <Link href="/movie/the-white-house">
                   <div className="flex items-center space-x-2">
                     <span>Play Now</span>
                     <Play className=" h-5 w-5 fill-current" />
@@ -107,7 +107,7 @@ export default function DashboardPage() {
       {/* Trending Movies */}
       <ContentSection title="Trending Movies" viewAllLink="/trending" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={home01}  title="John Wick 4" />
+          <MovieCard image={home01}  title="John Wick 4"  />
           <MovieCard image={home002} title="Spider-Man" />
           <MovieCard image={home003} title="The White House" />
           <MovieCard image={home004} title="The Post" />
@@ -385,8 +385,11 @@ function MovieRow({ children }) {
 }
 
 function MovieCard({ image, title }) {
+  // Convert title to URL-friendly slug
+  const slug = title.toLowerCase().replace(/\s+/g, '-');
+  
   return (
-    <div className="flex-shrink-0 w-40 group cursor-pointer">
+    <Link href={`/movie/${slug}`} className="flex-shrink-0 w-40 group cursor-pointer">
       <div className="relative overflow-hidden rounded-lg mb-2">
         <Image
           src={image || "/placeholder.svg"}
@@ -398,7 +401,7 @@ function MovieCard({ image, title }) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
       </div>
       <h3 className="text-sm font-medium text-center group-hover:text-blue-400 transition-colors">{title}</h3>
-    </div>
+    </Link>
   )
 }
 

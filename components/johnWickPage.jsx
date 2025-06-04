@@ -13,18 +13,16 @@ export default function MoviePage({ params }) {
   const scrollContainerRef = useRef(null)
   // This would normally come from an API based on the slug
   const movie = {
-    title: "John Wick 4",
-    year: "2023",
-    duration: "2h 35 mins",
+    title: "Movie Will be Uploaded Soon",
+    year: "N/A",
+    duration: "N/A",
     rating: "TV-MA",
-    score: "7.5",
+    score: "N/A",
     views: "4126",
-    reviews: "1",
+    reviews: "N/A",
     genres: ["Action,", "Adventure"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    cast: ["Renée Muffard"],
-    crew: ["Aleya Nadeau", "Ricky Alarcon", "Sarah Neal"],
+    cast: ["N/A"],
+    crew: ["N/A"],
     poster: "/placeholder.svg?height=400&width=300",
     backdrop: "/placeholder.svg?height=800&width=1400",
   }
@@ -64,18 +62,34 @@ export default function MoviePage({ params }) {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center">
         <div className="absolute inset-0">
+          {/* Background Image */}
           <Image src={movie02} alt={movie.title} fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#132036] to-transparent" />
+          
+          {/* Overlay Image */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center w-full h-[200px]">
+            <div className="relative w-full h-full ">
+              <Image 
+                src="/assets/images/background/coming2.png" 
+                alt="Coming Soon" 
+                fill 
+                className="object-contain"
+                
+                priority 
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4">
+        <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-2xl">
             <div className="text-[#1D50A3] font-semibold text-sm mb-2 uppercase tracking-wider flex flex-wrap gap-2">
+              <p>Genre</p>
               {movie.genres.slice(0, 2).map((genre) => (
                 <span key={genre}>{genre}</span>
               ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">{movie.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{movie.title}</h1>
             <div className="flex items-center space-x-4 mb-4 text-sm">
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-[#1D50A3] fill-[#1D50A3] mr-1" />
@@ -85,10 +99,7 @@ export default function MoviePage({ params }) {
               <span>{movie.duration}</span>
               <span className="bg-red-600 px-2 py-1 rounded">{movie.rating}</span>
             </div>
-            <p className="text-gray-300 mb-6">
-              Enjoy exclusive Amazon Originals as well as popular movies and TV shows for USD 12.99/mon. Watch now,
-              cancel anytime.
-            </p>
+            
             <div className="flex flex-wrap gap-4">
               <Link href="/player/johnWick"> 
               <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
