@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack & npx react-video sync -w", 
+    "dev": "next dev --turbopack & npx react-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "file-loader": "^6.2.0",
     "tailwindcss": "^4"
   }
 }
