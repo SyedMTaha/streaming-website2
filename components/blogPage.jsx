@@ -7,19 +7,22 @@ import blog03 from './../public/assets/images/blog/blog03.png';
 import blog04 from './../public/assets/images/blog/blog04.png';
 import blog05 from './../public/assets/images/blog/blog05.png';
 import blog06 from './../public/assets/images/blog/blog06.png';
+import blog07 from './../public/assets/images/blog/blog7.jpg';
+import blog08 from './../public/assets/images/blog/blog8.jpg';
+import blog09 from './../public/assets/images/blog/blog9.jpg';
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020D1E] via-[#071A38] to-[#020D1E] text-white">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Featured Article */}
             <article className="group">
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={blog01}
+                  src={blog09}
                   alt="Cozy movie watching scene"
                   width={600}
                   height={400}
@@ -56,7 +59,7 @@ export default function BlogPage() {
             <article className="group">
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={blog02}
+                  src={blog07}
                   alt="Thriller movie poster"
                   width={600}
                   height={400}
@@ -93,7 +96,7 @@ export default function BlogPage() {
             <article className="group">
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={blog03}
+                  src={blog08}
                   alt="Film making behind the scenes"
                   width={600}
                   height={400}
@@ -138,46 +141,7 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Search */}
-            <div className="bg-[#1a1a3a]/50 rounded-lg p-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="w-full bg-gray-700/50 border border-gray-600 rounded-lg pl-10 pr-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-                />
-              </div>
-            </div>
-
-            {/* Popular Posts */}
-            <div className="bg-[#1a1a3a]/50 rounded-lg p-4">
-              <h3 className="text-lg font-semibold mb-4">Popular Posts</h3>
-              <div className="space-y-4">
-                <PopularPost
-                  image={blog04}
-                  title="Best Movie To Cheer Your Mood Up In 2023"
-                  date="April 26, 2023"
-                  href="/blog/best-movie-cheer-mood-2023"
-                />
-                <PopularPost
-                  image={blog05}
-                  title="Movies That Will Make Your Holidays The Best"
-                  date="April 26, 2023"
-                  href="/blog/movies-holidays-best"
-                />
-                <PopularPost
-                  image={blog06}
-                  title="Must Watch Your Fav Web Series With Us"
-                  date="April 26, 2023"
-                  href="/blog/must-watch-web-series"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

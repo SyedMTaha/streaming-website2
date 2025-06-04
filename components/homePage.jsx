@@ -51,7 +51,7 @@ import news1 from './../public/assets/images/home/news1.jpg';
 import news2 from './../public/assets/images/home/news2.jpg';
 import news3 from './../public/assets/images/home/news3.jpg';
 import homegif from './../public/assets/images/home/homegif.gif';
-
+import homegif2 from './../public/assets/images/home/homegif2.gif';
 
 export default function DashboardPage() {
 
@@ -70,7 +70,7 @@ export default function DashboardPage() {
       <section className="relative h-[85vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src={home02}
+            src={homegif2}
             alt="The White House movie"
             fill
             className="object-cover"
@@ -114,7 +114,7 @@ export default function DashboardPage() {
       {/* Streaming Now */}
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={comingsoon}  title="Wingard 10"  />
+          <MovieCard image={comingsoon}  title="John Wick 4"  />
           <MovieCard image={comingsoon} title="Spider-Man" />
           <MovieCard image={comingsoon} title="The White House" />
           <MovieCard image={comingsoon} title="The Post" />

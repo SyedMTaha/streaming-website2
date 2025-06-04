@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Play, Pause, Volume2, Maximize, Settings, Star } from "lucide-react"
 import home04 from './../public/assets/images/landing/home04.png';
 import movie02 from './../public/assets/images/movies/sleepingangel.png';
+import launch from './../public/assets/images/movies/launching-soon.gif';
 import channel1 from './../public/assets/images/channels/channel01.png';
 import channel2 from './../public/assets/images/channels/channel02.png';
 import channel3 from './../public/assets/images/channels/channel03.png';
@@ -71,37 +72,9 @@ export default function LiveTVPage() {
           <div className="relative bg-black rounded-lg overflow-hidden">
             {/* Video Container */}
             <div className="relative aspect-video">
-              <Image src={movie02} alt="Live Stream" fill className="object-cover" />
-
-              {/* Video Controls Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={togglePlay}
-                    className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
-                  >
-                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-                  </button>
-
-                  <span className="text-sm">{formatTime(currentTime)}</span>
-
-                  {/* Progress Bar */}
-                  <div className="flex-1 bg-white/20 rounded-full h-1">
-                    <div
-                      className="bg-red-600 h-full rounded-full transition-all"
-                      style={{ width: `${(currentTime / duration) * 100}%` }}
-                    />
-                  </div>
-
-                  <span className="text-sm">{formatTime(duration)}</span>
-
-                  <div className="flex items-center gap-2">
-                    <Volume2 className="h-4 w-4" />
-                    <Settings className="h-4 w-4" />
-                    <Maximize className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
+              <Image src={launch} alt="Live Stream" fill className="object-cover" />
+              {/* Dissolving Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#020b1f] via-transparent to-[#020b1f] opacity-90" />
             </div>
           </div>
         </div>
