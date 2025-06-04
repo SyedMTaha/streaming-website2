@@ -18,17 +18,17 @@ export default function LiveTVPage() {
 
   const currentShow = {
     title: "Sleeping Angel",
-    rating: "8.2",
-    views: "426",
-    reviews: "1",
-    year: "2023",
-    duration: "179 mins",
-    contentRating: "TV-MA",
+    rating: "N/A",
+    views: "N/A",
+    reviews: "N/A",
+    year: "N/A",
+    duration: "N/A",
+    contentRating: "N/A",
     genres: ["Action", "Crime", "Thriller"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    cast: ["Brooke Muffard"],
-    crew: ["Aleya Nadeau"],
+      "N/A",
+    cast: ["N/A"],
+    crew: ["N/A"],
     poster: "/placeholder.svg?height=400&width=300",
   }
 
@@ -65,104 +65,40 @@ export default function LiveTVPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Left Sidebar - Show Info */}
-          <div className="lg:col-span-1">
-            <h1 className="text-2xl font-bold mb-6">Live Streaming</h1>
+        <h1 className="text-2xl font-bold mb-6 ">Live Streaming</h1>
+        
+        <div className="max-w-5xl mx-auto">
+          <div className="relative bg-black rounded-lg overflow-hidden">
+            {/* Video Container */}
+            <div className="relative aspect-video">
+              <Image src={movie02} alt="Live Stream" fill className="object-cover" />
 
-            {/* Current Show Card */}
-            <div className="bg-[#1a1a3a]/50 rounded-lg p-4 mb-6">
-              <div className="relative mb-4">
-                <Image
-                  src={home04}
-                  alt={currentShow.title}
-                  width={300}
-                  height={400}
-                  className="w-full rounded-lg"
-                />
-               
-              </div>
+              {/* Video Controls Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={togglePlay}
+                    className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
+                  >
+                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                  </button>
 
-              <h2 className="text-xl font-bold mb-2">{currentShow.title}</h2>
+                  <span className="text-sm">{formatTime(currentTime)}</span>
 
-              <div className="flex items-center mb-2">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 text-[#1D50A3] fill-[#1D50A3]" />
-                  ))}
-                </div>
-                <span className="ml-2 text-sm">{currentShow.rating}</span>
-                <span className="mx-2 text-gray-400">•</span>
-                <span className="text-sm">{currentShow.views} Views</span>
-                <span className="mx-2 text-gray-400">•</span>
-                <span className="text-sm">{currentShow.reviews} review</span>
-              </div>
+                  {/* Progress Bar */}
+                  <div className="flex-1 bg-white/20 rounded-full h-1">
+                    <div
+                      className="bg-red-600 h-full rounded-full transition-all"
+                      style={{ width: `${(currentTime / duration) * 100}%` }}
+                    />
+                  </div>
 
-              <div className="flex items-center gap-2 mb-3 text-sm">
-                <span>{currentShow.year}</span>
-                <span>•</span>
-                <span>{currentShow.duration}</span>
-                <span>•</span>
-                <span className="bg-red-600 px-2 py-0.5 rounded">{currentShow.contentRating}</span>
-              </div>
+                  <span className="text-sm">{formatTime(duration)}</span>
 
-              <div className="flex flex-wrap gap-2 mb-3">
-                {currentShow.genres.map((genre) => (
-                  <span key={genre} className="text-xs text-gray-400">
-                    {genre}
-                  </span>
-                ))}
-              </div>
-
-              <p className="text-sm text-gray-300 mb-4 leading-relaxed">{currentShow.description}</p>
-
-              <div className="space-y-2 text-sm">
-                <div>
-                  <span className="font-semibold">Cast:</span>
-                  <span className="text-gray-300 ml-2">{currentShow.cast.join(", ")}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Crew:</span>
-                  <span className="text-gray-300 ml-2">{currentShow.crew.join(", ")}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Video Player */}
-          <div className="lg:col-span-3">
-            <div className="relative bg-black rounded-lg overflow-hidden">
-              {/* Video Container */}
-              <div className="relative aspect-video">
-                <Image src={movie02} alt="Live Stream" fill className="object-cover" />
-
-                {/* Video Controls Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <div className="flex items-center gap-4">
-                    <button
-                      onClick={togglePlay}
-                      className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
-                    >
-                      {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-                    </button>
-
-                    <span className="text-sm">{formatTime(currentTime)}</span>
-
-                    {/* Progress Bar */}
-                    <div className="flex-1 bg-white/20 rounded-full h-1">
-                      <div
-                        className="bg-red-600 h-full rounded-full transition-all"
-                        style={{ width: `${(currentTime / duration) * 100}%` }}
-                      />
-                    </div>
-
-                    <span className="text-sm">{formatTime(duration)}</span>
-
-                    <div className="flex items-center gap-2">
-                      <Volume2 className="h-4 w-4" />
-                      <Settings className="h-4 w-4" />
-                      <Maximize className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Volume2 className="h-4 w-4" />
+                    <Settings className="h-4 w-4" />
+                    <Maximize className="h-4 w-4" />
                   </div>
                 </div>
               </div>

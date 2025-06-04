@@ -110,13 +110,13 @@ export default function Navbar() {
       <div className="px-4 sm:px-8 lg:px-8 max-w-full">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4 sm:space-x-8">
-          <Link href="/" className="flex items-center">
+          {/* <Link href="/" className="flex items-center"> */}
          <div className="relative flex items-center justify-center h-8 w-18">
          <Image src={logo || "/placeholder.svg"} alt="INBV Logo" width={80} height={32} priority />
        </div>
-        </Link>
+        {/* </Link> */}
 
-
+        <NavItem href="/home" label="Home" />
        {/* Desktop Navigation */}
        <div className="hidden md:flex space-x-6">
               

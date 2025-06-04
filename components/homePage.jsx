@@ -44,6 +44,14 @@ import home34 from './../public/assets/images/home/home34.png';
 import home35 from './../public/assets/images/home/home35.png';
 import home36 from './../public/assets/images/home/home36.png';
 import home37 from './../public/assets/images/home/home37.png';
+import comingsoon from './../public/assets/images/background/coming-soon.jpg';
+import comingsoonseries from './../public/assets/images/background/coming-soon-series.jpg';
+import logo5 from './../public/assets/images/logo/logo.png';
+import news1 from './../public/assets/images/home/news1.jpg';
+import news2 from './../public/assets/images/home/news2.jpg';
+import news3 from './../public/assets/images/home/news3.jpg';
+import homegif from './../public/assets/images/home/homegif.gif';
+
 
 export default function DashboardPage() {
 
@@ -59,7 +67,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center">
+      <section className="relative h-[85vh] flex items-center">
         <div className="absolute inset-0">
           <Image
             src={home02}
@@ -81,8 +89,7 @@ export default function DashboardPage() {
               <span>HD-4K</span>
             </div>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            Amid political chaos and hidden agendas, a young aide uncovers a conspiracy that could change the fate of the nation—all within the walls of the world’s most powerful residence.
             </p>
             <div className="flex space-x-4">
               
@@ -104,50 +111,88 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* Trending Movies */}
-      <ContentSection title="Trending Movies" viewAllLink="/trending" onScroll={handleScroll}>
+      {/* Streaming Now */}
+      <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={home01}  title="John Wick 4"  />
-          <MovieCard image={home002} title="Spider-Man" />
-          <MovieCard image={home003} title="The White House" />
-          <MovieCard image={home004} title="The Post" />
-          <MovieCard image={home05} title="Riverdale" />
-          <MovieCard image={home06} title="Best Friend" />
-          <MovieCard image={home01}  title="John Wick 4" />
-          <MovieCard image={home002} title="Spider-Man" />
-          <MovieCard image={home003} title="The White House" />
+          <MovieCard image={comingsoon}  title="Wingard 10"  />
+          <MovieCard image={comingsoon} title="Spider-Man" />
+          <MovieCard image={comingsoon} title="The White House" />
+          <MovieCard image={comingsoon} title="The Post" />
+          <MovieCard image={comingsoon} title="Riverdale" />
+          <MovieCard image={comingsoon} title="Best Friend" />
+          <MovieCard image={comingsoon}  title="John Wick 4" />
+          <MovieCard image={comingsoon} title="Spider-Man" />
+          <MovieCard image={comingsoon} title="The White House" />
         </MovieRow>
+      </ContentSection>
+
+      {/* Recommended Movies */}
+      <ContentSection title="Recommended Movies" viewAllLink="/trending" onScroll={handleScroll}>
+        <MovieRow>
+          <MovieCard image={comingsoon}  title="John Wick 4"  />
+          <MovieCard image={comingsoon} title="Spider-Man" />
+          <MovieCard image={comingsoon} title="The White House" />
+          <MovieCard image={comingsoon} title="The Post" />
+          <MovieCard image={comingsoon} title="Riverdale" />
+          <MovieCard image={comingsoon} title="Best Friend" />
+          <MovieCard image={comingsoon}  title="John Wick 4" />
+          <MovieCard image={comingsoon} title="Spider-Man" />
+          <MovieCard image={comingsoon} title="The White House" />
+        </MovieRow>
+      </ContentSection>
+
+
+      {/* Recommended TV Shows 2 */}
+      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <LargeCard
+            image={ comingsoonseries}
+            title="Top 10 Reasons to Watch Hocus Pocus 2"
+            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
+          />
+          <LargeCard
+            image={ comingsoonseries}
+            title="New Avatar 2 Cast Share First Impressions"
+            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
+          />
+          <LargeCard
+            image={ comingsoonseries}
+            title="Camila Mendes and Maya Hawke Answer Burning Questions"
+            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
+          />
+        </div>
       </ContentSection>
 
       {/* New Release */}
       <ContentSection title="New Release" viewAllLink="/new-releases"  onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={home07} title="The Sleeping Angel" />
-          <MovieCard image={home08} title="The Great Empire" />
-          <MovieCard image={home09} title="Good Doctor" />
-          <MovieCard image={home10} title="Swamp Thing" />
-          <MovieCard image={home11} title="James Bond" />
-          <MovieCard image={home12} title="La La Land" />
-          <MovieCard image={home07} title="The Sleeping Angel" />
-          <MovieCard image={home08} title="The Great Empire" />
-          <MovieCard image={home09} title="Good Doctor" />
+          <MovieCard image={comingsoon} title="The Sleeping Angel" />
+          <MovieCard image={comingsoon} title="The Great Empire" />
+          <MovieCard image={comingsoon} title="Good Doctor" />
+          <MovieCard image={comingsoon} title="Swamp Thing" />
+          <MovieCard image={comingsoon} title="James Bond" />
+          <MovieCard image={comingsoon} title="La La Land" />
+          <MovieCard image={comingsoon} title="The Sleeping Angel" />
+          <MovieCard image={comingsoon} title="The Great Empire" />
+          <MovieCard image={comingsoon} title="Good Doctor" />
         </MovieRow>
       </ContentSection>
 
       {/* Almost Adults Featured */}
-      <section className="py-8 px-4">1
+      <section className="py-8 px-4">
         <div className="container mx-auto">
           <div className="relative rounded-lg overflow-hidden h-64 md:h-80">
-            <Image src={home03} alt="Almost Adults" fill className="object-cover w-full"  priority/>
+            <Image src={home03} alt="Cartoon Series" fill className="object-cover w-full"  priority/>
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex items-center">
               <div className="px-8">
-                <h2 className="text-4xl font-bold mb-2">Almost Adults</h2>
+                <h2 className="text-4xl font-bold mb-2">Cartoon Series</h2>
                 <p className="text-gray-300 mb-4 max-w-md">
-                  A coming-of-age story about two best friends navigating their final year of college.
+                A hilarious and heartwarming cartoon series that follows quirky characters on wild adventures in a world where the unexpected is just part of everyday life.
+
                 </p>
                 
                 <button className="  bg-[#1D50A3]  text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 flex items-center gap-2 ">
-                  Play Now
+                  Watch Now
                   <Play className="h-5 w-5 fill-current" />
                 </button>
               </div>
@@ -159,16 +204,16 @@ export default function DashboardPage() {
       {/* Deal of the Week */}
       <ContentSection title="Deal of the Week" viewAllLink="/deals"  onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={home13} title="Love in The Sky" />
-          <MovieCard image={home14} title="SpaceX" />
-          <MovieCard image={home15} title="Spider Man Memo" />
-          <MovieCard image={home16} title="City Hunter" />
-          <MovieCard image={home17} title="The Angel" />
-          <MovieCard image={home18} title="The Post" />
-          <MovieCard image={home19} title="Best Friend" />
-          <MovieCard image={home20} title="White House" />
-          <MovieCard image={home13} title="Love in The Sky" />
-          <MovieCard image={home14} title="SpaceX" />
+          <MovieCard image={comingsoon} title="Love in The Sky" />
+          <MovieCard image={comingsoon} title="SpaceX" />
+          <MovieCard image={comingsoon} title="Spider Man Memo" />
+          <MovieCard image={comingsoon} title="City Hunter" />
+          <MovieCard image={comingsoon} title="The Angel" />
+          <MovieCard image={comingsoon} title="The Post" />
+          <MovieCard image={comingsoon} title="Best Friend" />
+          <MovieCard image={comingsoon} title="White House" />
+          <MovieCard image={comingsoon} title="Love in The Sky" />
+          <MovieCard image={comingsoon} title="SpaceX" />
         </MovieRow>
       </ContentSection>
 
@@ -202,100 +247,34 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4" id="tv-series-grid">
-            <TVShowCard image={home21} title="Falling Water" />
-            <TVShowCard image={home22} title="The Walking Dead" />
-            <TVShowCard image={home21} title="Suits" />
-            <TVShowCard image={home22} title="Stranger Things" />
-            <TVShowCard image={home23} title="Peaky Blinders" />
-            <TVShowCard image={home24} title="The Crown" />
-            <TVShowCard image={home25} title="Breaking Bad" />
-            <TVShowCard image={home26} title="Ozark" />
+            <TVShowCard image={comingsoonseries} title="Falling Water" />
+            <TVShowCard image={comingsoonseries} title="The Walking Dead" />
+            <TVShowCard image={comingsoonseries} title="Suits" />
+            <TVShowCard image={comingsoonseries} title="Stranger Things" />
+            <TVShowCard image={comingsoonseries} title="Peaky Blinders" />
+            <TVShowCard image={comingsoonseries} title="The Crown" />
+            <TVShowCard image={comingsoonseries} title="Breaking Bad" />
+            <TVShowCard image={comingsoonseries} title="Ozark" />
           </div>
         </div>
       </section>
 
-      {/* Pieces of Her Featured */}
-      <section className="py-8 px-4">
-        <div className="container mx-auto">
-          <div className="relative rounded-lg overflow-hidden h-64 md:h-80 bg-gradient-to-r from-teal-600 to-purple-600">
-            <div className="absolute inset-0 flex items-center justify-between px-8">
-              <div>
-                <p className="text-sm text-gray-300 mb-2">A NETFLIX SERIES</p>
-                <h2 className="text-4xl font-bold mb-4">PIECES OF HER</h2>
-                <button className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors font-semibold">
-                  Watch Trailer
-                </button>
-              </div>
-              <div className="hidden md:block">
-                <Image
-                  src={home04}
-                  alt="Pieces of Her"
-                  width={200}
-                  height={300}
-                  className="rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
-      {/* Recommended TV Shows */}
-      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv"  onScroll={handleScroll}>
-        <MovieRow>
-          <MovieCard image={home28} title="Day Night" />
-          <MovieCard image={home29} title="Day Dreamer" />
-          <MovieCard image={home30} title="Arcane" />
-          <MovieCard image={home31} title="Arcane" />
-          <MovieCard image={home28} title="Day Night" />
-          <MovieCard image={home29} title="Day Dreamer" />
-          <MovieCard image={home30} title="Arcane" />
-          <MovieCard image={home31} title="Arcane" />
-          <MovieCard image={home28} title="Day Night" />
-        </MovieRow>
-      </ContentSection>
-
-      {/* Recommended TV Shows 2 */}
-      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv-2">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <LargeCard
-            image={home32}
-            title="Top 10 Reasons to Watch Hocus Pocus 2"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
-          />
-          <LargeCard
-            image={home33}
-            title="New Avatar 2 Cast Share First Impressions"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
-          />
-          <LargeCard
-            image={home34}
-            title="Camila Mendes and Maya Hawke Answer Burning Questions"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
-          />
-        </div>
-      </ContentSection>
+      
 
       {/* House of the Dragon Banner */}
       <section className="py-8 px-4">
         <div className="container mx-auto">
-          <div className="relative rounded-lg overflow-hidden h-64 md:h-80 bg-gradient-to-r from-blue-900 to-blue-600">
+          <div className="relative rounded-lg overflow-hidden h-64 md:h-50 bg-gradient-to-r from-blue-900 to-blue-600">
             <div className="absolute inset-0 flex items-center justify-between px-8">
               <div>
-                <h2 className="text-5xl font-bold mb-2">HOUSE OF THE DRAGON</h2>
-                <p className="text-xl mb-4">STREAMING ON OCT 15</p>
-                <button className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors font-semibold">
-                  Watch Trailer
-                </button>
+                <h2 className="text-5xl font-bold mb-2"></h2>
+                <p className="text-xl mb-4"></p>
               </div>
-              <div className="hidden md:block">
-                <Image
-                  src={logo3}
-                  alt="House of the Dragon"
-                  width={200}
-                  height={200}
-                  className="rounded-full"
-                />
+              <div className="hidden md:flex items-center justify-center flex-1">
+                <Image src={logo5} alt="House of the Dragon" width={150} height={150} className="rounded-full" />
+                <p className="font-bold text-lg ml-3">Providing you Premium Quality Movies & TV Series</p>
               </div>
             </div>
           </div>
@@ -310,19 +289,19 @@ export default function DashboardPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <NewsCard
-              image={home35}
+              image={news1}
               title="Movies That Will Make Your Holidays The Best"
               date="April 26, 2023"
               category="Entertainment"
             />
             <NewsCard
-              image={home36}
+              image={news2}
               title="Best Movie To Cheer Your Mood Up In 2023"
               date="April 26, 2023"
               category="Entertainment"
             />
             <NewsCard
-              image={home37}
+              image={news3}
               title="Must Watch Your Fav Web Series With Us"
               date="April 26, 2023"
               category="Entertainment"
@@ -414,7 +393,7 @@ function TVShowCard({ image, title }) {
           alt={title}
           width={300}
           height={200}
-          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 opacity-50 group-hover:opacity-100 transition-all"
         />
       </div>
       <h3 className="text-sm font-medium group-hover:text-blue-400 transition-colors">{title}</h3>

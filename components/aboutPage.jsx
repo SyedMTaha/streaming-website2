@@ -14,6 +14,8 @@ import about10 from './../public/assets/images/about/about10.png';
 import about11 from './../public/assets/images/about/about11.png';
 import about12 from './../public/assets/images/about/about12.png';
 import about13 from './../public/assets/images/about/about13.png';
+import about14 from './../public/assets/images/about/about14.jpg';
+import about15 from './../public/assets/images/about/about15.jpg';
 
 
 export default function AboutPage() {
@@ -23,7 +25,7 @@ export default function AboutPage() {
       <section className="relative py-20 px-4 text-center">
         <div className="absolute inset-0 opacity-30">
           <Image
-            src={about01}
+            src={about14}
             alt="Hollywood background"
             fill
             className="object-cover"
@@ -49,7 +51,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  ">
             <div className="relative group w-full ">
               <Image
-                src={about02}
+                src={about15}
                 alt="Story telling with books and glasses"
                 width={500}
                 height={500}
