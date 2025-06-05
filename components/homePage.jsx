@@ -3,55 +3,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Play, Plus, Calendar } from "lucide-react"
-import home02 from './../public/assets/images/background/homePage02.png';
 import home03 from './../public/assets/images/background/homePage03.png';
-import home04 from './../public/assets/images/background/homePage04.png';
-import logo3 from './../public/assets/images/logo/logo3.png';
-import home01 from './../public/assets/images/home/home01.png';
-import home002 from './../public/assets/images/home/home02.png';
-import home003 from './../public/assets/images/home/home03.png';
-import home004 from './../public/assets/images/home/home04.png';
-import home05 from './../public/assets/images/home/home05.png';
-import home06 from './../public/assets/images/home/home06.png';
-import home07 from './../public/assets/images/home/home07.png';
-import home08 from './../public/assets/images/home/home08.png';
-import home09 from './../public/assets/images/home/home09.png';
-import home10 from './../public/assets/images/home/home10.png';
-import home11 from './../public/assets/images/home/home11.png';
-import home12 from './../public/assets/images/home/home12.png';
-import home13 from './../public/assets/images/home/home13.png';
-import home14 from './../public/assets/images/home/home14.png';
-import home15 from './../public/assets/images/home/home15.png';
-import home16 from './../public/assets/images/home/home16.png';
-import home17 from './../public/assets/images/home/home17.png';
-import home18 from './../public/assets/images/home/home18.png';
-import home19 from './../public/assets/images/home/home19.png';
-import home20 from './../public/assets/images/home/home20.png';
-import home21 from './../public/assets/images/home/home21.png';
-import home22 from './../public/assets/images/home/home22.png';
-import home23 from './../public/assets/images/home/home23.png';
-import home24 from './../public/assets/images/home/home24.png';
-import home25 from './../public/assets/images/home/home25.png';
-import home26 from './../public/assets/images/home/home26.png';
-import home27 from './../public/assets/images/home/home27.png';
-import home28 from './../public/assets/images/home/home28.png';
-import home29 from './../public/assets/images/home/home29.png';
-import home30 from './../public/assets/images/home/home30.png';
-import home31 from './../public/assets/images/home/home31.png';
-import home32 from './../public/assets/images/home/home32.png';
-import home33 from './../public/assets/images/home/home33.png';
-import home34 from './../public/assets/images/home/home34.png';
-import home35 from './../public/assets/images/home/home35.png';
-import home36 from './../public/assets/images/home/home36.png';
-import home37 from './../public/assets/images/home/home37.png';
 import comingsoon from './../public/assets/images/background/coming-soon.jpg';
 import comingsoonseries from './../public/assets/images/background/coming-soon-series.jpg';
 import logo5 from './../public/assets/images/logo/logo.png';
 import news1 from './../public/assets/images/home/news1.jpg';
 import news2 from './../public/assets/images/home/news2.jpg';
 import news3 from './../public/assets/images/home/news3.jpg';
-import homegif from './../public/assets/images/home/homegif.gif';
 import homegif2 from './../public/assets/images/home/homegif2.gif';
+import home38 from './../public/assets/images/home/home38.jpg';
+import home39 from './../public/assets/images/home/home39.jpg';
+import home40 from './../public/assets/images/home/home40.jpg';
+import home41 from './../public/assets/images/home/home41.jpg';
+import home42 from './../public/assets/images/home/home42.jpg';
+import home43 from './../public/assets/images/home/home43.jpg';
+//import home44 from './../public/assets/images/home/home44.jpg';
+import home45 from './../public/assets/images/home/home45.jpg';
 
 export default function DashboardPage() {
 
@@ -114,12 +81,13 @@ export default function DashboardPage() {
       {/* Streaming Now */}
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={comingsoon}  title="John Wick 4"  />
-          <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" />
-          <MovieCard image={comingsoon} title="The Post" />
-          <MovieCard image={comingsoon} title="Riverdale" />
-          <MovieCard image={comingsoon} title="Best Friend" />
+          <MovieCard image={home45}  title="Atomic Submarine"  />
+          <MovieCard image={home43}  title="Dragnet 1967"  />          
+          <MovieCard image={home40} title="Mister ED" />
+          <MovieCard image={home41} title="Hill Street Blues" />
+          <MovieCard image={home42} title="Iron Side" />
+          <MovieCard image={home38} title="The Andy Griffith Show" />
+          <MovieCard image={home39} title="Spider-Man" />
           <MovieCard image={comingsoon}  title="John Wick 4" />
           <MovieCard image={comingsoon} title="Spider-Man" />
           <MovieCard image={comingsoon} title="The White House" />
