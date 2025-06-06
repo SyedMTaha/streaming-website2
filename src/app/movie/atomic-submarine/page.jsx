@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import Navbar from "../../../../components/navbarSearch";
 import Footer from "../../../../components/footer";
-import AtomicSubmarine from "../../../../components/atomicSubmarinePage";
+import AtomicSubmarine from "../../../../components/moviesComponent/atomicSubmarinePage";
 
 export default function HomePage() {
     return (

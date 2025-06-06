@@ -3,13 +3,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef, useState } from "react"
-import movie01 from './../public/assets/images/movies/loveinsky.png';
-import home01 from './../public/assets/images/landing/home01.png';
-import movie02 from './../public/assets/images/movies/johnwick01.png';
-import movie03 from './../public/assets/images/movies/johnwick02.png';
-import review01 from './../public/assets/images/review/review01.png';
-import comingsoonGif from './../public/assets/images/movies/coming-soon.gif';
-import MuxPlayer from './MuxPlayer';
+import movie01 from './../../public/assets/images/movies/loveinsky.png';
+import home01 from './../../public/assets/images/landing/home01.png';
+import movie02 from './../../public/assets/images/movies/johnwick01.png';
+import movie03 from './../../public/assets/images/movies/johnwick02.png';
+import review01 from './../../public/assets/images/review/review01.png';
+import comingsoonGif from './../../public/assets/images/movies/coming-soon.gif';
+//import MuxPlayer from './MuxPlayer';
 import Vimeo from '@u-wave/react-vimeo';
 
 
@@ -46,7 +46,7 @@ export default function MoviePage({ params }) {
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
               <button
                 onClick={() => setIsPlaying(true)}
-                className="bg-blue-600 px-6 py-3 text-white rounded-lg font-semibold hover:bg-blue-800"
+                className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors"
               >
                 ▶ Play
               </button>
