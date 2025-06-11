@@ -3,11 +3,17 @@
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from 'next/image'
-import { ChevronDown, Globe, Menu, X, User, LogOut } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, User, LogOut, Heart, UserCircle } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
 import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function Navbar() {
   const [isGenreOpen, setIsGenreOpen] = React.useState(false)
@@ -106,7 +112,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full">
+    <nav className={`${montserrat.className} bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full`}>
       <div className="px-4 sm:px-8 lg:px-8 max-w-full">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4 sm:space-x-8">
@@ -166,12 +172,12 @@ export default function Navbar() {
 
         
           {/* Search Bar - Hidden on mobile, shown on desktop */}
-          <div className="hidden lg:flex flex-1 justify-end mx-6 xl:mx-8">
-            <div className="relative">
+          <div className="hidden lg:flex flex-1 justify-end mx-6 xl:mx-8 " >
+            <div className="relative" >
               <input
                 type="text"
-                placeholder="Find movies, TV shows and more..."
-                className="bg-gradient-to-b from-[#00112C] to-[#012256] border border-white rounded-lg pl-10 pr-4 py-1.5 text-sm placeholder-gray-400 focus:outline-none"
+                placeholder="Search Movies & Shows ..."
+                className="bg-gradient-to-b from-[#00112C] to-[#012256] border border-white rounded-2xl pl-10 pr-4 py-1.5 text-sm placeholder-gray-400 focus:outline-none shadow-xl"
                 style={{ width: "280px", color: "#A2ABC0" }}
               />
               <button className="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -208,13 +214,13 @@ export default function Navbar() {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors p-2 rounded-lg"
                 >
-                  <User className="h-5 w-5" />
+                  <UserCircle className="h-5 w-5" />
                   <span className="hidden sm:inline">{currentUser.displayName || 'User'}</span>
                 </button>
               ) : (
                 <Link href="/">
                   <button className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors p-2 rounded-lg">
-                    <User className="h-5 w-5" />
+                    <UserCircle className="h-5 w-5" />
                     <span className="hidden sm:inline">Sign In</span>
                   </button>
                 </Link>
@@ -231,6 +237,13 @@ export default function Navbar() {
                       {currentUser.email}
                     </p>
                   </div>
+                  <Link
+                    href="/wishlist"
+                    className="w-full flex items-center px-4 py-2 text-sm text-white hover:bg-blue-600/20 transition-colors"
+                  >
+                    <Heart className="h-4 w-4 mr-2" />
+                    My Wishlist
+                  </Link>
                   <button
                     onClick={handleLogout}
                     className="w-full flex items-center px-4 py-2 text-sm text-white hover:bg-blue-600/20 transition-colors"

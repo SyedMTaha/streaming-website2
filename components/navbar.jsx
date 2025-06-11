@@ -5,6 +5,12 @@ import Link from "next/link"
 import Image from 'next/image'
 import { ChevronDown, Globe, Menu, X, User } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 
 export default function Navbar() {
@@ -79,7 +85,7 @@ function closeMobileMenu() {
 }
 
   return (
-    <nav className="bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full">
+    <nav className={` ${montserrat.className} bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full`}>
     <div className="px-4 sm:px-8 lg:px-16 max-w-full">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-4 sm:space-x-8">
