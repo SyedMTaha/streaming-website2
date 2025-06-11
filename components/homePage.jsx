@@ -82,6 +82,8 @@ export default function DashboardPage() {
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home45}  title="Atomic Submarine"  />
+          <MovieCard image={"/"} title="Pursued" />
+          <MovieCard image={"/"} title="Stage Coach" />
           <MovieCard image={home43}  title="Dragnet 1967"  />          
           <MovieCard image={home40} title="Mister ED" />
           <MovieCard image={home41} title="Hill Street Blues" />
