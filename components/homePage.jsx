@@ -19,6 +19,7 @@ import home42 from './../public/assets/images/home/home42.jpg';
 import home43 from './../public/assets/images/home/home43.jpg';
 //import home44 from './../public/assets/images/home/home44.jpg';
 import home45 from './../public/assets/images/home/home45.jpg';
+import { Facebook, Twitter, Youtube, X, Instagram,   } from "lucide-react"
 
 export default function DashboardPage() {
 
@@ -30,12 +31,18 @@ export default function DashboardPage() {
     }
   };
 
+  const XIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center">
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <Image
             src={homegif2}
             alt="The White House movie"
@@ -44,7 +51,50 @@ export default function DashboardPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        </div> */}
+        <div className="absolute inset-0">
+        <Image
+          src={homegif2}
+          alt="The White House movie"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        
+        {/* Social Media Icons */}
+        <div className="absolute bottom-2 right-2 z-50 flex gap-2">
+          {/* Facebook */}
+          <div className="social-icon-container group">
+          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+        <Facebook className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+      </div>
+          </div>
+          
+          {/* Instagram */}
+          <div className="social-icon-container group">
+          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+        <Instagram className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+      </div>
+          </div>
+          
+          {/* X (Twitter) */}
+          <div className="social-icon-container group">
+              <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+              <XIcon className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+              </div>
+            
+          </div>
+          
+          {/* YouTube */}
+          <div className="social-icon-container group">
+          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+        <Youtube className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+          </div>  
+          </div>
+          
         </div>
+    </div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
