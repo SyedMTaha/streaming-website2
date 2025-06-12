@@ -55,7 +55,7 @@ export default function DashboardPage() {
         <div className="absolute inset-0">
         <Image
           src={homegif2}
-          alt="The White House movie"
+          alt="BG-GIF"
           fill
           className="object-cover"
           priority
@@ -63,7 +63,7 @@ export default function DashboardPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
         
         {/* Social Media Icons */}
-        <div className="absolute bottom-2 right-2 z-50 flex gap-2">
+        <div className="absolute bottom-2 right-0 z-50 flex gap-2">
           {/* Facebook */}
           <div className="social-icon-container group">
           <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
@@ -88,25 +88,22 @@ export default function DashboardPage() {
           
           {/* YouTube */}
           <div className="social-icon-container group">
-          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
-        <Youtube className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
-          </div>  
+          <div 
+            className="-ml-1 w-12 h-12 bg-blue-900 group-hover:bg-white flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden"
+            style={{clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%)'}}
+          >
+            <Youtube className="ml-2 w-5 h-5 text-white group-hover:text-blue-900 transition-colors duration-300" />
           </div>
+        </div>
           
         </div>
-    </div>
+      </div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">The White House</h1>
-            <div className="flex items-center space-x-4 mb-4 text-sm">
-              <span className="bg-red-600 px-2 py-1 rounded">TV-MA</span>
-              <span>2013</span>
-              <span>2h 11m</span>
-              <span>HD-4K</span>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to INBV</h1>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            Amid political chaos and hidden agendas, a young aide uncovers a conspiracy that could change the fate of the nation—all within the walls of the world’s most powerful residence.
+            We provide high quality movies & series stream 24/7
             </p>
             <div className="flex space-x-4">
               
