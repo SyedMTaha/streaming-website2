@@ -22,6 +22,7 @@ import home45 from './../public/assets/images/home/home45.jpg';
 import home46 from './../public/assets/images/home/home46.png';
 import home47 from './../public/assets/images/home/home47.jpg';
 import home48 from './../public/assets/images/home/home48.png';
+import home49 from './../public/assets/images/home/home49.png';
 import { Facebook, Twitter, Youtube, X, Instagram } from "lucide-react"
 
 export default function DashboardPage() {
@@ -140,7 +141,7 @@ export default function DashboardPage() {
           <MovieCard image={home45}  title="Atomic Submarine"  />
           <MovieCard image={home46} title="Pursued" />
           <MovieCard image={home48} title="Stage Coach" />
-          <MovieCard image={"/"} title="State Secret" />
+          <MovieCard image={home49} title="State Secret" />
           <MovieCard image={home47} title="Bad and the Beautiful" />
           {/* <MovieCard image={home43}  title="Dragnet 1967"  />          
           <MovieCard image={home40} title="Mister ED" />
