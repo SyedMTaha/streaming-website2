@@ -13,6 +13,8 @@ import { auth } from '../../../../../firebase';
 import { getFirestore, doc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 //import MuxPlayer from './MuxPlayer';
 import Vimeo from '@u-wave/react-vimeo';
+import NavbarTwo from "../../../../../components/navbarSearch";
+import Footer from "../../../../../components/footer";
 
 export default function MoviePage({ params }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -115,6 +117,7 @@ export default function MoviePage({ params }) {
   };
 
   return (
+    // <Navbar/>
     <div className="min-h-screen text-white ">
       <section>
         <div className="relative max-w-4xl mx-auto h-[85vh] rounded-lg overflow-hidden ">
@@ -197,14 +200,15 @@ export default function MoviePage({ params }) {
                 )}
               </button>
             </div>
-            {/* Share tooltip - appears when hovering over share button */}
-            {/* <div className="mt-2 text-xs text-gray-400">
-              Click share to copy movie link to clipboard
-            </div> */}
+            
           </div>
         </div>
       </section>
+
+
+
     </div>
+    // <Footer/>
   );
 };
 

@@ -16,7 +16,7 @@ export default function AtomAntPage() {
     contentRating: "TV-G",
     description:
       "Atom Ant is a tiny superhero ant with superhuman strength and the ability to fly. He fights crime and helps those in need while maintaining his secret identity as a regular ant.",
-    backdrop: "/assets/images/cartoons/atomAntBG.jfif",
+    backdrop: "/assets/images/cartoons/atomAnt.jpg",
   }
 
   const episodes = [
@@ -26,7 +26,7 @@ export default function AtomAntPage() {
       episode: "S01-E01",
       duration: "6 mins",
       description: "Atom Ant's first adventure as he helps a lost baby bird find its way home.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep1.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode1"
     },
     {
@@ -35,7 +35,7 @@ export default function AtomAntPage() {
       episode: "S01-E02",
       duration: "6 mins",
       description: "Atom Ant must stop a gang of food thieves from stealing from the local grocery store.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep2.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode2"
     },
     {
@@ -44,7 +44,7 @@ export default function AtomAntPage() {
       episode: "S01-E03",
       duration: "6 mins",
       description: "Atom Ant helps prevent a catastrophic ice storm from destroying the ant colony.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep3.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode3"
     },
     {
@@ -53,7 +53,7 @@ export default function AtomAntPage() {
       episode: "S01-E04",
       duration: "6 mins",
       description: "Atom Ant must rescue a group of ants who accidentally launched themselves into space.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep4.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode4"
     },
     {
@@ -62,7 +62,7 @@ export default function AtomAntPage() {
       episode: "S01-E05",
       duration: "6 mins",
       description: "Atom Ant participates in the annual ant race while trying to stop a cheating competitor.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep5.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode5"
     },
     {
@@ -71,7 +71,7 @@ export default function AtomAntPage() {
       episode: "S01-E06",
       duration: "6 mins",
       description: "Atom Ant must defend the ant colony from an invasion of termites.",
-      thumbnail: "/assets/images/cartoons/atom-ant-ep6.jpg",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode6"
     },
   ]

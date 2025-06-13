@@ -3,8 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Play, ChevronLeft, Clock, Star } from "lucide-react"
-import NavbarTwo from "../../../../components/navbarSearch"
-import Footer from "../../../../components/footer"
+import NavbarTwo from "../../../../../components/navbarSearch"
+import Footer from "../../../../../components/footer"
 
 export default function Episode4Page() {
   const episodeData = {
