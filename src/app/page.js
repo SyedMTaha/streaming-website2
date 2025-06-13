@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Tv, Download, Dribbble, Smile, Plus, Menu, X } from "lucide-react"
 import Footer from "../../components/footer";
-import home01 from './../../public/assets/images/background/homePage05.jpg';
+import home01 from '../../public/assets/images/background/homePage05.jpg';
 import img01 from './../../public/assets/images/landing/home01.png';
 import img02 from './../../public/assets/images/landing/home02.png';
 import img03 from './../../public/assets/images/landing/home03.png';
@@ -138,7 +138,7 @@ function Navbar() {
 export default function HomePage() {
   return (
     <>
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-[#091E49]">
       <Navbar />
       <div className="min-h-screen text-white w-full">
         {/* Hero Section */}
