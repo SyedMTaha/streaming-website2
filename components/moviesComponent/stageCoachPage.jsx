@@ -27,16 +27,16 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "atomic-submarine", // Add unique ID for the movie
-    title: "Atomic Submarine",
-    year: "1959",
-    duration: "1h 11min",
+    id: "Stage Coach", // Add unique ID for the movie
+    title: "Stage Coach",
+    year: "1939",
+    duration: "1h 36min",
     rating: "R",
-    score: "6.0",
+    score: "7.8",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "When ships begin mysteriously disappearing in the Arctic, the crew of the atomic-powered submarine Tiger Shark is sent to investigate. What they discover is a terrifying alien spacecraft beneath the sea, threatening Earth's survival. A tense blend of science fiction and Cold War suspense, The Atomic Submarine dives deep into danger to confront an otherworldly menace.",
+    description: "A diverse group of passengers—ranging from a marshal to an outlaw—embark on a perilous stagecoach journey through Apache territory. As they travel, they form unexpected bonds and confront their own prejudices in John Ford’s iconic Western masterpiece.",
     driveUrl: "https://drive.google.com/uc?export=download&id=1PwDjgF5q-TSrBxpxI_cH_4rPzwCLGufV",
     thumbnail: "/path-to-your-thumbnail.jpg"
   };

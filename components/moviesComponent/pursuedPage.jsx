@@ -27,18 +27,17 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "atomic-submarine", // Add unique ID for the movie
-    title: "Atomic Submarine",
-    year: "1959",
-    duration: "1h 11min",
+    id: "Pursued ", // Add unique ID for the movie
+    title: "Pursued ",
+    year: "1947",
+    duration: "1h 41min",
     rating: "R",
-    score: "6.0",
+    score: "7.1",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "When ships begin mysteriously disappearing in the Arctic, the crew of the atomic-powered submarine Tiger Shark is sent to investigate. What they discover is a terrifying alien spacecraft beneath the sea, threatening Earth's survival. A tense blend of science fiction and Cold War suspense, The Atomic Submarine dives deep into danger to confront an otherworldly menace.",
-    driveUrl: "https://drive.google.com/uc?export=download&id=1PwDjgF5q-TSrBxpxI_cH_4rPzwCLGufV",
-    thumbnail: "/path-to-your-thumbnail.jpg"
+    description: "Clay, a young man haunted by a mysterious childhood trauma, returns to his adoptive family only to face dark secrets, revenge, and a deadly feud. This noir-inspired Western blends psychological drama with suspense.",
+   
   };
 
   // Check if movie is in wishlist on component mount

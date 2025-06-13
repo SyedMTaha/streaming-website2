@@ -27,18 +27,17 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "atomic-submarine", // Add unique ID for the movie
-    title: "Atomic Submarine",
-    year: "1959",
-    duration: "1h 11min",
+    id: "Bad & The Beautiful", // Add unique ID for the movie
+    title: "Bad & The Beautiful",
+    year: "1952",
+    duration: "1h 58min",
     rating: "R",
-    score: "6.0",
+    score: "7.9",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "When ships begin mysteriously disappearing in the Arctic, the crew of the atomic-powered submarine Tiger Shark is sent to investigate. What they discover is a terrifying alien spacecraft beneath the sea, threatening Earth's survival. A tense blend of science fiction and Cold War suspense, The Atomic Submarine dives deep into danger to confront an otherworldly menace.",
-    driveUrl: "https://drive.google.com/uc?export=download&id=1PwDjgF5q-TSrBxpxI_cH_4rPzwCLGufV",
-    thumbnail: "/path-to-your-thumbnail.jpg"
+    description: "A powerful Hollywood producer uses and discards the people around him to build his career. As the film unfolds through three different viewpoints, it paints a haunting picture of ambition and manipulation in the movie business.",
+    
   };
 
   // Check if movie is in wishlist on component mount
@@ -130,7 +129,7 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092936389?h=1e0be4f157&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              src="https://player.vimeo.com/video/1092936264?h=6e7d41ff20&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               width="100%"
               height="100%"
               frameBorder="0"

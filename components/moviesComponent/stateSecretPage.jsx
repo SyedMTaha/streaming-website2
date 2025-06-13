@@ -27,18 +27,17 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "atomic-submarine", // Add unique ID for the movie
-    title: "Atomic Submarine",
-    year: "1959",
-    duration: "1h 11min",
+    id: "State Secret", // Add unique ID for the movie
+    title: "State Secret",
+    year: "1950",
+    duration: "1h 4min",
     rating: "R",
-    score: "6.0",
+    score: "6.8",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "When ships begin mysteriously disappearing in the Arctic, the crew of the atomic-powered submarine Tiger Shark is sent to investigate. What they discover is a terrifying alien spacecraft beneath the sea, threatening Earth's survival. A tense blend of science fiction and Cold War suspense, The Atomic Submarine dives deep into danger to confront an otherworldly menace.",
-    driveUrl: "https://drive.google.com/uc?export=download&id=1PwDjgF5q-TSrBxpxI_cH_4rPzwCLGufV",
-    thumbnail: "/path-to-your-thumbnail.jpg"
+    description: "A British doctor is drawn into a deadly conspiracy after operating on a dictator in a fictional European country. Fleeing from the secret police, he must rely on his wits to escape in this post-war thriller filled with tension and espionage.",
+    
   };
 
   // Check if movie is in wishlist on component mount
@@ -130,7 +129,7 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092936389?h=1e0be4f157&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              src="https://player.vimeo.com/video/1092933232?h=d997dfd2ca&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               width="100%"
               height="100%"
               frameBorder="0"

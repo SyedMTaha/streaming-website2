@@ -99,28 +99,12 @@ export default function DashboardPage() {
         </div>
       </div>
 
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-2xl">
+        <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen">
+          <div className="max-w-2xl text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to INBV</h1>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            We provide high quality movies & series stream 24/7
-            </p>
-            <div className="flex space-x-4">
-              
-              <button className="bg-[#1D50A3] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors ">
-                <Link href="/movie/the-white-house">
-                  <div className="flex items-center space-x-2">
-                    <span>Play Now</span>
-                    <Play className=" h-5 w-5 fill-current" />
-                  </div>
-                </Link>
-              </button>
-              
-              <button className="bg-gray-600/80 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-gray-600 transition-colors">
-                <Plus className="h-5 w-5" />
-                <span>My List</span>
-              </button>
-            </div>
+            We Provide High Quality Movies & Series Stream 24/7
+            </p> 
           </div>
         </div>
       </section>
@@ -131,6 +115,8 @@ export default function DashboardPage() {
           <MovieCard image={home45}  title="Atomic Submarine"  />
           <MovieCard image={"/"} title="Pursued" />
           <MovieCard image={"/"} title="Stage Coach" />
+          <MovieCard image={"/"} title="State Secret" />
+          <MovieCard image={"/"} title="Bad and the Beautiful" />
           <MovieCard image={home43}  title="Dragnet 1967"  />          
           <MovieCard image={home40} title="Mister ED" />
           <MovieCard image={home41} title="Hill Street Blues" />
