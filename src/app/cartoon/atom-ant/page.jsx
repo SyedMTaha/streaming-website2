@@ -20,7 +20,25 @@ export default function AtomAntPage() {
   }
 
   const episodes = [
+    { id: 17,
+      title: "Bully for Atom Ant",
+      episode: "S01-E17",
+      duration: "6 mins",
+      description: "Atom Ant must defend the ant colony from an invasion of termites.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode17"
+    },
     {
+      id: 18,
+      title: "Termighty Mean",
+      episode: "S01-E18",
+      duration: "6 mins",
+      description: "Atom Ant must defend the ant colony from an invasion of termites.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode18"
+    },
+    {
+
       id: 1,
       title: "Up and Atom",
       episode: "S01-E01",
@@ -74,6 +92,7 @@ export default function AtomAntPage() {
       thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode6"
     },
+    
   ]
 
   const scrollLeft = () => {

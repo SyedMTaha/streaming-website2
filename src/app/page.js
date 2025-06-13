@@ -49,16 +49,22 @@ const NetflixStyleMovieCard = ({ image, title, href, number }) => {
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={number <= 3} // Prioritize loading for first 3 images
+            priority={number <= 3}
           />
           
-          {/* Netflix-style Number */}
+          {/* Netflix-style Number with blue stroke */}
           <div className="absolute bottom-0 left-0 p-2">
             <div className="relative">
               <span 
-                className="text-7xl md:text-8xl font-black text-white opacity-90"
+                className="text-7xl md:text-8xl font-black text-white"
                 style={{
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.5)'
+                  textShadow: `
+                    -3px -3px 0 #091E49,
+                    3px -3px 0 #091E49,
+                    -3px 3px 0 #091E49,
+                    3px 3px 0 #091E49,
+                    0 0 8px rgba(29, 80, 163, 0.5)
+                  `
                 }}
               >
                 {number}
@@ -87,15 +93,15 @@ function Navbar() {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4 sm:space-x-8">
               <Link href="/" className="flex items-center">
-                <div className="relative flex items-center justify-center h-8 w-18">
-                  <Image src={logo || "/placeholder.svg"} alt="INBV Logo" width={80} height={32} priority />
+                <div className="relative flex items-center justify-center h-10 w-24">
+                  <Image src={logo || "/placeholder.svg"} alt="INBV Logo" width={100} height={40} priority />
                 </div>
               </Link>
             </div>
 
             <div className="flex items-center space-x-2 sm:space-x-0">
               <Link href="/auth/login">
-                <button className="bg-[#1D50A3] text-white hover:bg-blue-300 font-semibold p-2 rounded-lg flex items-center text-xs shadow-md hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 sm:text-sm">
+                <button className="bg-[#1D50A3] text-white hover:bg-blue-300 font-semibold px-4 py-2.5 rounded-lg flex items-center text-md shadow-md hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
                   <span className="hidden sm:inline">Watch Now</span>
                   <span className="sm:hidden">Watch</span>
                 </button>
@@ -167,10 +173,10 @@ export default function HomePage() {
               <input
                 type="email"
                 placeholder="Email address"
-                className="w-full px-4 py-3 rounded-sm bg-white/90 text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 rounded-sm bg-white/70 text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <Link href="/auth/login" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto whitespace-nowrap bg-[#1D50A3] text-white px-8 py-3 rounded-sm font-medium hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                <button className="w-full sm:w-auto whitespace-nowrap bg-[#1D50A3]/90 text-white px-8 py-3 rounded-sm font-medium hover:bg-blue-900/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
                   Get Started
                 </button>
               </Link>

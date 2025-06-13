@@ -133,7 +133,10 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092936389?h=1e0be4f157&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              src="https://player.vimeo.com/video/1093067481?h=9bcde39f81&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+
+              
+              
               width="100%"
               height="100%"
               frameBorder="0"
@@ -151,61 +154,6 @@ export default function MoviePage({ params }) {
           )}
         </div>
       </section>
-
-      <section className="bg-gradient-to-t from-[#020d1f] to-[#012256] py-8"> 
-        <div className="max-w-5xl mx-auto mt-5 ">
-          <div className="bg-[#012256] rounded-lg p-6 shadow-xl backdrop-blur-sm">
-            <h1 className="text-4xl font-bold mb-4">{movie.title}</h1>
-            <div className="flex items-center space-x-4 mb-4 text-sm">
-              <span className="bg-red-600 px-2 py-1 rounded">{movie.rating}</span>
-              <span>{movie.year}</span>
-              <span>{movie.duration}</span>
-              <div className="flex items-center">
-                <Star className="h-4 w-4 text-yellow-500 mr-1" />
-                <span>{movie.score}</span>
-              </div>
-            </div>
-            <p className="text-md text-gray-300 mb-6">{movie.description}</p>
-            
-            <div className="flex space-x-4">
-              <button 
-                onClick={toggleWishlist}
-                disabled={wishlistLoading}
-                className={`${
-                  isInWishlist ? 'bg-[#1D50A3]' : 'bg-gray-600/80'
-                } text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group`}
-              >
-                <Bookmark className={`h-5 w-5 ${isInWishlist ? 'fill-current' : ''}`} />
-                <span>{isInWishlist ? 'Added to Wishlist' : 'Add to Wishlist'}</span>
-              </button>
-              <button 
-                onClick={handleShare}
-                disabled={shareLoading}
-                className="bg-gray-600/80 text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group"
-              >
-                {showShareSuccess ? (
-                  <>
-                    <Check className="h-5 w-5 text-green-400" />
-                    <span>Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Share className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    <span>Share</span>
-                  </>
-                )}
-                {/* Share success animation */}
-                {showShareSuccess && (
-                  <div className="absolute inset-0 bg-[#1D50A3] animate-pulse" />
-                )}
-              </button>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-
 
     </div>
     // <Footer/>
