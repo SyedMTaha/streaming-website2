@@ -104,11 +104,10 @@ function closeMobileMenu() {
           
 
           <Link href="/auth/login">
-            <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 text-navy-900 font-semibold p-2  rounded-lg flex items-center text-sm sm:text-base">
-              
-              <span className="hidden sm:inline">Watch Now</span>
-              <span className="sm:hidden">Watch</span>
-            </button>
+          <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 font-semibold p-2 rounded-lg flex items-center text-xs shadow-md shadow-gray-900 hover:shadow-lg hover:shadow-gray-900 transition-shadow duration-300 sm:text-sm">
+          <span className="hidden sm:inline">Watch Now</span>
+          <span className="sm:hidden">Watch</span>
+        </button>
           </Link>
 
           <button

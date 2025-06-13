@@ -17,9 +17,11 @@ import home40 from './../public/assets/images/home/home40.jpg';
 import home41 from './../public/assets/images/home/home41.jpg';
 import home42 from './../public/assets/images/home/home42.jpg';
 import home43 from './../public/assets/images/home/home43.jpg';
-//import home44 from './../public/assets/images/home/home44.jpg';
 import home45 from './../public/assets/images/home/home45.jpg';
-import { Facebook, Twitter, Youtube, X, Instagram,   } from "lucide-react"
+import home46 from './../public/assets/images/home/home46.png';
+import home47 from './../public/assets/images/home/home47.jpg';
+import home48 from './../public/assets/images/home/home48.png';
+import { Facebook, Twitter, Youtube, X, Instagram } from "lucide-react"
 
 export default function DashboardPage() {
 
@@ -42,7 +44,8 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center">
-        {/* <div className="absolute inset-0">
+        {/* Background Image */}
+        <div className="absolute inset-0 pointer-events-none">
           <Image
             src={homegif2}
             alt="The White House movie"
@@ -51,59 +54,48 @@ export default function DashboardPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        </div> */}
-        <div className="absolute inset-0">
-        <Image
-          src={homegif2}
-          alt="BG-GIF"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        
+        </div>
+
         {/* Social Media Icons */}
         <div className="absolute bottom-2 right-0 z-50 flex gap-2">
           {/* Facebook */}
           <div className="social-icon-container group">
-          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
-        <Facebook className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
-      </div>
+            <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+              <Facebook className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+            </div>
           </div>
           
           {/* Instagram */}
           <div className="social-icon-container group">
-          <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
-        <Instagram className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
-      </div>
+            <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+              <Instagram className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
+            </div>
           </div>
           
           {/* X (Twitter) */}
           <div className="social-icon-container group">
-              <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+            <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
               <XIcon className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
-              </div>
-            
+            </div>
           </div>
           
           {/* YouTube */}
           <div className="social-icon-container group">
-          <div 
-            className="-ml-1 w-12 h-12 bg-blue-900 group-hover:bg-white flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden"
-            style={{clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%)'}}
-          >
-            <Youtube className="ml-2 w-5 h-5 text-white group-hover:text-blue-900 transition-colors duration-300" />
+            <div 
+              className="-ml-1 w-12 h-12 bg-blue-900 group-hover:bg-white flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden"
+              style={{clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%)'}}
+            >
+              <Youtube className="ml-2 w-5 h-5 text-white group-hover:text-blue-900 transition-colors duration-300" />
+            </div>
           </div>
         </div>
-          
-        </div>
-      </div>
 
-        <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen">
-          <div className="max-w-2xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to INBV</h1>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-            We Provide High Quality Movies & Series Stream 24/7
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen pointer-events-none">
+          <div className="max-w-2xl text-center mb-25">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">Welcome to INBV</h1>
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed drop-shadow-[0_0_5px_rgba(255,255,255,0.4)]">
+              We Provide High Quality Movies & Series Stream 24/7
             </p> 
           </div>
         </div>
@@ -113,16 +105,16 @@ export default function DashboardPage() {
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home45}  title="Atomic Submarine"  />
-          <MovieCard image={"/"} title="Pursued" />
-          <MovieCard image={"/"} title="Stage Coach" />
+          <MovieCard image={home46} title="Pursued" />
+          <MovieCard image={home48} title="Stage Coach" />
           <MovieCard image={"/"} title="State Secret" />
-          <MovieCard image={"/"} title="Bad and the Beautiful" />
-          <MovieCard image={home43}  title="Dragnet 1967"  />          
+          <MovieCard image={home47} title="Bad and the Beautiful" />
+          {/* <MovieCard image={home43}  title="Dragnet 1967"  />          
           <MovieCard image={home40} title="Mister ED" />
           <MovieCard image={home41} title="Hill Street Blues" />
           <MovieCard image={home42} title="Iron Side" />
           <MovieCard image={home38} title="The Andy Griffith Show" />
-          <MovieCard image={home39} title="Spider-Man" />
+          <MovieCard image={home39} title="Spider-Man" /> */}
           <MovieCard image={comingsoon}  title="John Wick 4" />
           <MovieCard image={comingsoon} title="Spider-Man" />
           <MovieCard image={comingsoon} title="The White House" />
