@@ -20,6 +20,44 @@ export default function AtomAntPage() {
   }
 
   const episodes = [
+
+    {
+      id: 13,
+      title: "Super Blooper",
+      episode: "S01-E13",
+      duration: "6 mins",
+      description: "Atom Ant's first adventure as he helps a lost baby bird find its way home.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode13"
+    },
+    {
+      id: 14,
+      title: "Wild Wild Ants",
+      episode: "S01-E14",
+      duration: "6 mins",
+      description: "Atom Ant's first adventure as he helps a lost baby bird find its way home.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode14"
+    },
+
+    {
+      id: 15,
+      title: "Dina-Sore",
+      episode: "S01-E15",
+      duration: "6 mins",
+      description: "Atom Ant's first adventure as he helps a lost baby bird find its way home.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode15"
+    },
+    {
+      id: 16,
+      title: "Amusement Park Amazement",
+      episode: "S01-E16",
+      duration: "6 mins",
+      description: "Atom Ant's first adventure as he helps a lost baby bird find its way home.",
+      thumbnail: "/assets/images/cartoons/atomAnt.jpg",
+      path: "/cartoon/atom-ant/episode16"
+    },
     { id: 17,
       title: "Bully for Atom Ant",
       episode: "S01-E17",
@@ -37,6 +75,7 @@ export default function AtomAntPage() {
       thumbnail: "/assets/images/cartoons/atomAnt.jpg",
       path: "/cartoon/atom-ant/episode18"
     },
+    
     {
 
       id: 1,

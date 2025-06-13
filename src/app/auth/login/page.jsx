@@ -7,7 +7,7 @@ export default function LoginPage() {
     <>
       <Navbar/>
       <div
-        className="h-[117vh] px-12 flex items-center relative"
+        className="h-[122vh] px-12 flex items-center relative"
         style={{
           backgroundColor: "#020D1E",
           backgroundImage: "url('/assets/images/background/login3.jpg')",
