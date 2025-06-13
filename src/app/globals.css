@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+* Custom Curved Separator 
+.curved-separator {
+  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%);
+}
