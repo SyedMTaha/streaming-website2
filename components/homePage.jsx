@@ -181,7 +181,7 @@ export default function DashboardPage() {
         </MovieRow>
       </ContentSection>
 
-      {/* Almost Adults Featured */}
+      {/* Cartoon Series */}
       <section className="py-8 px-4">
         <div className="container mx-auto">
           <div className="relative rounded-lg overflow-hidden h-64 md:h-80">
@@ -193,11 +193,12 @@ export default function DashboardPage() {
                 A hilarious and heartwarming cartoon series that follows quirky characters on wild adventures in a world where the unexpected is just part of everyday life.
 
                 </p>
-                
+                <Link href="/cartoon" >
                 <button className="  bg-[#1D50A3]  text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 flex items-center gap-2 ">
                   Watch Now
                   <Play className="h-5 w-5 fill-current" />
                 </button>
+                </Link>
               </div>
             </div>
           </div>
