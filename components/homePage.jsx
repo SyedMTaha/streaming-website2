@@ -22,7 +22,7 @@ import home45 from './../public/assets/images/home/home45.jpg';
 import home46 from './../public/assets/images/home/home46.png';
 import home47 from './../public/assets/images/home/home47.jpg';
 import home48 from './../public/assets/images/home/home48.png';
-import home49 from './../public/assets/images/home/home49.png';
+import home49 from './../public/assets/images/home/home49.jpeg';
 import { Facebook, Twitter, Youtube, X, Instagram } from "lucide-react"
 
 export default function DashboardPage() {
