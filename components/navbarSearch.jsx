@@ -214,8 +214,8 @@ export default function Navbar() {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors p-2 rounded-lg"
                 >
-                  <UserCircle className="h-5 w-5" />
-                  <span className="hidden sm:inline">{currentUser.displayName || 'User'}</span>
+                  <UserCircle className="h-7 w-7" />
+                  {/* <span className="hidden sm:inline">{currentUser.displayName || 'User'}</span> */}
                 </button>
               ) : (
                 <Link href="/">

@@ -25,8 +25,8 @@ export default function Footer() {
               <Image src={logo2 || "/placeholder.svg"} alt="INBV TV" width={150} height={150} />
             </div>
             <div className="mb-4">
-              <p className="text-sm text-gray-300 mb-2">Connect with us</p>
-              <div className="flex space-x-4">
+              <p className="text-sm text-gray-300 mb-2 text-center">Connect with us</p>
+              <div className="flex justify-center space-x-4">
                 <Link
                   href="https://facebook.com"
                   className="bg-white rounded-full p-2 hover:opacity-80 transition-opacity"
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Must Watch Movies */}
-          <div className="text-center md:text-left">
+          {/* <div className="text-center md:text-left">
             <h3 className="text-lg font-medium mb-4">Must Watch Movies</h3>
             <ul className="space-y-2">
               <FooterLink href="/movies/dj-thillu">DJ Thillu</FooterLink>
@@ -59,7 +59,7 @@ export default function Footer() {
               <FooterLink href="/movies/the-reckless">The Reckless</FooterLink>
               <FooterLink href="/movies/zombie-world">Zombie World</FooterLink>
             </ul>
-          </div>
+          </div> */}
 
           {/* Genres */}
           <div className="text-center md:text-left">

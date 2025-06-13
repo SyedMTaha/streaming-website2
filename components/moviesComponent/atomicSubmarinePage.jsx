@@ -131,6 +131,7 @@ export default function MoviePage({ params }) {
           {isPlaying && (
             <iframe
               src="https://player.vimeo.com/video/1092936389?h=1e0be4f157&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+   
               width="100%"
               height="100%"
               frameBorder="0"

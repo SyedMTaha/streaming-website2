@@ -11,6 +11,7 @@ import news1 from './../public/assets/images/home/news1.jpg';
 import news2 from './../public/assets/images/home/news2.jpg';
 import news3 from './../public/assets/images/home/news3.jpg';
 import homegif2 from './../public/assets/images/home/homegif2.gif';
+import homePage from './../public/assets/images/home/homePage02.jpg';
 import home38 from './../public/assets/images/home/home38.jpg';
 import home39 from './../public/assets/images/home/home39.jpg';
 import home40 from './../public/assets/images/home/home40.jpg';
@@ -43,29 +44,48 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center">
+      <section className="relative h-[95vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
-            src={homegif2}
+            src={homePage}
             alt="The White House movie"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
         </div>
 
         {/* Social Media Icons */}
         <div className="absolute bottom-2 right-0 z-50 flex gap-2">
-          {/* Facebook */}
+          
+          {/* TikTok */}
           <div className="social-icon-container group">
+            <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
+              <svg 
+                className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* Facebook */}
+          <a 
+            href="https://www.facebook.com/share/1P7zFL7e2z/?mibextid=wwXIfr" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-icon-container group"
+          >
             <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
               <Facebook className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
             </div>
-          </div>
+          </a>
           
           {/* Instagram */}
+          
           <div className="social-icon-container group">
             <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
               <Instagram className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
@@ -91,18 +111,18 @@ export default function DashboardPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen pointer-events-none">
+        {/* <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen pointer-events-none">
           <div className="max-w-2xl text-center mb-25">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">Welcome to INBV</h1>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed drop-shadow-[0_0_5px_rgba(255,255,255,0.4)]">
               We Provide High Quality Movies & Series Stream 24/7
             </p> 
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Streaming Now */}
-      <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
+      <ContentSection title="Streaming Now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home45}  title="Atomic Submarine"  />
           <MovieCard image={home46} title="Pursued" />
@@ -115,14 +135,14 @@ export default function DashboardPage() {
           <MovieCard image={home42} title="Iron Side" />
           <MovieCard image={home38} title="The Andy Griffith Show" />
           <MovieCard image={home39} title="Spider-Man" /> */}
-          <MovieCard image={comingsoon}  title="John Wick 4" />
+          {/* <MovieCard image={comingsoon}  title="John Wick 4" />
           <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" />
+          <MovieCard image={comingsoon} title="The White House" /> */}
         </MovieRow>
       </ContentSection>
 
       {/* Recommended Movies */}
-      <ContentSection title="Recommended Movies" viewAllLink="/trending" onScroll={handleScroll}>
+      <ContentSection title="Recommended Movies" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={comingsoon}  title="John Wick 4"  />
           <MovieCard image={comingsoon} title="Spider-Man" />
@@ -130,9 +150,9 @@ export default function DashboardPage() {
           <MovieCard image={comingsoon} title="The Post" />
           <MovieCard image={comingsoon} title="Riverdale" />
           <MovieCard image={comingsoon} title="Best Friend" />
-          <MovieCard image={comingsoon}  title="John Wick 4" />
+          {/* <MovieCard image={comingsoon}  title="John Wick 4" />
           <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" />
+          <MovieCard image={comingsoon} title="The White House" /> */}
         </MovieRow>
       </ContentSection>
 
@@ -336,9 +356,11 @@ function ContentSection({ title, viewAllLink, children, onScroll }) {
                 </svg>
               </button>
             </div>
-            <Link href={viewAllLink} className="text-white-400 font-medium hover:text-blue-300 text-sm">
-              View All
-            </Link>
+            {viewAllLink && (
+              <Link href={viewAllLink} className="text-white-400 font-medium hover:text-blue-300 text-sm">
+                View All
+              </Link>
+            )}
           </div>
         </div>
         <div className="overflow-hidden">

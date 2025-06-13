@@ -33,7 +33,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
-                <Link href="/blog/movies-holidays-best">Movies That Will Make Your Holidays The Best</Link>
+                Movies That Will Make Your Holidays The Best
               </h2>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -70,7 +70,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
-                <Link href="/blog/thriller-movies-not-miss">Thriller Movies That You Should Not Miss</Link>
+                Thriller Movies That You Should Not Miss
               </h2>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -107,7 +107,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
-                <Link href="/blog/film-making-everything">Film Making Can Give You Everything</Link>
+                Film Making Can Give You Everything
               </h2>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -129,16 +129,7 @@ export default function BlogPage() {
               </div>
             </article>
 
-            {/* Pagination */}
-            <div className=" space-x-2 pt-8">
-              <button className="bg-[#1D50A3] text-white px-3 py-2 size-10 rounded font-medium">1</button>
-              <button className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded transition-colors size-10">
-                2
-              </button>
-              <button className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded transition-colors size-10">
-                &gt;
-              </button>
-            </div>
+          
           </div>
 
         

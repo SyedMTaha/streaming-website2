@@ -102,43 +102,43 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Shield className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Personalized Entertainment"
+              description="Enjoy tailor-made movie and series recommendations curated just for you — because your time deserves content you actually love."
             />
             <FeatureCard
               icon={<Star className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Exclusive Content"
+              description="Gain access to INBV TV originals and exclusive releases you won't find anywhere else. Your next obsession starts here."
             />
             <FeatureCard
               icon={<Users className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Family-Friendly Features"
+              description="Create individual profiles for family members, so everyone can watch their favorites without overlap."
             />
             <FeatureCard
               icon={<Clock className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Stream Anytime, Anywhere"
+              description="Watch instantly on any device — at home or on the go. Your entertainment, your schedule."
             />
             <FeatureCard
               icon={<Award className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Award-Winning Titles"
+              description="From global blockbusters to indie gems, explore an ever-expanding library of critically acclaimed shows and films."
             />
             <FeatureCard
               icon={<Globe className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Global Reach"
+              description="Enjoy content from around the world with multilingual support and subtitles — entertainment without borders."
             />
             <FeatureCard
               icon={<Heart className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Ad-Free Experience"
+              description="Binge without interruptions. No ads, no distractions — just pure storytelling."
             />
             <FeatureCard
               icon={<Shield className="h-8 w-8" />}
-              title="The Best Deals"
-              description="Many exclusive discounts including personalized offers and Mix & Match bundles"
+              title="Safe & Secure"
+              description="Your data and preferences are protected with enterprise-grade security. You watch, we guard."
             />
           </div>
         </div>
