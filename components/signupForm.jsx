@@ -109,11 +109,11 @@ export default function SignupForm() {
     <div className="flex items-start">
       <div
         className="bg-[#191C33] rounded-[10px] p-4 sm:p-8 flex items-center justify-start shadow-2xl w-full max-w-[600px]"
-        style={{ height: "650px", minHeight: "500px", width: '500px' }}
+        style={{ height: "670px", minHeight: "500px", width: '500px' }}
       >
         <div className="p-4 sm:p-8 rounded-xl w-full">
           <div className="text-center mb-6">
-            <h1 className="text-white text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text">
+            <h1 className="text-white text-3xl font-bold mb-0 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text">
               Sign Up
             </h1>
             <p className="text-gray-300 text-m leading-relaxed">Create your account to get started</p>

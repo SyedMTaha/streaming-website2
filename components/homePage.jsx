@@ -60,6 +60,12 @@ export default function DashboardPage() {
         <div className="absolute bottom-2 right-0 z-50 flex gap-2">
           
           {/* TikTok */}
+          <a 
+            href="https://www.tiktok.com/@inbvtv?_t=ZS-8xAgUZayDgm&_r=1" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-icon-container group"
+          >
           <div className="social-icon-container group">
             <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
               <svg 
@@ -71,6 +77,7 @@ export default function DashboardPage() {
               </svg>
             </div>
           </div>
+          </a>
 
           {/* Facebook */}
           <a 
@@ -85,12 +92,18 @@ export default function DashboardPage() {
           </a>
           
           {/* Instagram */}
-          
+          <a 
+            href="https://www.instagram.com/inbvtv?igsh=dGN4Y2ZhMDExZWx5" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-icon-container group"
+          >
           <div className="social-icon-container group">
             <div className="w-12 h-12 bg-blue-900 group-hover:bg-white transform skew-x-12 flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden">
               <Instagram className="w-5 h-5 text-white group-hover:text-blue-900 transform -skew-x-12 transition-colors duration-300" />
             </div>
           </div>
+          </a>
           
           {/* X (Twitter) */}
           <div className="social-icon-container group">
@@ -366,7 +379,7 @@ function ContentSection({ title, viewAllLink, children, onScroll }) {
         <div className="overflow-hidden">
           <div 
             id={`${sectionId}-container`}
-            className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide"
+            className="flex space-x-3 overflow-x-auto pb-4 scrollbar-hide"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {children}
@@ -386,14 +399,14 @@ function MovieCard({ image, title }) {
   const slug = title.toLowerCase().replace(/\s+/g, '-');
   
   return (
-    <Link href={`/movie/${slug}`} className="flex-shrink-0 w-40 group cursor-pointer">
+    <Link href={`/movie/${slug}`} className="flex-shrink-0 w-70 group cursor-pointer">
       <div className="relative overflow-hidden rounded-lg mb-2">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
           width={400}
           height={300}
-          className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
       </div>
