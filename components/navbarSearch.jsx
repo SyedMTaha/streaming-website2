@@ -27,28 +27,28 @@ export default function Navbar() {
 
   const genres = [
     { name: "Action", href: "/genre/action" },
-    { name: "Comedy", href: "/genre/comedy" },
-    { name: "Cartoon", href: "/genre/cartoon" },
-    { name: "Drama", href: "/genre/drama" },
-    { name: "Horror", href: "/genre/horror" },
-    { name: "Romance", href: "/genre/romance" },
-    { name: "Thriller", href: "/genre/thriller" },
-    { name: "Sci-Fi", href: "/genre/sci-fi" },
     { name: "Adventure", href: "/genre/adventure" },
-    { name: "Family", href: "/genre/family" },
-    { name: "Documentary", href: "/genre/documentary" },
-    { name: "Inspiration", href: "/genre/inspiration" },
-    { name: "Mystery", href: "/genre/mystery" },
-    { name: "Crime", href: "/genre/crime" },
-    { name: "War", href: "/genre/war" },
-    { name: "Western", href: "/genre/western" },
-    { name: "Musical", href: "/genre/musical" },
     { name: "Animation", href: "/genre/animation" },
     { name: "Biographical", href: "/genre/biographical" },
+    { name: "Cartoon", href: "/genre/cartoon" },
+    { name: "Comedy", href: "/genre/comedy" },
+    { name: "Crime", href: "/genre/crime" },
+    { name: "Documentary", href: "/genre/documentary" },
+    { name: "Drama", href: "/genre/drama" },
+    { name: "Family", href: "/genre/family" },
     { name: "Historical", href: "/genre/historical" },
+    { name: "Horror", href: "/genre/horror" },
+    { name: "Inspiration", href: "/genre/inspiration" },
     { name: "Martial Arts", href: "/genre/martial-arts" },
-    { name: "Sport", href: "/genre/sport" },
+    { name: "Musical", href: "/genre/musical" },
+    { name: "Mystery", href: "/genre/mystery" },
     { name: "News", href: "/genre/news" },
+    { name: "Romance", href: "/genre/romance" },
+    { name: "Sci-Fi", href: "/genre/sci-fi" },
+    { name: "Sport", href: "/genre/sport" },
+    { name: "Thriller", href: "/genre/thriller" },
+    { name: "War", href: "/genre/war" },
+    { name: "Western", href: "/genre/western" },
   ]
 
   useEffect(() => {
@@ -147,7 +147,7 @@ export default function Navbar() {
 
                 {/* Dropdown Menu */}
                 {isGenreOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-106 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50 w-[80vh]">
+                  <div className="absolute top-full left-0 mt-1 w-106 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50 w-[90vh]">
                     <div className="grid grid-cols-4 gap-1 p-2">
                       {genres.map((genre) => (
                         <Link

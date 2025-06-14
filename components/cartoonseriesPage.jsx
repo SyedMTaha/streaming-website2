@@ -3,13 +3,24 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef, useState } from "react"
-import movie01 from '../public/assets/images/movies/loveinsky.png';
-import home01 from '../public/assets/images/landing/home01.png';
-import movie02 from '../public/assets/images/movies/johnwick01.png';
-import movie03 from '../public/assets/images/movies/johnwick02.png';
-import review01 from '../public/assets/images/review/review01.png';
 import home02 from '../public/assets/images/background/homePage01.png';
 import atomAnt from '../public/assets/images/cartoons/atomAnt.jpg';
+import Highlander from '../public/assets/images/cartoons/Highlander.jpeg';
+import Hong from '../public/assets/images/cartoons/Hong-kong-phoey.jpg';
+import Jeannie from '../public/assets/images/cartoons/Jeannie.jpg';
+import Jetsons from '../public/assets/images/cartoons/Jetsons.jpg';
+import Lippy from '../public/assets/images/cartoons/Lippy.jpg';
+import Precious from '../public/assets/images/cartoons/Precious.jpeg';
+import Quick from '../public/assets/images/cartoons/Quick.jpeg';
+import Sealab from '../public/assets/images/cartoons/Sealab.jpg';
+import Superman from '../public/assets/images/cartoons/Superman.jpg';
+import greatgrape from '../public/assets/images/cartoons/greatgrape.jpg';
+import fantastic from '../public/assets/images/cartoons/fantastic.jpg';
+import tom from '../public/assets/images/cartoons/tom.jpeg';
+import top from '../public/assets/images/cartoons/top.jpg';
+import yogi from '../public/assets/images/cartoons/yogi.jpg';
+import samsons from '../public/assets/images/cartoons/samsons.jpg';
+
 import comingsoon from '../public/assets/images/background/coming-soon.jpg';
 
 export default function MoviePage({ params }) {
@@ -72,12 +83,21 @@ export default function MoviePage({ params }) {
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={atomAnt}  title="Atom Ant"  />
-          <MovieCard image={comingsoon} title="Cartoon Series" />
-          <MovieCard image={comingsoon}  title="Cartoon Series" />
-          <MovieCard image={comingsoon} title="Cartoon Series" />
-          <MovieCard image={comingsoon} title="Cartoon Series" />
-          <MovieCard image={comingsoon} title="Cartoon Series" />
-          <MovieCard image={comingsoon} title="Cartoon Series" />
+          <MovieCard image={Highlander} title="Highlander" />
+          <MovieCard image={Hong}  title="Hong Kong Phoey" />
+          <MovieCard image={Jeannie} title="Jeannie" />
+          <MovieCard image={Jetsons} title="Jetsons" />
+          <MovieCard image={Lippy} title="Lippy the lion hardy har har" />
+          <MovieCard image={Precious} title="Precious Pupp" />
+          <MovieCard image={Quick} title="Quick draw mcgraw" />
+          <MovieCard image={Sealab} title="Sealab" />
+          <MovieCard image={Superman} title="Superman" />
+          <MovieCard image={greatgrape} title="The Great Grape Ape Show" />
+          <MovieCard image={fantastic} title="The New Fantastic Four 1978" />
+          <MovieCard image={tom} title="Tom and Jerry Comdey Show" />
+          <MovieCard image={top} title="Top Cat" />
+          <MovieCard image={yogi} title="Yogi Bear" />
+          <MovieCard image={samsons} title="Young Samsons Goliath" />
         </MovieRow>
       </ContentSection>
 

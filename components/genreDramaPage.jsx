@@ -30,40 +30,61 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "A Star is Born 1954", 
+      image: "/assets/images/movies/drama/a Star is Born 1954.jpeg",
+
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
+      title: "Broken Strings", 
+      image: "/assets/images/movies/drama/Broken Strings.jpeg",
+      
     },
     { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
+      title: "His Girl Friday", 
+      image: "/assets/images/movies/drama/His Girl Friday.jpeg",
+
     },
     { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
+      title: "Hitch Hiker", 
+      image: "/assets/images/movies/drama/Hitch Hiker.jpeg",
+
     },
     { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
+      title: "Key Largo 1948", 
+      image: "/assets/images/movies/drama/Key Largo 1948.jpeg",
+
     },
     { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "My Man Godfrey", 
+      image: "/assets/images/movies/drama/My Man Godfrey.jpeg",
+    },
+    { 
+      title: "Salt of the Earth 1954", 
+      image: "/assets/images/movies/drama/Salt of the Earth 1954.jpeg",
+    },
+    { 
+      title: "Suddenly", 
+      image: "/assets/images/movies/drama/Suddenly.jpg",
+    },
+    { 
+      title: "The empror jones", 
+      image: "/assets/images/movies/drama/The empror jones.jpeg",
+    },
+    { 
+      title: "The Kennel Murder Case", 
+      image: "/assets/images/movies/drama/The Kennel Murder Case.jpeg",
+    },
+    { 
+      title: "The Outlaw 1943", 
+      image: "/assets/images/movies/drama/The Outlaw 1943.jpeg",
+    },
+    { 
+      title: "The Scarlet Street 1945", 
+      image: "/assets/images/movies/drama/The Scarlet Street 1945.jpg",
+    },
+    { 
+      title: "The Stranger 1946", 
+      image: "/assets/images/movies/drama/The Stranger 1946.jpg",
     }
   ]
 
@@ -164,11 +185,7 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
+                
               </div>
             </div>
           ))}

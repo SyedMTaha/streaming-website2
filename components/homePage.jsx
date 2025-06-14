@@ -10,19 +10,24 @@ import logo5 from './../public/assets/images/logo/logo.png';
 import news1 from './../public/assets/images/home/news1.jpg';
 import news2 from './../public/assets/images/home/news2.jpg';
 import news3 from './../public/assets/images/home/news3.jpg';
-import homegif2 from './../public/assets/images/home/homegif2.gif';
 import homePage from './../public/assets/images/home/homePage02.jpg';
-import home38 from './../public/assets/images/home/home38.jpg';
-import home39 from './../public/assets/images/home/home39.jpg';
-import home40 from './../public/assets/images/home/home40.jpg';
-import home41 from './../public/assets/images/home/home41.jpg';
-import home42 from './../public/assets/images/home/home42.jpg';
-import home43 from './../public/assets/images/home/home43.jpg';
 import home45 from './../public/assets/images/home/home45.jpg';
 import home46 from './../public/assets/images/home/home46.png';
 import home47 from './../public/assets/images/home/home47.jpg';
 import home48 from './../public/assets/images/home/home48.png';
 import home49 from './../public/assets/images/home/home49.jpeg';
+import series01 from './../public/assets/images/series/series01.jpeg';
+import series02 from './../public/assets/images/series/series02.jpg';
+import series03 from './../public/assets/images/series/series03.jpg';
+import series04 from './../public/assets/images/series/series04.jpg';
+import series05 from './../public/assets/images/series/series05.jpg';
+import series06 from './../public/assets/images/series/series06.jpg';
+import HisFriday from './../public/assets/images/movies/drama/His Girl Friday.jpeg';
+import Suddenly from './../public/assets/images/movies/drama/Suddenly.jpg';
+import Stranger from './../public/assets/images/movies/drama/The Stranger 1946.jpg';
+import Outlaw from './../public/assets/images/movies/drama/The Outlaw 1943.jpeg';
+import Lost from './../public/assets/images/movies/sci-fi/The lost world 1925.jpeg';
+import Last from './../public/assets/images/movies/sci-fi/Last woman on earth 1960.jpg';
 import { Facebook, Twitter, Youtube, X, Instagram } from "lucide-react"
 
 export default function DashboardPage() {
@@ -123,16 +128,6 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
-
-        {/* Hero Content */}
-        {/* <div className="relative z-10 container mx-auto px-4 flex items-center justify-center min-h-screen pointer-events-none">
-          <div className="max-w-2xl text-center mb-25">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">Welcome to INBV</h1>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed drop-shadow-[0_0_5px_rgba(255,255,255,0.4)]">
-              We Provide High Quality Movies & Series Stream 24/7
-            </p> 
-          </div>
-        </div> */}
       </section>
 
       {/* Streaming Now */}
@@ -143,30 +138,19 @@ export default function DashboardPage() {
           <MovieCard image={home48} title="Stage Coach" />
           <MovieCard image={home49} title="State Secret" />
           <MovieCard image={home47} title="Bad and the Beautiful" />
-          {/* <MovieCard image={home43}  title="Dragnet 1967"  />          
-          <MovieCard image={home40} title="Mister ED" />
-          <MovieCard image={home41} title="Hill Street Blues" />
-          <MovieCard image={home42} title="Iron Side" />
-          <MovieCard image={home38} title="The Andy Griffith Show" />
-          <MovieCard image={home39} title="Spider-Man" /> */}
-          {/* <MovieCard image={comingsoon}  title="John Wick 4" />
-          <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" /> */}
         </MovieRow>
       </ContentSection>
 
       {/* Recommended Movies */}
       <ContentSection title="Recommended Movies" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={comingsoon}  title="John Wick 4"  />
-          <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" />
-          <MovieCard image={comingsoon} title="The Post" />
-          <MovieCard image={comingsoon} title="Riverdale" />
-          <MovieCard image={comingsoon} title="Best Friend" />
-          {/* <MovieCard image={comingsoon}  title="John Wick 4" />
-          <MovieCard image={comingsoon} title="Spider-Man" />
-          <MovieCard image={comingsoon} title="The White House" /> */}
+          <MovieCard image={HisFriday}  title="His Girl Friday"  />
+          <MovieCard image={Suddenly} title="Suddenly" />
+          <MovieCard image={Stranger} title="The Stranger 1946" />
+          <MovieCard image={Outlaw} title="The Outlaw 1943" />
+          <MovieCard image={Lost} title="The Lost World 1925" />
+          <MovieCard image={Last} title="Last Woman on Earth 1960" />
+
         </MovieRow>
       </ContentSection>
 
@@ -175,17 +159,17 @@ export default function DashboardPage() {
       <ContentSection title="Recommended TV Shows">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <LargeCard
-            image={ comingsoonseries}
+            image={ series01}
             title="Top 10 Reasons to Watch Hocus Pocus 2"
             description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
           <LargeCard
-            image={ comingsoonseries}
+            image={ series02}
             title="New Avatar 2 Cast Share First Impressions"
             description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
           <LargeCard
-            image={ comingsoonseries}
+            image={ series03}
             title="Camila Mendes and Maya Hawke Answer Burning Questions"
             description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
@@ -195,15 +179,12 @@ export default function DashboardPage() {
       {/* New Release */}
       <ContentSection title="New Release"   onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={comingsoon} title="The Sleeping Angel" />
-          <MovieCard image={comingsoon} title="The Great Empire" />
-          <MovieCard image={comingsoon} title="Good Doctor" />
-          <MovieCard image={comingsoon} title="Swamp Thing" />
-          <MovieCard image={comingsoon} title="James Bond" />
-          <MovieCard image={comingsoon} title="La La Land" />
-          <MovieCard image={comingsoon} title="The Sleeping Angel" />
-          <MovieCard image={comingsoon} title="The Great Empire" />
-          <MovieCard image={comingsoon} title="Good Doctor" />
+          <MovieCard image={HisFriday}  title="His Girl Friday"  />
+          <MovieCard image={Suddenly} title="Suddenly" />
+          <MovieCard image={Stranger} title="The Stranger 1946" />
+          <MovieCard image={Outlaw} title="The Outlaw 1943" />
+          <MovieCard image={Lost} title="The Lost World 1925" />
+          <MovieCard image={Last} title="Last Woman on Earth 1960" />
         </MovieRow>
       </ContentSection>
 
@@ -234,16 +215,12 @@ export default function DashboardPage() {
       {/* Deal of the Week */}
       <ContentSection title="Deal of the Week" onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={comingsoon} title="Love in The Sky" />
-          <MovieCard image={comingsoon} title="SpaceX" />
-          <MovieCard image={comingsoon} title="Spider Man" />
-          <MovieCard image={comingsoon} title="City Hunter" />
-          <MovieCard image={comingsoon} title="The Angel" />
-          <MovieCard image={comingsoon} title="The Post" />
-          <MovieCard image={comingsoon} title="Best Friend" />
-          <MovieCard image={comingsoon} title="The White House" />
-          <MovieCard image={comingsoon} title="Love in The Sky" />
-          <MovieCard image={comingsoon} title="SpaceX" />
+          <MovieCard image={HisFriday}  title="His Girl Friday"  />
+          <MovieCard image={Suddenly} title="Suddenly" />
+          <MovieCard image={Stranger} title="The Stranger 1946" />
+          <MovieCard image={Outlaw} title="The Outlaw 1943" />
+          <MovieCard image={Lost} title="The Lost World 1925" />
+          <MovieCard image={Last} title="Last Woman on Earth 1960" />
         </MovieRow>
       </ContentSection>
 
@@ -277,21 +254,18 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4" id="tv-series-grid">
-            <TVShowCard image={comingsoonseries} title="Falling Water" />
-            <TVShowCard image={comingsoonseries} title="The Walking Dead" />
-            <TVShowCard image={comingsoonseries} title="Suits" />
-            <TVShowCard image={comingsoonseries} title="Stranger Things" />
-            <TVShowCard image={comingsoonseries} title="Peaky Blinders" />
-            <TVShowCard image={comingsoonseries} title="The Crown" />
-            <TVShowCard image={comingsoonseries} title="Breaking Bad" />
-            <TVShowCard image={comingsoonseries} title="Ozark" />
+            <TVShowCard image={series01} title="Beverly Bill Billies" />
+            <TVShowCard image={series02} title="Dragnet 1967" />
+            <TVShowCard image={series03} title="Hill Street Blues" />
+            <TVShowCard image={series04} title="Iron Side" />
+            <TVShowCard image={series05} title="Mister ED" />
+            <TVShowCard image={series06} title="The Andy Griffth Show" />
+            <TVShowCard image={series01} title="Beverly Bill Billies" />
+            <TVShowCard image={series02} title="Dragnet 1967" />
           </div>
         </div>
       </section>
 
-      
-
-      
 
       {/* House of the Dragon Banner */}
       <section className="py-8 px-4">

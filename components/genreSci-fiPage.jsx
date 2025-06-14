@@ -30,40 +30,39 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "Assignment Outer Space", 
+      image: "/assets/images/movies/sci-fi/Assignment outer space.jpeg",
+    
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
+      title: "First Spaceship on Venus", 
+      image: "/assets/images/movies/sci-fi/first spaceship on venus.jpeg",
+      
     },
     { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
+      title: "Incredible Shrinking Man 1957", 
+      image: "/assets/images/movies/sci-fi/incredible shrinking man 1957.jpeg",
+    
     },
     { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
+      title: "Last Woman on Eearth 1960", 
+      image: "/assets/images/movies/sci-fi/Last woman on earth 1960.jpg",
+    
     },
     { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
+      title: "The Day The Earth Stood Still", 
+      image: "/assets/images/movies/sci-fi/The day the earth stood still.jpeg",
+    
     },
     { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "The Incredible Petrified World", 
+      image: "/assets/images/movies/sci-fi/The Incredible Petrified World.jpg",
+    
+    },
+    { 
+      title: "The Lost World 1925", 
+      image: "/assets/images/movies/sci-fi/The lost world 1925.jpeg",
+    
     }
   ]
 
@@ -164,11 +163,7 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
+                
               </div>
             </div>
           ))}

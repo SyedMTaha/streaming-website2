@@ -29,40 +29,69 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "Atom Ant", 
+      image: "/assets/images/cartoons/atomAnt.jpg",
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
+      title: "Highlander", 
+      image: "/assets/images/cartoons/Highlander.jpeg",
+      
     },
     { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
+      title: "Hong Kong Phoey", 
+      image: "/assets/images/cartoons/Hong-kong-phoey.jpg",
     },
     { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
+      title: "Jeannie", 
+      image: "/assets/images/cartoons/Jeannie.jpg",
     },
     { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
+      title: "Jetsons", 
+      image: "/assets/images/cartoons/Jetsons.jpg",
     },
     { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "Lippy the lion hardy har har", 
+      image: "/assets/images/cartoons/Lippy.jpg",
+    },
+    { 
+      title: "Precious Pupp", 
+      image: "/assets/images/cartoons/Precious.jpeg",
+    },
+    { 
+      title: "Quick draw mcgraw", 
+      image: "/assets/images/cartoons/Quick.jpeg",
+    },
+    { 
+      title: "Sealab", 
+      image: "/assets/images/cartoons/Sealab.jpg",
+    },
+    { 
+      title: "Superman", 
+      image: "/assets/images/cartoons/Superman.jpg",
+    },
+    { 
+      title: "The Great Grape Ape Show", 
+      image: "/assets/images/cartoons/greatgrape.jpg",
+    },
+    { 
+      title: "The New Fantastic Four 1978", 
+      image: "/assets/images/cartoons/fantastic.jpg",
+    },
+    { 
+      title: "Tom and Jerry Comdey Show", 
+      image: "/assets/images/cartoons/tom.jpeg",
+    },
+    { 
+      title: "Top Cat", 
+      image: "/assets/images/cartoons/top.jpg",
+    },
+    { 
+      title: "Yogi Bear", 
+      image: "/assets/images/cartoons/yogi.jpg",
+    },
+    { 
+      title: "Young Samsons Goliath", 
+      image: "/assets/images/cartoons/samsons.jpg",
     }
   ]
 
@@ -115,11 +144,11 @@ export default function MoviePage({ params }) {
       <div className="container mx-auto px-4 md:px-8 lg:px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
-            <h3 className="text-2xl font-bold">Showing all movies</h3>
-            <span className="text-gray-400">({recommendedMovies.length} movies)</span>
+            <h3 className="text-2xl font-bold">Showing all Cartoons</h3>
+            <span className="text-gray-400">({recommendedMovies.length} cartoons)</span>
           </div>
           
-          <div className="flex space-x-2 ml-105">
+          <div className="flex space-x-2 ml-100">
             <button
               onClick={scrollLeft}
               className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
@@ -163,11 +192,7 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
+                
               </div>
             </div>
           ))}
