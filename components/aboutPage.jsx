@@ -65,29 +65,26 @@ export default function AboutPage() {
                 World-Class Library Of Captivating Crime Thrillers, Addictive Dramas, And Intriguing Mysteries
               </h2>
               <p className="text-gray-300 mb-4 leading-relaxed text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+              At INBV TV, we bring you the edge of your seat with a premium selection of gripping crime thrillers, intense dramas, and brain-twisting mysteries. Whether you're into detective sagas, courtroom battles, or psychological suspense, there's something in our lineup to satisfy your curiosity and craving for drama. Dive into compelling storytelling that keeps you guessing — and bingeing.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-4 ">
                   <div className="bg-[#1D50A3] p-1.5 rounded-full mt-1">
                     <Check className="h-4 w-4 text-[#ffffff]  " />
                   </div>
-                  <span className="text-gray-200 text-sm">Be the first to catch the latest movie drops as they go live.</span>
+                  <span className="text-gray-200 text-sm">Stream the newest blockbusters the moment they drop.</span>
                 </div>
                 <div className="flex items-center space-x-4 ">
                   <div className="bg-[#1D50A3] p-1.5 rounded-full mt-1 ">
                     <Check className="h-4 w-4 text-[#ffffff]" />
                   </div>
-                  <span className="text-gray-200">From timeless classics to the latest releases</span>
+                  <span className="text-gray-200">Discover award-winning series from top creators around the world.</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="bg-[#1D50A3] p-1.5 rounded-full mb-3">
                     <Check className="h-4 w-4 text-[#ffffff]" />
                   </div>
-                  <span className="text-gray-200">New shows added weekly so there's always something to watch.</span>
+                  <span className="text-gray-200">Fresh content every week so your watchlist never runs dry.</span>
                 </div>
               </div>
             </div>

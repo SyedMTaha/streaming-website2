@@ -171,8 +171,8 @@ export default function DashboardPage() {
       </ContentSection>
 
 
-      {/* Recommended TV Shows 2 */}
-      <ContentSection title="Recommended TV Shows" viewAllLink="/recommended-tv-2">
+      {/* Recommended TV Shows  */}
+      <ContentSection title="Recommended TV Shows">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <LargeCard
             image={ comingsoonseries}
@@ -193,7 +193,7 @@ export default function DashboardPage() {
       </ContentSection>
 
       {/* New Release */}
-      <ContentSection title="New Release" viewAllLink="/new-releases"  onScroll={handleScroll}>
+      <ContentSection title="New Release"   onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={comingsoon} title="The Sleeping Angel" />
           <MovieCard image={comingsoon} title="The Great Empire" />
@@ -232,16 +232,16 @@ export default function DashboardPage() {
       </section>
 
       {/* Deal of the Week */}
-      <ContentSection title="Deal of the Week" viewAllLink="/deals"  onScroll={handleScroll}>
+      <ContentSection title="Deal of the Week" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={comingsoon} title="Love in The Sky" />
           <MovieCard image={comingsoon} title="SpaceX" />
-          <MovieCard image={comingsoon} title="Spider Man Memo" />
+          <MovieCard image={comingsoon} title="Spider Man" />
           <MovieCard image={comingsoon} title="City Hunter" />
           <MovieCard image={comingsoon} title="The Angel" />
           <MovieCard image={comingsoon} title="The Post" />
           <MovieCard image={comingsoon} title="Best Friend" />
-          <MovieCard image={comingsoon} title="White House" />
+          <MovieCard image={comingsoon} title="The White House" />
           <MovieCard image={comingsoon} title="Love in The Sky" />
           <MovieCard image={comingsoon} title="SpaceX" />
         </MovieRow>

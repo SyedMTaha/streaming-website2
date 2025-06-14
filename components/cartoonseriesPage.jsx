@@ -72,7 +72,7 @@ export default function MoviePage({ params }) {
       <ContentSection title="Streaming Now" viewAllLink="/streaming-now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={atomAnt}  title="Atom Ant"  />
-          <MovieCard image={"/"} title="Cartoon Series" />
+          <MovieCard image={comingsoon} title="Cartoon Series" />
           <MovieCard image={comingsoon}  title="Cartoon Series" />
           <MovieCard image={comingsoon} title="Cartoon Series" />
           <MovieCard image={comingsoon} title="Cartoon Series" />

@@ -236,7 +236,7 @@ export default function HomePage() {
               >
                 {/* Movie Cards with Numbers */}
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/loveInSky" number="1" />
+                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" number="1" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
                   <NetflixStyleMovieCard image={img02} title="SpaceX" href="/movie/spacex" number="2" />
@@ -251,10 +251,10 @@ export default function HomePage() {
                   <NetflixStyleMovieCard image={img05} title="The Post" href="/movie/the-post" number="5" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img06} title="White House" href="/movie/white-house" number="6" />
+                  <NetflixStyleMovieCard image={img06} title="The White House" href="/movie/the-white-house" number="6" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/loveInSky" number="7" />
+                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" number="7" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
                   <NetflixStyleMovieCard image={img02} title="SpaceX" href="/movie/spacex" number="8" />
