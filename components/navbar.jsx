@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Image from 'next/image'
-import { ChevronDown, Globe, Menu, X, User } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, User, Search } from "lucide-react";
 import logo from './../public/assets/images/logo/logo.png';
 import { Montserrat } from 'next/font/google';
 
@@ -85,7 +85,7 @@ function closeMobileMenu() {
 }
 
   return (
-    <nav className={` ${montserrat.className} bg-gradient-to-b from-[#00112C] to-[#012256] py-4 w-full`}>
+    <nav className={` ${montserrat.className} bg-[#021C4F] py-4 w-full`}>
     <div className="px-4 sm:px-8 lg:px-16 max-w-full">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-4 sm:space-x-8">
@@ -97,17 +97,64 @@ function closeMobileMenu() {
 
       {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
+            <NavItem href="/" label="Home" />
+            <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} ref={dropdownRef}>
+              <button
+                onClick={toggleGenreDropdown}
+                className="flex items-center text-white hover:text-blue-400 transition-colors duration-200 py-2"
+              >
+                <span>Live TV</span>
+                <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-200 ${isGenreOpen ? "rotate-180" : ""}`} />
+              </button>
+              {isGenreOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-[#012256] rounded-md shadow-lg py-1 z-20">
+                  {genres.map((genre) => (
+                    <Link
+                      key={genre.name}
+                      href={genre.href}
+                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-blue-600/20"
+                    >
+                      {genre.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <NavItem href="/about" label="About Us" />
+            <NavItem href="/blog" label="Blog" />
           </div>
         </div>
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           
+          {/* Search Bar */}
+          <div className="hidden md:flex relative items-center">
+            <input 
+              type="text" 
+              placeholder="Find movies, TV shows and more..."
+              className="bg-[#1A3362] text-white px-4 py-2 rounded-full pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
+            />
+            <Search className="absolute left-3 text-gray-400 h-5 w-5" />
+          </div>
 
-          <Link href="/auth/login">
-          <button className="bg-[#A2ABC0] text-[#183056] hover:bg-gray-300 font-semibold p-2 rounded-lg flex items-center text-xs shadow-md shadow-gray-900 hover:shadow-lg hover:shadow-gray-900 transition-shadow duration-300 sm:text-sm">
-          <span className="hidden sm:inline">Watch Now</span>
-          <span className="sm:hidden">Watch</span>
-        </button>
+          {/* Language Selection */}
+          <button className="hidden md:flex text-white items-center hover:bg-white/10 p-2 rounded transition-colors">
+            <Globe className="h-4 w-4 mr-1" />
+            EN
+            <ChevronDown className="h-4 w-4 ml-1" />
+          </button>
+
+          {/* User Icon */}
+          <button className="hidden md:block text-white hover:bg-white/10 p-2 rounded transition-colors">
+            <User className="h-5 w-5" />
+          </button>
+          
+          {/* Subscribe Button */}
+          <Link href="/auth/signup">
+            <button className="bg-[#1D50A3] text-white hover:bg-blue-900 font-semibold p-2 rounded-lg flex items-center text-xs shadow-md shadow-gray-900 hover:shadow-lg hover:shadow-gray-900 transition-shadow duration-300 sm:text-sm">
+              <span className="hidden sm:inline">Subscribe</span>
+              <span className="sm:hidden">Subscribe</span>
+            </button>
           </Link>
 
           <button
@@ -132,7 +179,7 @@ function closeMobileMenu() {
                   onClick={toggleGenreDropdown}
                   className="flex items-center justify-between w-full px-3 py-2 text-white hover:text-blue-400 hover:bg-blue-600/10 rounded transition-colors duration-200"
                 >
-                  <span>Genre</span>
+                  <span>Live TV</span>
                   <ChevronDown
                     className={"h-4 w-4 transition-transform duration-200 " + (isGenreOpen ? "rotate-180" : "")}
                   />
@@ -154,8 +201,7 @@ function closeMobileMenu() {
                 )}
               </div>
 
-            <MobileNavItem href="/live-tv" label="Live TV" onClick={closeMobileMenu} />
-              <MobileNavItem href="/blog" label="Blog" onClick={closeMobileMenu} />
+            <MobileNavItem href="/blog" label="Blog" onClick={closeMobileMenu} />
               <MobileNavItem href="/about" label="About Us" onClick={closeMobileMenu} />
             
             
@@ -166,6 +212,11 @@ function closeMobileMenu() {
                 <ChevronDown className="h-4 w-4 ml-1" />
               </button>
             </div>
+
+            {/* User Icon for mobile */}
+            <Link href="/auth/profile" className="block px-3 py-2 text-white hover:text-blue-400 hover:bg-blue-600/10 rounded transition-colors duration-200">
+              <User className="h-5 w-5 inline-block mr-2" /> Profile
+            </Link>
 
           </div>
         </div>

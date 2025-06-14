@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef, useState } from "react"
-
 import home02 from './../public/assets/images/background/homePage05.jpg';
 
 export default function MoviePage({ params }) {
@@ -106,7 +105,7 @@ export default function MoviePage({ params }) {
             </span>
             <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl">/</span>
             <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
-              Drama
+              Cartoon
             </span>
           </div>
         </div>

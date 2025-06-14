@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
         <NavbarTwo />
-      <CartoonSeries/>
+        <CartoonSeries/>
         <Footer />
     </div>
   )

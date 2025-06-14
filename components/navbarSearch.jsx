@@ -28,6 +28,7 @@ export default function Navbar() {
   const genres = [
     { name: "Action", href: "/genre/action" },
     { name: "Comedy", href: "/genre/comedy" },
+    { name: "Cartoon", href: "/genre/cartoon" },
     { name: "Drama", href: "/genre/drama" },
     { name: "Horror", href: "/genre/horror" },
     { name: "Romance", href: "/genre/romance" },
@@ -146,7 +147,7 @@ export default function Navbar() {
 
                 {/* Dropdown Menu */}
                 {isGenreOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-106 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-106 bg-[#1a1a3a] border border-blue-900/30 rounded-lg shadow-xl py-2 z-50 w-[80vh]">
                     <div className="grid grid-cols-4 gap-1 p-2">
                       {genres.map((genre) => (
                         <Link

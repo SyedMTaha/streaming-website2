@@ -214,7 +214,7 @@ export default function AtomAntPage() {
             </div>
           </div>
 
-          <div id="episodes-container" className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+          <div id="episodes-container" className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {episodes.map((episode) => (
               <Link href={episode.path} key={episode.id}>
                 <div className="flex-shrink-0 w-80 group cursor-pointer">

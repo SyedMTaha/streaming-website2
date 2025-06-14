@@ -13,6 +13,11 @@ import img04 from './../../public/assets/images/landing/home04.png';
 import img05 from './../../public/assets/images/landing/home05.png';
 import img06 from './../../public/assets/images/landing/home06.png';
 import logo from './../../public/assets/images/logo/logo.png';
+import home45 from '../../public/assets/images/home/home45.jpg';
+import home46 from '../../public/assets/images/home/home46.png';
+import home47 from '../../public/assets/images/home/home47.jpg';
+import home48 from '../../public/assets/images/home/home48.png';
+import home49 from '../../public/assets/images/home/home49.jpeg';
 
 const faqData = [
   {
@@ -148,7 +153,7 @@ export default function HomePage() {
       <Navbar />
       <div className="min-h-screen text-white w-full">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 text-center min-h-[80vh] flex items-center w-full">
+        <section className="relative py-20 px-4 text-center min-h-[95vh] flex items-center w-full">
           {/* Background Image Container */}
           <div className="absolute inset-0 w-full h-full">
             <Image
@@ -236,31 +241,31 @@ export default function HomePage() {
               >
                 {/* Movie Cards with Numbers */}
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" number="1" />
+                  <NetflixStyleMovieCard image={home45} title="Atomic Submarine" href="/movie/atomic-submarine" number="1" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img02} title="SpaceX" href="/movie/spacex" number="2" />
+                  <NetflixStyleMovieCard image={home46} title="Pursued" href="/movie/pursued" number="2" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img03} title="City Hunter" href="/movie/city-hunter" number="3" />
+                  <NetflixStyleMovieCard image={home47} title="Bad and the Beautiful" href="/movie/bad-and-the-beautiful" number="3" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img04} title="The Sleeping Angel" href="/movie/the-sleeping-angel" number="4" />
+                  <NetflixStyleMovieCard image={home48} title="Stage Coach" href="/movie/stage-coach" number="4" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img05} title="The Post" href="/movie/the-post" number="5" />
+                  <NetflixStyleMovieCard image={home49} title="State Secret" href="/movie/state-secret" number="5" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img06} title="The White House" href="/movie/the-white-house" number="6" />
+                  <NetflixStyleMovieCard image={home45} title="Atomic Submarine" href="/movie/atomic-submarine" number="6" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img01} title="Love in The Sky" href="/movie/love-in-the-sky" number="7" />
+                  <NetflixStyleMovieCard image={home46} title="Pursued" href="/movie/pursued" number="7" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img02} title="SpaceX" href="/movie/spacex" number="8" />
+                  <NetflixStyleMovieCard image={home47} title="Bad and the Beautiful" href="/movie/bad-and-the-beautiful" number="8" />
                 </div>
                 <div className="flex-shrink-0 w-40 sm:w-48 md:w-72">
-                  <NetflixStyleMovieCard image={img03} title="City Hunter" href="/movie/city-hunter" number="9" />
+                  <NetflixStyleMovieCard image={home48} title="Stage Coach" href="/movie/stage-coach" number="9" />
                 </div>
                 
               </div>

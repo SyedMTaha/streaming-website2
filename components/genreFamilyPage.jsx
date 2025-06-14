@@ -3,12 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef, useState } from "react"
-import movie01 from './../public/assets/images/movies/loveinsky.png';
-import home01 from './../public/assets/images/landing/home01.png';
-import movie02 from './../public/assets/images/movies/johnwick01.png';
-import movie03 from './../public/assets/images/movies/johnwick02.png';
-import review01 from './../public/assets/images/review/review01.png';
-import home02 from './../public/assets/images/background/homePage01.png';
+
+import home02 from './../public/assets/images/background/homePage05.jpg';
 
 export default function MoviePage({ params }) {
   const scrollContainerRef = useRef(null)
@@ -110,7 +106,7 @@ export default function MoviePage({ params }) {
             </span>
             <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl">/</span>
             <span className="text-[#ffffff] font-bold text-3xl md:text-4xl lg:text-4xl uppercase tracking-wider">
-              Family  
+              Family
             </span>
           </div>
         </div>
@@ -124,6 +120,21 @@ export default function MoviePage({ params }) {
             <span className="text-gray-400">({recommendedMovies.length} movies)</span>
           </div>
           
+          <div className="flex space-x-2 ml-105">
+            <button
+              onClick={scrollLeft}
+              className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="bg-gray-700/50 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+
           <div className="flex items-center">
             <select 
               value={sortBy}
@@ -138,9 +149,9 @@ export default function MoviePage({ params }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="cursor-pointer group">
+            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
