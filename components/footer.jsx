@@ -65,12 +65,11 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-medium mb-4">Genres</h3>
             <ul className="space-y-2">
-              <FooterLink href="/genres/romance">Romance</FooterLink>
-              <FooterLink href="/genres/drama">Drama</FooterLink>
-              <FooterLink href="/genres/family">Family</FooterLink>
-              <FooterLink href="/genres/comedy">Comedy</FooterLink>
-              <FooterLink href="/genres/actions">Actions</FooterLink>
-              <FooterLink href="/genres/adventure">Adventure</FooterLink>
+              <FooterLink href="/genre/action">Action</FooterLink>
+              <FooterLink href="/genre/drama">Drama</FooterLink>
+              <FooterLink href="/genre/cartoon">Cartoon</FooterLink>
+              <FooterLink href="/genre/sci-fi">Sci-Fi</FooterLink>
+              <FooterLink href="/genre/adventure">Adventure</FooterLink>
             </ul>
           </div>
 

@@ -159,19 +159,16 @@ export default function DashboardPage() {
       <ContentSection title="Recommended TV Shows">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <LargeCard
-            image={ series01}
+            image={ series04}
             title="Top 10 Reasons to Watch Hocus Pocus 2"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
           <LargeCard
-            image={ series02}
+            image={ series06}
             title="New Avatar 2 Cast Share First Impressions"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
           <LargeCard
-            image={ series03}
+            image={ series05}
             title="Camila Mendes and Maya Hawke Answer Burning Questions"
-            description="Best comedy feature follows two best friends in their final year of college while they navigate new relationships."
           />
         </div>
       </ContentSection>
@@ -179,12 +176,12 @@ export default function DashboardPage() {
       {/* New Release */}
       <ContentSection title="New Release"   onScroll={handleScroll}>
         <MovieRow>
-          <MovieCard image={HisFriday}  title="His Girl Friday"  />
-          <MovieCard image={Suddenly} title="Suddenly" />
-          <MovieCard image={Stranger} title="The Stranger 1946" />
-          <MovieCard image={Outlaw} title="The Outlaw 1943" />
-          <MovieCard image={Lost} title="The Lost World 1925" />
-          <MovieCard image={Last} title="Last Woman on Earth 1960" />
+          <MovieCard image={comingsoon}  title="His Girl Friday"  />
+          <MovieCard image={comingsoon} title="Suddenly" />
+          <MovieCard image={comingsoon} title="The Stranger 1946" />
+          <MovieCard image={comingsoon} title="The Outlaw 1943" />
+          <MovieCard image={comingsoon} title="The Lost World 1925" />
+          <MovieCard image={comingsoon} title="Last Woman on Earth 1960" />
         </MovieRow>
       </ContentSection>
 
@@ -221,6 +218,9 @@ export default function DashboardPage() {
           <MovieCard image={Outlaw} title="The Outlaw 1943" />
           <MovieCard image={Lost} title="The Lost World 1925" />
           <MovieCard image={Last} title="Last Woman on Earth 1960" />
+          <MovieCard image={HisFriday}  title="His Girl Friday"  />
+          <MovieCard image={Suddenly} title="Suddenly" />
+          <MovieCard image={Stranger} title="The Stranger 1946" />
         </MovieRow>
       </ContentSection>
 
@@ -381,7 +381,7 @@ function MovieCard({ image, title }) {
           alt={title}
           width={400}
           height={300}
-          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-84 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
       </div>

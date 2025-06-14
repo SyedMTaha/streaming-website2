@@ -119,7 +119,7 @@ export default function MoviePage({ params }) {
     <div className="min-h-screen text-white bg-gradient-to-t from-[#020d1f] to-[#012256]">
       <section className="max-w-7xl mx-auto py-8 px-4 flex flex-col lg:flex-row gap-8">
         {/* Left Column: Movie Details */}
-        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl backdrop-blur-sm flex-shrink-0">
+        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0">
           <div className="relative mb-6 rounded-lg overflow-hidden">
             <Image
               src={home45 || "/placeholder.png"} 
@@ -181,7 +181,7 @@ export default function MoviePage({ params }) {
         </div>
 
         {/* Right Column: Media Player */}
-        <div className="lg:w-2/3 relative h-[60vh] lg:h-[80vh] rounded-lg overflow-hidden mt-6">
+        <div className="lg:w-2/3 relative h-[60vh] lg:h-[80vh] rounded-lg overflow-hidden mt-4">
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
               <button

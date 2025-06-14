@@ -167,32 +167,9 @@ export default function AboutPage() {
       {/* Leadership and Content Section */}
       <section className="py-10 px-4 bg-[#020b1f]">
         <div className="container mx-auto ">
-          <h2 className="text-3xl font-bold mb-12 text-center">Leadership</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-20">
-            <TeamMember
-              image={about04}
-              name="Leslie Alexander"
-              position="Founder & CEO"
-            />
-            <TeamMember
-              image={about07}
-              name="Leslie Alexander"
-              position="Founder & CEO"
-            />
-            <TeamMember
-              image={about06}
-              name="Leslie Alexander"
-              position="Founder & CEO"
-            />
-            <TeamMember
-              image={about05}
-              name="Leslie Alexander"
-              position="Founder & CEO"
-            />
-          </div>
 
           {/* Movie Posters and Company Info */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
             {/* Left side - Movie Posters Grid (taking 2/3 of the width) */}
             <div className="lg:col-span-2">
               <div className="relative">
@@ -279,12 +256,12 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Corporate Culture</h3>
                 <p className="text-gray-300 text-sm mb-4">Make modern television and stay at our fingertips.</p>
-                <Link
+                <button
                   href="/community"
                   className="bg-[#1D50A3] text-white px-6 py-3 mt-3 rounded-lg font-medium inline-block hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                 >
                   Join Our Community
-                </Link>
+                </button>
               </div>
             </div>
           </div>

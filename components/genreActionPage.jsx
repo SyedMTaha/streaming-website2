@@ -11,59 +11,31 @@ export default function MoviePage({ params }) {
   const [sortBy, setSortBy] = useState('newest')
   
   // This would normally come from an API based on the slug
-  const movie = {
-    title: "John Wick 4",
-    year: "2023",
-    duration: "2h 35 mins",
-    rating: "TV-MA",
-    score: "7.5",
-    views: "4126",
-    reviews: "1",
-    genres: ["Action,", "Adventure"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    cast: ["Renée Muffard"],
-    crew: ["Aleya Nadeau", "Ricky Alarcon", "Sarah Neal"],
-    poster: "/placeholder.svg?height=400&width=300",
-    backdrop: "/placeholder.svg?height=800&width=1400",
-  }
-
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "Atomic Submarine", 
+      image: "/assets/images/home/home45.jpg",
+ 
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
+      title: "Pursued", 
+      image: "/assets/images/home/home46.png",
+      
     },
     { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
+      title: "Stage Coach", 
+      image: "/assets/images/home/home47.jpg",
+
     },
     { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
+      title: "State Secret", 
+      image: "/assets/images/home/home48.png",
+
     },
     { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
-    },
-    { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "State Secret", 
+      image: "/assets/images/home/home49.jpeg",
+
     }
   ]
 
@@ -164,11 +136,7 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
+                
               </div>
             </div>
           ))}
