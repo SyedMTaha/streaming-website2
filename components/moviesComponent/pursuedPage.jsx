@@ -13,6 +13,7 @@ import { auth } from '../../firebase';
 import { getFirestore, doc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 //import MuxPlayer from './MuxPlayer';
 import Vimeo from '@u-wave/react-vimeo';
+import home46 from '../../public/assets/images/home/home46.png';
 
 export default function MoviePage({ params }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -114,9 +115,72 @@ export default function MoviePage({ params }) {
   };
 
   return (
-    <div className="min-h-screen text-white ">
-      <section>
-        <div className="relative max-w-4xl mx-auto h-[85vh] rounded-lg overflow-hidden ">
+    <div className="min-h-screen text-white bg-gradient-to-t from-[#020d1f] to-[#012256]">
+      <section className="max-w-7xl mx-auto py-8 px-4 flex flex-col lg:flex-row gap-8">
+        {/* Left Column: Movie Details */}
+        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0">
+          <div className="relative mb-6 rounded-lg overflow-hidden">
+            <Image
+              src={home46 || "/placeholder.png"} 
+              alt={`${movie.title} thumbnail`}
+              width={300}
+              height={450}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <h1 className="text-4xl font-bold mb-2">{movie.title}</h1>
+          <div className="flex items-center space-x-4 mb-4 text-sm">
+            <span className="bg-red-600 px-2 py-1 rounded">{movie.rating}</span>
+            <span>{movie.year}</span>
+            <span>{movie.duration}</span>
+            <div className="flex items-center">
+              <Star className="h-4 w-4 text-yellow-500 mr-1" />
+              <span>{movie.score}</span>
+            </div>
+          </div>
+          <p className="text-md text-gray-300 mb-6">{movie.description}</p>
+          
+          <div className="text-sm text-gray-400 mb-6">
+            <p className="mb-1"><span className="font-semibold text-white">Cast:</span> Some Actor, Another Actor</p> {/* Placeholder for cast */}
+            <p><span className="font-semibold text-white">Crew:</span> Director Name, Producer Name</p> {/* Placeholder for crew */}
+          </div>
+
+          <div className="flex space-x-4">
+            <button 
+              onClick={toggleWishlist}
+              disabled={wishlistLoading}
+              className={`${
+                isInWishlist ? 'bg-[#1D50A3]' : 'bg-gray-600/80'
+              } text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group`}
+            >
+              <Bookmark className={`h-5 w-5 ${isInWishlist ? 'fill-current' : ''}`} />
+              <span>{isInWishlist ? 'Added to Wishlist' : 'Add to Wishlist'}</span>
+            </button>
+            <button 
+              onClick={handleShare}
+              disabled={shareLoading}
+              className="bg-gray-600/80 text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group"
+            >
+              {showShareSuccess ? (
+                <>
+                  <Check className="h-5 w-5 text-green-400" />
+                  <span>Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Share className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <span>Share</span>
+                </>
+              )}
+              {showShareSuccess && (
+                <div className="absolute inset-0 bg-[#1D50A3] animate-pulse" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Right Column: Media Player */}
+        <div className="lg:w-2/3 relative h-[60vh] lg:h-[80vh] rounded-lg overflow-hidden mt-4">
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
               <button
@@ -129,8 +193,7 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092935963?h=5742e343fb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-
+              src="https://player.vimeo.com/video/1092935963?h=5742e343fb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               width="100%"
               height="100%"
               frameBorder="0"
@@ -141,67 +204,11 @@ export default function MoviePage({ params }) {
           )}
           {!isPlaying && (
             <img
-              src={movie.thumbnail}
+              src={movie.thumbnail || "/placeholder.png"}
               alt={`${movie.title} thumbnail`}
               className="w-full h-full object-cover"
             />
           )}
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-t from-[#020d1f] to-[#012256] py-8"> 
-        <div className="max-w-5xl mx-auto mt-5 ">
-          <div className="bg-[#012256] rounded-lg p-6 shadow-xl backdrop-blur-sm">
-            <h1 className="text-4xl font-bold mb-4">{movie.title}</h1>
-            <div className="flex items-center space-x-4 mb-4 text-sm">
-              <span className="bg-red-600 px-2 py-1 rounded">{movie.rating}</span>
-              <span>{movie.year}</span>
-              <span>{movie.duration}</span>
-              <div className="flex items-center">
-                <Star className="h-4 w-4 text-yellow-500 mr-1" />
-                <span>{movie.score}</span>
-              </div>
-            </div>
-            <p className="text-md text-gray-300 mb-6">{movie.description}</p>
-            
-            <div className="flex space-x-4">
-              <button 
-                onClick={toggleWishlist}
-                disabled={wishlistLoading}
-                className={`${
-                  isInWishlist ? 'bg-[#1D50A3]' : 'bg-gray-600/80'
-                } text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group`}
-              >
-                <Bookmark className={`h-5 w-5 ${isInWishlist ? 'fill-current' : ''}`} />
-                <span>{isInWishlist ? 'Added to Wishlist' : 'Add to Wishlist'}</span>
-              </button>
-              <button 
-                onClick={handleShare}
-                disabled={shareLoading}
-                className="bg-gray-600/80 text-white px-4 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-900 transition-colors relative overflow-hidden group"
-              >
-                {showShareSuccess ? (
-                  <>
-                    <Check className="h-5 w-5 text-green-400" />
-                    <span>Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Share className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    <span>Share</span>
-                  </>
-                )}
-                {/* Share success animation */}
-                {showShareSuccess && (
-                  <div className="absolute inset-0 bg-[#1D50A3] animate-pulse" />
-                )}
-              </button>
-            </div>
-            {/* Share tooltip - appears when hovering over share button */}
-            {/* <div className="mt-2 text-xs text-gray-400">
-              Click share to copy movie link to clipboard
-            </div> */}
-          </div>
         </div>
       </section>
     </div>
