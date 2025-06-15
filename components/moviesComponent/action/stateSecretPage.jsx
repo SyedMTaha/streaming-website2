@@ -3,17 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight, Check, Copy } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
-import movie01 from './../../public/assets/images/movies/loveinsky.png';
-import home01 from './../../public/assets/images/landing/home01.png';
-import movie02 from './../../public/assets/images/movies/johnwick01.png';
-import movie03 from './../../public/assets/images/movies/johnwick02.png';
-import review01 from './../../public/assets/images/review/review01.png';
-import comingsoonGif from './../../public/assets/images/movies/coming-soon.gif';
-import { auth } from '../../firebase';
+import { auth } from '../../../firebase';
 import { getFirestore, doc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
-//import MuxPlayer from './MuxPlayer';
-import Vimeo from '@u-wave/react-vimeo';
-import home46 from '../../public/assets/images/home/home46.png';
+import State from '../../../public/assets/images/movies/action/landscape/State secret.jpg';
 
 export default function MoviePage({ params }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,17 +20,17 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "Pursued ", // Add unique ID for the movie
-    title: "Pursued ",
-    year: "1947",
-    duration: "1h 41min",
+    id: "State Secret", // Add unique ID for the movie
+    title: "State Secret",
+    year: "1950",
+    duration: "1h 4min",
     rating: "R",
-    score: "7.1",
+    score: "6.8",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "Clay, a young man haunted by a mysterious childhood trauma, returns to his adoptive family only to face dark secrets, revenge, and a deadly feud. This noir-inspired Western blends psychological drama with suspense.",
-   
+    description: "A British doctor is drawn into a deadly conspiracy after operating on a dictator in a fictional European country. Fleeing from the secret police, he must rely on his wits to escape in this post-war thriller filled with tension and espionage.",
+    
   };
 
   // Check if movie is in wishlist on component mount
@@ -118,14 +110,14 @@ export default function MoviePage({ params }) {
     <div className="min-h-screen text-white bg-gradient-to-t from-[#020d1f] to-[#012256]">
       <section className="max-w-7xl mx-auto py-8 px-4 flex flex-col lg:flex-row gap-8">
         {/* Left Column: Movie Details */}
-        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0">
+        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0 h-fit">
           <div className="relative mb-6 rounded-lg overflow-hidden">
             <Image
-              src={home46 || "/placeholder.png"} 
+              src={State  || "/placeholder.png"} 
               alt={`${movie.title} thumbnail`}
-              width={300}
-              height={450}
-              className="w-full h-auto object-cover"
+              width={600}
+              height={338}
+              className="w-full h-auto object-cover aspect-video"
             />
           </div>
           <h1 className="text-4xl font-bold mb-2">{movie.title}</h1>
@@ -141,8 +133,8 @@ export default function MoviePage({ params }) {
           <p className="text-md text-gray-300 mb-6">{movie.description}</p>
           
           <div className="text-sm text-gray-400 mb-6">
-            <p className="mb-1"><span className="font-semibold text-white">Cast:</span> Some Actor, Another Actor</p> {/* Placeholder for cast */}
-            <p><span className="font-semibold text-white">Crew:</span> Director Name, Producer Name</p> {/* Placeholder for crew */}
+            <p className="mb-1"><span className="font-semibold text-white">Cast:</span> Some Actor, Another Actor</p>
+            <p><span className="font-semibold text-white">Crew:</span> Director Name, Producer Name</p>
           </div>
 
           <div className="flex space-x-4">
@@ -180,7 +172,7 @@ export default function MoviePage({ params }) {
         </div>
 
         {/* Right Column: Media Player */}
-        <div className="lg:w-2/3 relative h-[60vh] lg:h-[80vh] rounded-lg overflow-hidden mt-4">
+        <div className="lg:w-2/3 relative aspect-video rounded-lg overflow-hidden">
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
               <button
@@ -193,7 +185,7 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092935963?h=5742e343fb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+               src="https://player.vimeo.com/video/1092933232?h=d997dfd2ca&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               width="100%"
               height="100%"
               frameBorder="0"

@@ -30,14 +30,29 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "A Star is Born 1954", 
-      image: "/assets/images/movies/drama/a Star is Born 1954.jpeg",
-
+      title: "Suddenly", 
+      image: "/assets/images/movies/drama/Suddenly.jpg",
     },
     { 
       title: "Broken Strings", 
       image: "/assets/images/movies/drama/Broken Strings.jpeg",
-      
+    },
+    { 
+      title: "Key Largo 1948", 
+      image: "/assets/images/movies/drama/Key Largo 1948.jpeg",
+    },
+    { 
+      title: "Salt of the Earth 1954", 
+      image: "/assets/images/movies/drama/Salt of the Earth 1954.jpeg",
+    },  
+    { 
+      title: "The Stranger 1946", 
+      image: "/assets/images/movies/drama/The Stranger 1946.jpg",
+    },
+    { 
+      title: "A Star is Born 1954", 
+      image: "/assets/images/movies/drama/a Star is Born 1954.jpeg",
+
     },
     { 
       title: "His Girl Friday", 
@@ -50,21 +65,8 @@ export default function MoviePage({ params }) {
 
     },
     { 
-      title: "Key Largo 1948", 
-      image: "/assets/images/movies/drama/Key Largo 1948.jpeg",
-
-    },
-    { 
       title: "My Man Godfrey", 
       image: "/assets/images/movies/drama/My Man Godfrey.jpeg",
-    },
-    { 
-      title: "Salt of the Earth 1954", 
-      image: "/assets/images/movies/drama/Salt of the Earth 1954.jpeg",
-    },
-    { 
-      title: "Suddenly", 
-      image: "/assets/images/movies/drama/Suddenly.jpg",
     },
     { 
       title: "The empror jones", 
@@ -81,10 +83,6 @@ export default function MoviePage({ params }) {
     { 
       title: "The Scarlet Street 1945", 
       image: "/assets/images/movies/drama/The Scarlet Street 1945.jpg",
-    },
-    { 
-      title: "The Stranger 1946", 
-      image: "/assets/images/movies/drama/The Stranger 1946.jpg",
     }
   ]
 
@@ -172,7 +170,11 @@ export default function MoviePage({ params }) {
 
         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
+            <Link 
+              href={`/movie/${movie.title.toLowerCase().replace(/\s+/g, '-')}`}
+              key={index}
+              className="flex-shrink-0 w-48 cursor-pointer group"
+            >
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
@@ -185,9 +187,8 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

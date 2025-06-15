@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import Navbar from "../../../../components/navbarSearch";
 import Footer from "../../../../components/footer";
-import Statesecret from "../../../../components/moviesComponent/stateSecretPage";
+import Statesecret from "../../../../components/moviesComponent/action/stateSecretPage";
 
 export default function HomePage() {
     return (

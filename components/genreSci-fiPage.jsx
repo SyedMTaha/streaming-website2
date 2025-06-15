@@ -30,40 +30,33 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "Assignment Outer Space", 
-      image: "/assets/images/movies/sci-fi/Assignment outer space.jpeg",
-    
-    },
-    { 
       title: "First Spaceship on Venus", 
       image: "/assets/images/movies/sci-fi/first spaceship on venus.jpeg",
-      
-    },
+    },  
     { 
-      title: "Incredible Shrinking Man 1957", 
-      image: "/assets/images/movies/sci-fi/incredible shrinking man 1957.jpeg",
-    
+      title: "The Incredible Petrified World", 
+      image: "/assets/images/movies/sci-fi/The Incredible Petrified World.jpg",
     },
     { 
       title: "Last Woman on Eearth 1960", 
       image: "/assets/images/movies/sci-fi/Last woman on earth 1960.jpg",
-    
+    },
+    { 
+      title: "Incredible Shrinking Man 1957", 
+      image: "/assets/images/movies/sci-fi/incredible shrinking man 1957.jpeg",
+    },
+    {
+    title: "The Lost World 1925", 
+    image: "/assets/images/movies/sci-fi/The lost world 1925.jpeg",
     },
     { 
       title: "The Day The Earth Stood Still", 
       image: "/assets/images/movies/sci-fi/The day the earth stood still.jpeg",
-    
     },
     { 
-      title: "The Incredible Petrified World", 
-      image: "/assets/images/movies/sci-fi/The Incredible Petrified World.jpg",
-    
-    },
-    { 
-      title: "The Lost World 1925", 
-      image: "/assets/images/movies/sci-fi/The lost world 1925.jpeg",
-    
-    }
+      title: "Assignment Outer Space", 
+      image: "/assets/images/movies/sci-fi/Assignment outer space.jpeg",
+    }   
   ]
 
   const scrollLeft = () => {
@@ -150,7 +143,11 @@ export default function MoviePage({ params }) {
 
         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
+            <Link 
+              href={`/movie/${movie.title.toLowerCase().replace(/\s+/g, '-')}`}
+              key={index}
+              className="flex-shrink-0 w-48 cursor-pointer group"
+            >
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
@@ -163,9 +160,8 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

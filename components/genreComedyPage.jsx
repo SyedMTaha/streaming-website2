@@ -30,40 +30,20 @@ export default function MoviePage({ params }) {
 
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "Check and Double Check", 
+      //image: "/assets/images/movies/drama/Suddenly.jpg",
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
+      title: "Brideless Groom", 
+      //image: "/assets/images/movies/drama/Broken Strings.jpeg",
     },
     { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
+      title: "My Man Godfrey 1957", 
+      //image: "/assets/images/movies/drama/Key Largo 1948.jpeg",
     },
     { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
-    },
-    { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
-    },
-    { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "His Girl Friday", 
+      //image: "/assets/images/movies/drama/Salt of the Earth 1954.jpeg",
     }
   ]
 
@@ -151,7 +131,11 @@ export default function MoviePage({ params }) {
 
         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
+            <Link 
+              href={`/movie/${movie.title.toLowerCase().replace(/\s+/g, '-')}`}
+              key={index}
+              className="flex-shrink-0 w-48 cursor-pointer group"
+            >
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
@@ -164,13 +148,8 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

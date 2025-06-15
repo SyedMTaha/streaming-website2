@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Play, Plus, Calendar } from "lucide-react"
 import home03 from './../public/assets/images/background/homePage03.png';
 import comingsoon from './../public/assets/images/background/coming-soon.jpg';
-import comingsoonseries from './../public/assets/images/background/coming-soon-series.jpg';
 import logo5 from './../public/assets/images/logo/logo.png';
 import news1 from './../public/assets/images/home/news1.jpg';
 import news2 from './../public/assets/images/home/news2.jpg';
@@ -28,6 +27,8 @@ import Stranger from './../public/assets/images/movies/drama/The Stranger 1946.j
 import Outlaw from './../public/assets/images/movies/drama/The Outlaw 1943.jpeg';
 import Lost from './../public/assets/images/movies/sci-fi/The lost world 1925.jpeg';
 import Last from './../public/assets/images/movies/sci-fi/Last woman on earth 1960.jpg';
+import Pursued from '../public/assets/images/movies/action/7.jpg';
+import Bad from '../public/assets/images/movies/action/3.jpg';
 import { Facebook, Twitter, Youtube, X, Instagram } from "lucide-react"
 
 export default function DashboardPage() {
@@ -134,10 +135,10 @@ export default function DashboardPage() {
       <ContentSection title="Streaming Now" onScroll={handleScroll}>
         <MovieRow>
           <MovieCard image={home45}  title="Atomic Submarine"  />
-          <MovieCard image={home46} title="Pursued" />
+          <MovieCard image={Pursued} title="Pursued" />
           <MovieCard image={home48} title="Stage Coach" />
           <MovieCard image={home49} title="State Secret" />
-          <MovieCard image={home47} title="Bad and the Beautiful" />
+          <MovieCard image={Bad} title="Bad and the Beautiful" />
         </MovieRow>
       </ContentSection>
 

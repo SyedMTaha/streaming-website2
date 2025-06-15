@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import Navbar from "../../../../components/navbarSearch";
 import Footer from "../../../../components/footer";
-import Pursued from "../../../../components/moviesComponent/pursuedPage";
+import Pursued from "../../../../components/moviesComponent/action/pursuedPage";
 
 export default function HomePage() {
     return (

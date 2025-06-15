@@ -11,60 +11,16 @@ export default function MoviePage({ params }) {
   const [sortBy, setSortBy] = useState('newest')
   
   // This would normally come from an API based on the slug
-  const movie = {
-    title: "John Wick 4",
-    year: "2023",
-    duration: "2h 35 mins",
-    rating: "TV-MA",
-    score: "7.5",
-    views: "4126",
-    reviews: "1",
-    genres: ["Action,", "Adventure"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    cast: ["Renée Muffard"],
-    crew: ["Aleya Nadeau", "Ricky Alarcon", "Sarah Neal"],
-    poster: "/placeholder.svg?height=400&width=300",
-    backdrop: "/placeholder.svg?height=800&width=1400",
-  }
-
   const recommendedMovies = [
     { 
-      title: "Love In The Night Sky", 
-      image: "/assets/images/home/home13.png",
-      year: "2023",
-      genre: "Romance"
+      title: "The Outlaw", 
+      image: "/assets/images/movies/western/2.jpeg",
     },
     { 
-      title: "Spacex", 
-      image: "/assets/images/home/home14.png",
-      year: "2024",
-      genre: "Sci-Fi"
-    },
-    { 
-      title: "Spider Man Memo", 
-      image: "/assets/images/home/home15.png",
-      year: "2023",
-      genre: "Action"
-    },
-    { 
-      title: "City Hunter", 
-      image: "/assets/images/home/home16.png",
-      year: "2024",
-      genre: "Action"
-    },
-    { 
-      title: "The Sleeping Angel", 
-      image: "/assets/images/home/home17.png",
-      year: "2023",
-      genre: "Drama"
-    },
-    { 
-      title: "The Past", 
-      image: "/assets/images/home/home18.png",
-      year: "2024",
-      genre: "Drama"
+      title: "One Eyed Jacks", 
+      image: "/assets/images/movies/western/1.jpg",   
     }
+    
   ]
 
   const scrollLeft = () => {
@@ -151,7 +107,11 @@ export default function MoviePage({ params }) {
 
         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
+            <Link 
+              href={`/movie/${movie.title.toLowerCase().replace(/\s+/g, '-')}`}
+              key={index}
+              className="flex-shrink-0 w-48 cursor-pointer group"
+            >
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
@@ -164,13 +124,8 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                <div className="flex items-center text-xs text-gray-400 space-x-2">
-                  <span>{movie.year}</span>
-                  <span>•</span>
-                  <span>{movie.genre}</span>
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

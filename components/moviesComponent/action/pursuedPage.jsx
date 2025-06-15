@@ -3,17 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Bookmark, ThumbsUp, Share, Star, Plus, BookmarkIcon, ChevronLeft, ChevronRight, Check, Copy } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
-import movie01 from './../../public/assets/images/movies/loveinsky.png';
-import home01 from './../../public/assets/images/landing/home01.png';
-import movie02 from './../../public/assets/images/movies/johnwick01.png';
-import movie03 from './../../public/assets/images/movies/johnwick02.png';
-import review01 from './../../public/assets/images/review/review01.png';
-import comingsoonGif from './../../public/assets/images/movies/coming-soon.gif';
-import { auth } from '../../firebase';
+import { auth } from '../../../firebase';
 import { getFirestore, doc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
-//import MuxPlayer from './MuxPlayer';
-import Vimeo from '@u-wave/react-vimeo';
-import home45 from '../../public/assets/images/home/home45.jpg';
+import Pursued from '../../../public/assets/images/movies/action/landscape/Pursued.jpg';
 
 export default function MoviePage({ params }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,18 +20,17 @@ export default function MoviePage({ params }) {
 
   // This would normally come from an API based on the slug
   const movie = {
-    id: "atomic-submarine", // Add unique ID for the movie
-    title: "Atomic Submarine",
-    year: "1959",
-    duration: "1h 11min",
+    id: "Pursued ", // Add unique ID for the movie
+    title: "Pursued ",
+    year: "1947",
+    duration: "1h 41min",
     rating: "R",
-    score: "6.0",
+    score: "7.1",
     views: "4126",
     reviews: "1",
     genres: ["Action", "Crime", "Thriller"],
-    description: "When ships begin mysteriously disappearing in the Arctic, the crew of the atomic-powered submarine Tiger Shark is sent to investigate. What they discover is a terrifying alien spacecraft beneath the sea, threatening Earth's survival. A tense blend of science fiction and Cold War suspense, The Atomic Submarine dives deep into danger to confront an otherworldly menace.",
-    driveUrl: "https://drive.google.com/uc?export=download&id=1PwDjgF5q-TSrBxpxI_cH_4rPzwCLGufV",
-    thumbnail: "/assets/images/home/home45.jpg",
+    description: "Clay, a young man haunted by a mysterious childhood trauma, returns to his adoptive family only to face dark secrets, revenge, and a deadly feud. This noir-inspired Western blends psychological drama with suspense.",
+   
   };
 
   // Check if movie is in wishlist on component mount
@@ -119,14 +110,14 @@ export default function MoviePage({ params }) {
     <div className="min-h-screen text-white bg-gradient-to-t from-[#020d1f] to-[#012256]">
       <section className="max-w-7xl mx-auto py-8 px-4 flex flex-col lg:flex-row gap-8">
         {/* Left Column: Movie Details */}
-        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0">
+        <div className="lg:w-1/3 bg-[#012256] rounded-lg p-6 shadow-xl py-4 backdrop-blur-sm flex-shrink-0 h-fit">
           <div className="relative mb-6 rounded-lg overflow-hidden">
             <Image
-              src={home45 || "/placeholder.png"} 
+              src={Pursued || "/placeholder.png"} 
               alt={`${movie.title} thumbnail`}
-              width={300}
-              height={450}
-              className="w-full h-auto object-cover"
+              width={600}
+              height={338}
+              className="w-full h-auto object-cover aspect-video"
             />
           </div>
           <h1 className="text-4xl font-bold mb-2">{movie.title}</h1>
@@ -142,8 +133,8 @@ export default function MoviePage({ params }) {
           <p className="text-md text-gray-300 mb-6">{movie.description}</p>
           
           <div className="text-sm text-gray-400 mb-6">
-            <p className="mb-1"><span className="font-semibold text-white">Cast:</span> Some Actor, Another Actor</p> {/* Placeholder for cast */}
-            <p><span className="font-semibold text-white">Crew:</span> Director Name, Producer Name</p> {/* Placeholder for crew */}
+            <p className="mb-1"><span className="font-semibold text-white">Cast:</span> Some Actor, Another Actor</p>
+            <p><span className="font-semibold text-white">Crew:</span> Director Name, Producer Name</p>
           </div>
 
           <div className="flex space-x-4">
@@ -181,7 +172,7 @@ export default function MoviePage({ params }) {
         </div>
 
         {/* Right Column: Media Player */}
-        <div className="lg:w-2/3 relative h-[60vh] lg:h-[80vh] rounded-lg overflow-hidden mt-4">
+        <div className="lg:w-2/3 relative aspect-video rounded-lg overflow-hidden">
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
               <button
@@ -194,7 +185,7 @@ export default function MoviePage({ params }) {
           )}
           {isPlaying && (
             <iframe
-              src="https://player.vimeo.com/video/1092936389?h=1e0be4f157&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              src="https://player.vimeo.com/video/1092935963?h=5742e343fb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               width="100%"
               height="100%"
               frameBorder="0"

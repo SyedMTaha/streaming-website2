@@ -57,7 +57,7 @@ export default function MoviePage({ params }) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020b1f] via-[#0a2151] to-[#020b1f] text-white">
       {/* Hero Section */}
-      <section className="relative h-[65vh] flex items-center justify-center">
+      <section className="relative h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0">
         <Image
               src={home02 || "/placeholder.svg"}

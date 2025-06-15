@@ -19,23 +19,42 @@ export default function MoviePage({ params }) {
     },
     { 
       title: "Pursued", 
-      image: "/assets/images/home/home46.png",
+      image: "/assets/images/movies/action/7.jpg",
       
     },
     { 
-      title: "Stage Coach", 
-      image: "/assets/images/home/home47.jpg",
+      title: "Bad and the Beautiful", 
+      image: "/assets/images/movies/action/3.jpg",
 
     },
     { 
-      title: "State Secret", 
+      title: "Stage Coach", 
       image: "/assets/images/home/home48.png",
 
     },
     { 
       title: "State Secret", 
       image: "/assets/images/home/home49.jpeg",
-
+    },
+    { 
+      title: "Train 1964", 
+      image: "/assets/images/movies/action/9.jpeg",
+    },
+    { 
+      title: "Deadline USA 1952", 
+      image: "/assets/images/movies/action/4.jpeg",
+    },
+    { 
+      title: "Angel and the Badman", 
+      image: "/assets/images/movies/action/1.jpg",
+    },
+    { 
+      title: "Detour 1945", 
+      image: "/assets/images/movies/action/5.jpg",
+    },
+    { 
+      title: "The Outlaw", 
+      image: "/assets/images/movies/action/6.jpg",
     }
   ]
 
@@ -123,7 +142,11 @@ export default function MoviePage({ params }) {
 
         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {recommendedMovies.map((movie, index) => (
-            <div key={index} className="flex-shrink-0 w-48 cursor-pointer group">
+            <Link 
+              href={`/movie/${movie.title.toLowerCase().replace(/\s+/g, '-')}`}
+              key={index}
+              className="flex-shrink-0 w-48 cursor-pointer group"
+            >
               <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2">
                 <Image
                   src={movie.image || "/placeholder.svg"}
@@ -136,9 +159,8 @@ export default function MoviePage({ params }) {
                 <p className="text-sm font-medium text-white group-hover:text-[#1D50A3] transition-colors">
                   {movie.title}
                 </p>
-                
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

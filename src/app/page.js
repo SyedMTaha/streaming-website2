@@ -153,7 +153,7 @@ export default function HomePage() {
       <Navbar />
       <div className="min-h-screen text-white w-full">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 text-center min-h-[95vh] flex items-center w-full">
+        <section className="relative py-20 px-4 text-center min-h-[100vh] flex items-center w-full">
           {/* Background Image Container */}
           <div className="absolute inset-0 w-full h-full">
             <Image
